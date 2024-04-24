@@ -2,6 +2,9 @@
 #include <cassert>
 #include <cmath>
 
+#include <iostream>
+#include <string>
+
 class Matrix2x2; class Matrix3x3; class Matrix4x4; class MatrixMxN;
 class Vector3D; class Vector4D; class VectorND;
 
@@ -27,6 +30,7 @@ public:
 
 	//Display
 	void PrintVector() const;
+	std::string ToString() const;
 
 	//Vector values *-1
 	void Opposite();
@@ -177,6 +181,8 @@ public:
 
 	//Display
 	void PrintVector() const;
+	std::string ToString() const;
+
 	//Vector values *-1
 	void Opposite();
 	//x += v2.x , ...
@@ -322,6 +328,8 @@ public:
 
 	//Display
 	void PrintVector() const;
+	std::string ToString() const;
+
 	//Vector values *-1
 	void Opposite();
 	//x += v2.x , ...

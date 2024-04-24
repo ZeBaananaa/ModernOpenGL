@@ -60,6 +60,11 @@ void Vector2D::PrintVector() const
 	printf("{%f}\n", y);
 }
 
+std::string Vector2D::ToString() const
+{
+	return "\n{" + std::to_string(x) + "}\n{" + std::to_string(y) + "}\n";
+}
+
 void Vector2D::Opposite()
 {
 	x *= -1.f;
@@ -487,6 +492,13 @@ void Vector3D::PrintVector() const
 	printf("\n{%f}\n", x);
 	printf("{%f}\n", y);
 	printf("{%f}\n", z);
+}
+
+std::string Vector3D::ToString() const
+{
+	return "\n{" + std::to_string(x) + "}\n{"
+		+ std::to_string(y) + "}\n{"
+		+ std::to_string(z) + "}\n";
 }
 
 void Vector3D::Opposite()
@@ -924,6 +936,14 @@ void Vector4D::PrintVector() const
 	printf("{%f}\n", y);
 	printf("{%f}\n", z);
 	printf("{%f}\n", w);
+}
+
+std::string Vector4D::ToString() const
+{
+	return "\n{" + std::to_string(x)+ "}\n{" 
+		+ std::to_string(y) + "}\n{"
+		+ std::to_string(z) + "}\n{"
+		+ std::to_string(w) + "}\n";
 }
 
 void Vector4D::Opposite()
