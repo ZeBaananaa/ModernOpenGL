@@ -1,5 +1,7 @@
 #include "Log.h"
 
+bool Log::openOnce = false;
+
 Log::Log()
 {
 }
@@ -16,7 +18,18 @@ Log::~Log()
 
 void Log::OpenFile(const char*& fileName)
 {
-	fileOpen.open(fileName);
+	if (!fileOpen.is_open())
+	{
+		if (Log::openOnce)
+		{
+			fileOpen.open(fileName);
+		}
+		else
+		{
+			Log::openOnce = true;
+			fileOpen.open(fileName, std::ofstream::out | std::ofstream::trunc);
+		}
+	}
 
 	if (!fileOpen.is_open())
 	{
@@ -33,17 +46,31 @@ bool CheckPrintArg(const char c)
 	else
 		return false;
 }
-std::string Log::Print(const std::string format,...)
+
+std::string Log::Print(const std::string format, ...)
 {
 	va_list params;
 	va_start(params, format);
+	std::string txt = StrReorganization(format, params);
 
-	int nbValue = 0;
+	std::cout << txt << std::endl;
 
-	std::string result ="";
-	for (int i = 0; i < format.length();++i)
+	if(fileOpen.is_open())
 	{
-		if (format[i] == '%' && i != format.length()-1)
+		fileOpen << txt + "\n";
+	}
+
+	va_end(params);
+	return txt;
+}
+
+std::string Log::StrReorganization(const std::string format, va_list params)
+{
+	int nbValue = 0;
+	std::string result = "";
+	for (int i = 0; i < format.length(); ++i)
+	{
+		if (format[i] == '%' && i != format.length() - 1)
 		{
 			char c = format[i + 1];
 			if (CheckPrintArg(c))
@@ -58,7 +85,7 @@ std::string Log::Print(const std::string format,...)
 				{
 					result += std::to_string(va_arg(params, double));
 				}
-				
+
 				++i;
 			}
 			else
@@ -66,25 +93,15 @@ std::string Log::Print(const std::string format,...)
 				std::cout << "error type arg : %" << c << std::endl;
 				break;
 			}
-
 		}
 		else
 		{
 			result += format[i];
 		}
 	}
-	va_end(params);
-	std::cout << result << std::endl;
-	
-	if (fileOpen.is_open())
-	{
-		result += "\n";
-		fileOpen << result;
-	}
 
 	return result;
 }
-
 
 void Log::CloseFile()
 {
@@ -94,14 +111,19 @@ void Log::CloseFile()
 	}
 }
 
+void WriteInFile(std::fstream& file, std::string txt)
+{
+	//recup et reecrit ensuite
+}
+
 void Debug_Log(std::string text, std::string FileName, int line, ...)
 {
-	Log log;
+	Log log("debug.txt");
 	va_list args;
 	va_start(args, line);
 
-	text = log.Print(text, args);
-	text = FileName + "(" + std::to_string(line) + "): " + text;
+	text = FileName + "(" + std::to_string(line) + "): " + log.StrReorganization(text,args) + "\n";
+	log.Print(text);
 
 	va_end(args);
 	OutputDebugStringA(text.c_str());

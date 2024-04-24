@@ -14,19 +14,21 @@
 void testLog()
 {
     Log logPerso("debug.txt");
-    int leInt = 5;
+    int leInt = 7;
     logPerso.Print("hello world %d %d", leInt, leInt + 1);
     float leFloat = 4.0f;
     logPerso.Print("hello world %f", leFloat);
     Vector4D v(1.f, 2.f, 3.f, 4.f);
     logPerso.Print(v.ToString());
 
-    DEBUG_LOG("ayoo %g", 5));
+    DEBUG_LOG("ayoo %d %d", 5,6));
 }
 
 int main()
 {
     testLog();
+   // DEBUG_LOG("ayoo %d %d", 5, 6));
+
     return 0;
 }
 
