@@ -1,6 +1,8 @@
 // ModerneOpenGL.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 //
-
+#include "Assertion.h"
+//Test Assert
+bool on = true;
 #include <iostream>
 
 //si vous utilisez gle32s.lib (et donc pas de dll)
@@ -10,18 +12,11 @@
 
 #include <cstdint>
 
-#ifdef NDEBUG
-#define Assert(x) if(x == false){abort();}
-#else
-#define Assert(x) if(x == false){__debugbreak();}
-#endif
-
-
 
 struct vec2 { float x, y; }; // ou r,g ou s,t
 struct vec3 { float x, y, z; }; // ou r,g,b ou s,t,p
 struct vec4 { float x, y, z, w; }; // ou r,g,b,a ou s,t,p,q
-bool on = true;
+
 
 
 struct Vertex
