@@ -40,6 +40,9 @@ libs/glfw/docs/html/
 !libs/glew/lib/Release/
 !libs/glew/lib/Release/Win32/
 
+!ModerneOpenGL/Source/include/Core/Debug
+!ModerneOpenGL/Source/src/Core/Debug
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
