@@ -133,7 +133,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\src\Core\Debug\Assertion.cpp" />
     <ClCompile Include="Source\src\Core\Debug\Log.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Matrix.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Vector.cpp" />
