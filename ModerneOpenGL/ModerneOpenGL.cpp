@@ -21,7 +21,7 @@
 struct vec2 { float x, y; }; // ou r,g ou s,t
 struct vec3 { float x, y, z; }; // ou r,g,b ou s,t,p
 struct vec4 { float x, y, z, w; }; // ou r,g,b,a ou s,t,p,q
-bool on = false;
+bool on = true;
 
 
 struct Vertex
