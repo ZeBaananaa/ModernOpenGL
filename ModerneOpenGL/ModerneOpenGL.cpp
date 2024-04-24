@@ -10,9 +10,19 @@
 
 #include <cstdint>
 
+#ifdef NDEBUG
+#define Assert(x) if(x == false){abort();}
+#else
+#define Assert(x) if(x == false){__debugbreak();}
+#endif
+
+
+
 struct vec2 { float x, y; }; // ou r,g ou s,t
 struct vec3 { float x, y, z; }; // ou r,g,b ou s,t,p
 struct vec4 { float x, y, z, w; }; // ou r,g,b,a ou s,t,p,q
+bool on = false;
+
 
 struct Vertex
 {
@@ -116,7 +126,9 @@ public:
 int main(void)
 {
     GLFWwindow* window;
-
+    
+    Assert(on);
+    
     /* Initialize the library */
     if (!glfwInit())
         return -1;
@@ -155,3 +167,4 @@ int main(void)
     glfwTerminate();
     return 0;
 }
+
