@@ -1,18 +1,8 @@
 #pragma once
-class Assertion
-{
-public:
-	Assertion();
-	~Assertion();
 
-private:
 
-};
-
-Assertion::Assertion()
-{
-}
-
-Assertion::~Assertion()
-{
-}
+#ifdef NDEBUG
+#define Assert(x) if(x == false){abort();}
+#else
+#define Assert(x) if(x == false){__debugbreak();}
+#endif

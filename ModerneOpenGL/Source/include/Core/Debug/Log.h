@@ -8,7 +8,6 @@
 #include <stdarg.h>
 
 #include <Windows.h>
-
 #define DEBUG_LOG(txt,...)(Debug_Log(txt,__FILE__, __LINE__,__VA_ARGS__)
 
 class Log

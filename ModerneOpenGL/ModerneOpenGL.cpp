@@ -1,6 +1,8 @@
 // ModerneOpenGL.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 //
-
+#include "Assertion.h"
+//Test Assert
+bool on = true;
 #include <iostream>
 
 //si vous utilisez gle32s.lib (et donc pas de dll)
