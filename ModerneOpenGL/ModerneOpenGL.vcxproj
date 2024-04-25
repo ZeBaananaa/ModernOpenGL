@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../libs/GLFW/include;../libs/GLEW/include;Source/include/Core/Maths;Source/include;Source/include/Core;Source/include/Core/Debug</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../libs/GLFW/include;../libs/GLEW/include;Source/include/Core/Maths;Source/include;Source/include/Core;Source/include/Core/Debug;Source/include/LowRenderer;Source/include/Physics;Source/include/Resources;Source/include/Core/DataStructure</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -123,7 +123,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>;Source/include/Core/Maths;Source/include;Source/include/Core;Source/include/Core/Debug</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>;Source/include/Core/Maths;Source/include;Source/include/Core;Source/include/Core/Debug;Source/include/LowRenderer;Source/include/Physics;Source/include/Resources;Source/include/Core/DataStructure</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,15 +138,27 @@
     <ClCompile Include="Source\src\Core\Maths\Matrix.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Vector.cpp" />
     <ClCompile Include="ModerneOpenGL.cpp" />
+    <ClCompile Include="Source\src\Resources\Model.cpp" />
+    <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />
+    <ClInclude Include="Source\include\Core\DataStructure\Graph.h" />
     <ClInclude Include="Source\include\Core\Debug\Assertion.h" />
     <ClInclude Include="Source\include\Core\Debug\Log.h" />
     <ClInclude Include="Source\include\Core\Maths\MathPerso.h" />
     <ClInclude Include="Source\include\Core\Maths\Matrix.h" />
     <ClInclude Include="Source\include\Core\Maths\Vector.h" />
-    <ClInclude Include="Vertex.hpp" />
+    <ClInclude Include="Source\include\LowRenderer\Camera.h" />
+    <ClInclude Include="Source\include\LowRenderer\Light.h" />
+    <ClInclude Include="Source\include\LowRenderer\Mesh.h" />
+    <ClInclude Include="Source\include\Physics\Transform.h" />
+    <ClInclude Include="Source\include\Resources\Model.h" />
+    <ClInclude Include="Source\include\Resources\ResourcesManager.h" />
+    <ClInclude Include="Source\include\Resources\Scene.h" />
+    <ClInclude Include="Source\include\Resources\Shader.h" />
+    <ClInclude Include="Source\include\Resources\Texture.h" />
+    <ClInclude Include="Source\include\Resources\Vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

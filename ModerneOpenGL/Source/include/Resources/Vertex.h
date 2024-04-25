@@ -2,20 +2,16 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-struct vec2 { float x, y; }; // ou r,g ou s,t
-struct vec3 { float x, y, z; }; // ou r,g,b ou s,t,p
-struct vec4 { float x, y, z, w; }; // ou r,g,b,a ou s,t,p,q
+#include "MathPerso.h"
 
 struct Vertex
 {
 	//attributte du sommet
-	vec2 position;
+	Vector3D position;
+	Vector3D normal;
+	Vector2D textureUV;
 
-	//float vertices[];
-	//GLfloat normal[];
 	//GLfloat color[];
-	//vec2 uv; //coord texture
-
 };
 
 Vertex g_Triangles[] = {{-0.5f,-0.5f},
