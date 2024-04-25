@@ -6,5 +6,7 @@ hello world 4.000000
 {3.000000}
 {4.000000}
 
-nGL\ModerneOpenGL.cpp(24): ayoo 5 6
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(23): ayoo 5 6
+
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(29): ayoo 7 8
 

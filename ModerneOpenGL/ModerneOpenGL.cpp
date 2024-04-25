@@ -13,13 +13,12 @@
 #include "MathPerso.h"
 void testLog()
 {
-    Log logPerso("debug.txt");
     int leInt = 7;
-    logPerso.Print("hello world %d %d", leInt, leInt + 1);
+    Log::Get().Print("hello world %d %d", leInt, leInt + 1);
     float leFloat = 4.0f;
-    logPerso.Print("hello world %f", leFloat);
+    Log::Get().Print("hello world %f", leFloat);
     Vector4D v(1.f, 2.f, 3.f, 4.f);
-    logPerso.Print(v.ToString());
+    Log::Get().Print(v.ToString());
 
     DEBUG_LOG("ayoo %d %d", 5,6));
 }
@@ -27,8 +26,9 @@ void testLog()
 int main()
 {
     testLog();
-   // DEBUG_LOG("ayoo %d %d", 5, 6));
+    DEBUG_LOG("ayoo %d %d", 7, 8));
 
+    Log::Get().Destroy();
     return 0;
 }
 

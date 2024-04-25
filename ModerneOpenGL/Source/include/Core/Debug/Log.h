@@ -14,18 +14,21 @@
 class Log
 {
 public:
-	static bool openOnce;
 
-	Log();
-	Log(const char* fileName);
+	static Log& Get();
+	static void Destroy();
 	~Log();
 
-	void OpenFile(const char* & filename);
+	void OpenFile(const char*& filename);
 	std::string Print(const std::string format, ...);
-	std::string StrReorganization(const std::string format, va_list params);
+	std::string Print(const std::string format, va_list params);
 
 private:
 
+	Log(const char* fileName);
+	static Log* instance;
+
+	std::string StrReorganization(const std::string format, va_list params);
 	std::fstream fileOpen;
 	void CloseFile();
 };

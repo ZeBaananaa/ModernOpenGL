@@ -1,14 +1,25 @@
 #include "Log.h"
-
-bool Log::openOnce = false;
-
-Log::Log()
-{
-}
+Log* Log::instance = nullptr;
 
 Log::Log(const char* fileName)
 {
 	OpenFile(fileName);
+}
+
+Log& Log::Get()
+{
+	if (instance == nullptr)
+		instance = new Log("debug.txt");
+	return *instance;
+}
+
+void Log::Destroy()
+{
+	if (instance)
+	{
+		delete instance;
+		instance = nullptr;
+	}
 }
 
 Log::~Log()
@@ -18,18 +29,7 @@ Log::~Log()
 
 void Log::OpenFile(const char*& fileName)
 {
-	if (!fileOpen.is_open())
-	{
-		if (Log::openOnce)
-		{
-			fileOpen.open(fileName);
-		}
-		else
-		{
-			Log::openOnce = true;
-			fileOpen.open(fileName, std::ofstream::out | std::ofstream::trunc);
-		}
-	}
+	fileOpen.open(fileName, std::ofstream::out | std::ofstream::trunc);
 
 	if (!fileOpen.is_open())
 	{
@@ -51,16 +51,20 @@ std::string Log::Print(const std::string format, ...)
 {
 	va_list params;
 	va_start(params, format);
+	std::string txt = Print(format, params);
+	va_end(params);
+
+	return txt;
+}
+
+std::string Log::Print(const std::string format, va_list params)
+{
 	std::string txt = StrReorganization(format, params);
 
 	std::cout << txt << std::endl;
-
-	if(fileOpen.is_open())
-	{
+	if (fileOpen.is_open())
 		fileOpen << txt + "\n";
-	}
 
-	va_end(params);
 	return txt;
 }
 
@@ -111,20 +115,13 @@ void Log::CloseFile()
 	}
 }
 
-void WriteInFile(std::fstream& file, std::string txt)
-{
-	//recup et reecrit ensuite
-}
-
 void Debug_Log(std::string text, std::string FileName, int line, ...)
 {
-	Log log("debug.txt");
 	va_list args;
 	va_start(args, line);
 
-	text = FileName + "(" + std::to_string(line) + "): " + log.StrReorganization(text,args) + "\n";
-	log.Print(text);
-
+	text = FileName + "(" + std::to_string(line) + "): " + text + "\n";
+	text = Log::Get().Print(text, args);
 	va_end(args);
 	OutputDebugStringA(text.c_str());
 }
