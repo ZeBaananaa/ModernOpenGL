@@ -12,6 +12,7 @@ bool on = true;
 
 //#include <cstdint>
 #include "Log.h"
+#include "Model.h"
 #include "MathPerso.h"
 void testLog()
 {
@@ -22,13 +23,14 @@ void testLog()
     Vector4D v(1.f, 2.f, 3.f, 4.f);
     Log::Get().Print(v.ToString());
 
-    DEBUG_LOG("ayoo %d %d", 5,6));
+    DEBUG_LOG("ayoo %d %d", 5, 6));
 }
 
 int main()
 {
-    testLog();
+    Model pyra("pyramid.obj");
 
+    testLog();
     Log::Get().Destroy();
     return 0;
 }

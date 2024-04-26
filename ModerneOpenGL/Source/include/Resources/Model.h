@@ -15,5 +15,4 @@ public:
 private:
 	void LoadModel(std::string nameObjFile);
 
-
 };
