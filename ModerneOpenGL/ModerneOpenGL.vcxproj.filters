@@ -27,6 +27,7 @@
     <ClCompile Include="Source\src\Core\Debug\Log.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Source\src\Resources\RessourceManager.cpp">
     <ClCompile Include="Source\src\Core\Debug\Assertion.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -53,6 +54,7 @@
     <ClInclude Include="Source\include\Core\Debug\Assertion.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Source\include\Resources\RessourceManager.h">
     <ClInclude Include="Source\include\App.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
