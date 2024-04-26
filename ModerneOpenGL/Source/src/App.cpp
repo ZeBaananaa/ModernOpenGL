@@ -1,4 +1,5 @@
 #include "App.h"
+#include "Model.h"
 
 bool Application::Initialise()
 {
@@ -11,24 +12,28 @@ bool Application::Initialise()
     glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
     //if data == null juste alloue memoire
     //glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 3, g_Triangles, GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 6, sablier, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 3, g_Indices, GL_STATIC_DRAW);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 6, g_IndicesSablier, GL_STATIC_DRAW);
+
 
 #define POSITION 0
-#define COLOR 3
+#define NORMAL 3
+#define Texture 4
     // indice vbo si plusieur vbo (pos,couleur,ect.) ici tout dans 1 /nbcomposants/type composants/noramaliser?/size of struct
-    //pos
-    glVertexAttribPointer(POSITION, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, position));
+  
+    glVertexAttribPointer(POSITION, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, position));
     glEnableVertexAttribArray(POSITION);
-    //color
-    glVertexAttribPointer(COLOR, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, color));
-    glEnableVertexAttribArray(COLOR);
+
+    glVertexAttribPointer(NORMAL, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+    glEnableVertexAttribArray(NORMAL);
+
+    glVertexAttribPointer(Texture, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, textureUV));
+    glEnableVertexAttribArray(Texture);
 
 #undef POSITION
-#undef COLOR
+#undef NORMAL
+#undef Texture
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);

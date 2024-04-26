@@ -28,7 +28,6 @@ void testLog()
 int main()
 {
     testLog();
-    DEBUG_LOG("ayoo %d %d", 7, 8));
 
     Log::Get().Destroy();
     return 0;

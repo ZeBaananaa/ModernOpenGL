@@ -14,11 +14,11 @@ struct Vertex
 	//GLfloat color[];
 };
 
-Vertex g_Triangles[] = {{-0.5f,-0.5f},
-						{0.5f,-0.5f},	
-						{0.f,0.5f} };
-
-uint16_t g_Indices[] = { 0,1,2 };
+//Vertex g_Triangles[] = {{-0.5f,-0.5f},
+//						{0.5f,-0.5f},	
+//						{0.f,0.5f} };
+//
+//uint16_t g_Indices[] = { 0,1,2 };
 
 // VBO 1/ save pos,color normal des sommets
 // EBO 2/ indice des sommets
