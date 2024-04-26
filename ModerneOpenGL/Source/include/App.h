@@ -1,7 +1,7 @@
 #pragma once
 //si vous utilisez gle32s.lib (et donc pas de dll)
 #define GLEW_STATIC 1
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 class Application

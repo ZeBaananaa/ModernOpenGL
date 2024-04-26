@@ -16,7 +16,6 @@ bool Application::Initialise()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 3, g_Indices, GL_STATIC_DRAW);
 
-
 #define POSITION 0
 #define NORMAL 3
 #define Texture 4

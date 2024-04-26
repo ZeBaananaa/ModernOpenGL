@@ -111,7 +111,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../libs/GLFW/lib-vc2022;../libs/GLEW/lib/Release/x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);opengl32.lib;glfw3dll.lib;glew32s.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);opengl32.lib;glfw3.lib;glew32s.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,9 +135,11 @@
   <ItemGroup>
     <ClCompile Include="Source\src\App.cpp" />
     <ClCompile Include="Source\src\Core\Debug\Log.cpp" />
+    <ClCompile Include="Source\src\Core\InputHandler.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Matrix.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Vector.cpp" />
     <ClCompile Include="ModerneOpenGL.cpp" />
+    <ClCompile Include="Source\src\glad.c" />
     <ClCompile Include="Source\src\Resources\Model.cpp" />
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
   </ItemGroup>
@@ -146,9 +148,12 @@
     <ClInclude Include="Source\include\Core\DataStructure\Graph.h" />
     <ClInclude Include="Source\include\Core\Debug\Assertion.h" />
     <ClInclude Include="Source\include\Core\Debug\Log.h" />
+    <ClInclude Include="Source\include\Core\InputHandler.h" />
     <ClInclude Include="Source\include\Core\Maths\MathPerso.h" />
     <ClInclude Include="Source\include\Core\Maths\Matrix.h" />
     <ClInclude Include="Source\include\Core\Maths\Vector.h" />
+    <ClInclude Include="Source\include\glad\glad.h" />
+    <ClInclude Include="Source\include\KHR\khrplatform.h" />
     <ClInclude Include="Source\include\LowRenderer\Camera.h" />
     <ClInclude Include="Source\include\LowRenderer\Light.h" />
     <ClInclude Include="Source\include\LowRenderer\Mesh.h" />
