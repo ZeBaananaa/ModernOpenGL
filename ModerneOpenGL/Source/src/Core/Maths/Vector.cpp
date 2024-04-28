@@ -940,7 +940,7 @@ void Vector4D::PrintVector() const
 
 std::string Vector4D::ToString() const
 {
-	return "\n{" + std::to_string(x)+ "}\n{" 
+	return "\n{" + std::to_string(x) + "}\n{" 
 		+ std::to_string(y) + "}\n{"
 		+ std::to_string(z) + "}\n{"
 		+ std::to_string(w) + "}\n";

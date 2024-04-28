@@ -159,6 +159,9 @@ Vector2D& Matrix2x2::operator[](int index)
 		return col1;
 	else if (index == 1)
 		return col2;
+
+
+	return col1;
 }
 
 Vector2D Matrix2x2::operator[](int index) const
@@ -168,6 +171,8 @@ Vector2D Matrix2x2::operator[](int index) const
 		return col1;
 	else if (index == 1)
 		return col2;
+
+	return col1;
 }
 
 /////////////////// fct out of class ///////////////////
@@ -509,6 +514,8 @@ Vector3D& Matrix3x3::operator[](int index)
 		return col2;
 	else if (index == 2)
 		return col3;
+
+	return col1;
 }
 
 Vector3D Matrix3x3::operator[](int index) const
@@ -520,6 +527,8 @@ Vector3D Matrix3x3::operator[](int index) const
 		return col2;
 	else if (index == 2)
 		return col3;
+
+	return col1;
 }
 
 
@@ -762,6 +771,24 @@ void Matrix4x4::PrintMatrix() const
 	printf("\n");
 }
 
+std::string Matrix4x4::ToString() const
+{
+	std::string result = "\n";
+	
+	for (int i{ 0 }; i <= 3; ++i)
+	{
+		result += "{";
+
+		for (int j{ 0 }; j <= 3; ++j)
+		{
+			result += "  " + std::to_string((*this)[j][i]) + "  ";
+		}
+		result += "}\n";
+	}
+	result += "\n";
+	return result;
+}
+
 Vector4D Matrix4x4::Diagonal() const
 {
 	return { (*this)[0][0],(*this)[1][1],(*this)[2][2],(*this)[3][3] };
@@ -918,6 +945,8 @@ Vector4D& Matrix4x4::operator[](int index)
 		return col3;
 	else if (index == 3)
 		return col4;
+
+	return col1;
 }
 
 Vector4D Matrix4x4::operator[](int index) const
@@ -931,6 +960,8 @@ Vector4D Matrix4x4::operator[](int index) const
 		return col3;
 	else if (index == 3)
 		return col4;
+
+	return col1;
 }
 
 /////////////////// fct out of class ///////////////////
@@ -1110,7 +1141,7 @@ void Matrix4x4ToFloat(const Matrix4x4& m, float* f)
 
 /////////////////////////////////////////////////////////////
 
-Matrix4x4 viewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3D& up)
+Matrix4x4 ViewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3D& up)
 {
 	Vector3D f = Normalize(forward);
 	Vector3D r = Normalize(CrossProduct(f, up));
@@ -1122,7 +1153,7 @@ Matrix4x4 viewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3
 		, {-DotProduct(r,eye),-DotProduct(u,eye),-DotProduct(f,eye),1.f} };
 }
 
-Matrix4x4 frustumMatrix(float left, float right, float bottom, float top, float near, float far)
+Matrix4x4 FrustumMatrix(float left, float right, float bottom, float top, float near, float far)
 {
 	return { { (2.f * near) / (right - left), 0.f, 0.f, 0.f }
 		   , { 0.f, (2.f * near) / (top - bottom), 0.f, 0.f }
@@ -1130,7 +1161,7 @@ Matrix4x4 frustumMatrix(float left, float right, float bottom, float top, float 
 		   ,{ 0.f,0.f, -1.f,0.f } };
 }
 
-Matrix4x4 orthoMatrix(float left, float right, float bottom, float top, float near, float far)
+Matrix4x4 OrthoMatrix(float left, float right, float bottom, float top, float near, float far)
 {
 	return { { 2.f / (right - left), 0.f, 0.f, 0.f }
 		, { 0.f, 2.f / (top - bottom), 0.f, 0.f }
@@ -1138,7 +1169,7 @@ Matrix4x4 orthoMatrix(float left, float right, float bottom, float top, float ne
 		,{ -((right + left) / (right - left)),-((top + bottom) / (top - bottom)),((far + near) / (far - near)),1.f } };
 }
 
-Matrix4x4 perspectiveMatrix(float fovY, float aspect, float near, float far)
+Matrix4x4 PerspectiveMatrix(float fovY, float aspect, float near, float far)
 {
 	float s = 1.f / (tanf((fovY / 2.f) * (PI / 180.f)));
 	float sX = 1.f / (aspect * tanf((fovY / 2.f) * (PI / 180.f)));

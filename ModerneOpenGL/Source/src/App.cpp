@@ -1,6 +1,26 @@
 #include "App.h"
 #include "Model.h"
 
+#include "Camera.h"
+Vector2D Application::posMouse = { 0.f,0.f };
+Application* Application::instance = nullptr;
+
+Application& Application::Get()
+{
+    if (instance == nullptr)
+        instance = new Application();
+    return *instance;
+}
+
+void Application::Destroy()
+{
+    if (instance)
+    {
+        delete instance;
+        instance = nullptr;
+    }
+}
+
 bool Application::Initialise()
 {
     glGenBuffers(1, &m_VBO);
@@ -60,5 +80,27 @@ void Application::Render()
 
     //draw arrays ou elements
     //glDrawArrays(GL_TRIANGLES, 0, 6);
+
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, nullptr);
+}
+
+void Application::SetWindowSize(float width, float height)
+{
+    m_width = width;
+    m_height = height;
+    Camera::Get().recalculateProjection = true;
+}
+
+
+void Application::RotationMouse(int x, int y)
+{
+    Camera* cam = &Camera::Get();
+    Vector2D newPosMouse((float)x, (float)y);
+    Vector2D dirMouse = Application::posMouse - newPosMouse;
+
+    Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, cam->GetDirection()));
+
+    cam->Rotation(dirMouse.x / 500.f, Vector3D::axeY, cam->GetEye());
+    cam->Rotation(dirMouse.y / 500.f, localAxisX3D, cam->GetEye());
+    Application::posMouse = newPosMouse;
 }

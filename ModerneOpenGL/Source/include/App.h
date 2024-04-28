@@ -4,11 +4,15 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include "MathPerso.h"
+
 class Application
 {
 public:
-     Application() = default;
      ~Application() = default;
+
+     static Application& Get();
+     static void Destroy();
 
     int32_t m_width = 1280;
     int32_t m_height = 720;
@@ -21,6 +25,15 @@ public:
     void Terminate();
     void Update();
     void Render();
+
+    void SetWindowSize(float width, float height);
+
+    static Vector2D posMouse;
+    void RotationMouse(int x, int y);
+
+private:
+    static Application* instance;
+    Application() = default;
 };
 
 //Vertex g_Triangles[] = { Vertex{{-0.5f,-0.5f},   {1.f,0.f,0.f}},

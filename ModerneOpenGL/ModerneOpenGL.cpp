@@ -12,6 +12,8 @@ bool on = true;
 
 //#include <cstdint>
 #include "Log.h"
+#include "App.h"
+#include "Camera.h"
 #include "Model.h"
 #include "MathPerso.h"
 void testLog()
@@ -31,7 +33,12 @@ int main()
     Model pyra("AlienAnimal.obj");
 
     testLog();
-    Log::Get().Destroy();
+    
+    DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString()));
+
+    Log::Destroy();
+    Application::Destroy();
+    Camera::Destroy();
     return 0;
 }
 
