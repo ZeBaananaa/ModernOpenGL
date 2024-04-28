@@ -308,7 +308,7 @@ Matrix3x3::Matrix3x3(const MatrixMxN& m)
 {
 	if (m.nbColumn == 3 && m.nbLigne == 3)
 	{
-		for (int i{ 0 }; i < m.nbColumn; ++i)
+		for (unsigned int i{ 0 }; i < m.nbColumn; ++i)
 		{
 			(*this)[i] = m[i];
 		}
@@ -437,7 +437,7 @@ float Matrix3x3::DeterminantRec() const
 	float det = 0.f;
 	for (int i{ 0 }; i <= 2; ++i)
 	{
-		det += (*this)[0][i] * powf(-1, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -702,7 +702,7 @@ Matrix4x4::Matrix4x4(const MatrixMxN& m)
 {
 	if (m.nbColumn == 4 && m.nbLigne == 4)
 	{
-		for (int i{ 0 }; i < m.nbColumn; ++i)
+		for (unsigned int i{ 0 }; i < m.nbColumn; ++i)
 		{
 			(*this)[i] = m[i];
 		}
@@ -845,7 +845,7 @@ float Matrix4x4::DeterminantRec() const
 	float det = 0.f;
 	for (int i{ 0 }; i <= 3; ++i)
 	{
-		det += (*this)[0][i] * powf(-1, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -1157,7 +1157,7 @@ MatrixMxN::MatrixMxN(int _nbLigne, int _nbColumn)
 
 	columns = new VectorND[nbColumn];
 
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = VectorND(nbLigne);
 	}
@@ -1169,11 +1169,11 @@ MatrixMxN::MatrixMxN(float* values, int _nbLigne, int _nbColumn)
 	nbColumn = _nbColumn;
 	int sizeValues = 0;
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		this->columns[i].size = nbLigne;
 		columns[i].values = new float[nbLigne];
-		for (int j = 0; j < nbLigne; ++j,++sizeValues)
+		for (unsigned int j = 0; j < nbLigne; ++j,++sizeValues)
 		{
 			columns[i][j] = values[sizeValues];
 		}
@@ -1186,7 +1186,7 @@ MatrixMxN::MatrixMxN(const VectorND* _col, int _nbLigne, int _nbColumn)
 	nbColumn = _nbColumn;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = _col[i];
 	}
@@ -1198,7 +1198,7 @@ MatrixMxN::MatrixMxN(const Matrix2x2& m)
 	nbColumn = 2;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1210,7 +1210,7 @@ MatrixMxN::MatrixMxN(const Matrix3x3& m)
 	nbColumn = 3;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1222,7 +1222,7 @@ MatrixMxN::MatrixMxN(const Matrix4x4& m)
 	nbColumn = 4;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1234,7 +1234,7 @@ MatrixMxN::MatrixMxN(const MatrixMxN& m)
 	nbLigne = m.nbLigne;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1248,10 +1248,10 @@ MatrixMxN::~MatrixMxN()
 void MatrixMxN::PrintMatrix() const
 {
 	printf("\n");
-	for (int i{ 0 }; i < nbLigne; ++i)
+	for (unsigned int i{ 0 }; i < nbLigne; ++i)
 	{
 		printf("{");
-		for (int j{ 0 }; j < nbColumn; ++j)
+		for (unsigned int j{ 0 }; j < nbColumn; ++j)
 		{
 			printf("  %f  ", (*this)[j][i]);
 		}
@@ -1265,7 +1265,7 @@ VectorND MatrixMxN::Diagonal() const
 	if (nbColumn == nbLigne)
 	{
 		VectorND v(nbColumn);
-		for (int i = 0; i < nbColumn; ++i)
+		for (unsigned int i = 0; i < nbColumn; ++i)
 		{
 			v[i] = (*this)[i][i];
 		}
@@ -1280,7 +1280,7 @@ float MatrixMxN::Trace() const
 {
 	VectorND diag = Diagonal();
 	float result = 0.f;
-	for (int i = 0; i < diag.size; ++i)
+	for (unsigned int i = 0; i < diag.size; ++i)
 	{
 		result += diag[i];
 	}
@@ -1289,7 +1289,7 @@ float MatrixMxN::Trace() const
 
 void MatrixMxN::Opposite()
 {
-	for (int i = 0; i < nbColumn; ++i)
+	for (unsigned int i = 0; i < nbColumn; ++i)
 	{
 		(*this)[i].Opposite();
 	}
@@ -1301,9 +1301,9 @@ void MatrixMxN::Transpose()
 	int newNbColum = nbLigne;
 	MatrixMxN transpose(newNbLigne, newNbColum);
 
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
-		for (int j{ 0 }; j < nbLigne; ++j)
+		for (unsigned int j{ 0 }; j < nbLigne; ++j)
 		{
 			transpose[j][i] = (*this)[i][j];
 		}
@@ -1315,9 +1315,9 @@ void MatrixMxN::Add(const MatrixMxN& m2)
 {
 	if (nbColumn == m2.nbColumn && nbLigne == nbLigne)
 	{
-		for (int i{ 0 }; i < nbColumn; ++i)
+		for (unsigned int i{ 0 }; i < nbColumn; ++i)
 		{
-			for (int j{ 0 }; j < nbLigne; ++j)
+			for (unsigned int j{ 0 }; j < nbLigne; ++j)
 			{
 				(*this)[i][j] += m2[i][j];
 			}
@@ -1329,7 +1329,7 @@ void MatrixMxN::Add(const MatrixMxN& m2)
 
 void MatrixMxN::Product(float f)
 {
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		(*this)[i].Product(f);
 	}
@@ -1341,11 +1341,11 @@ void MatrixMxN::Product(const MatrixMxN& m2)
 	{
 		MatrixMxN result(nbLigne,m2.nbColumn);
 
-		for (int columnRes = 0; columnRes < result.nbColumn; ++columnRes)
+		for (unsigned int columnRes = 0; columnRes < result.nbColumn; ++columnRes)
 		{
-			for (int ligne = 0; ligne < nbLigne; ++ligne)
+			for (unsigned int ligne = 0; ligne < nbLigne; ++ligne)
 			{
-				for (int column = 0; column < nbColumn; ++column)
+				for (unsigned int column = 0; column < nbColumn; ++column)
 				{
 					result[columnRes][ligne] += (*this)[column][ligne] * m2[columnRes][column];
 				}
@@ -1376,9 +1376,9 @@ float MatrixMxN::Determinant() const
 float MatrixMxN::DeterminantRec() const
 {
 	float det = 0.f;
-	for (int i{ 0 }; i < nbLigne; ++i)
+	for (unsigned int i{ 0 }; i < nbLigne; ++i)
 	{
-		det += (*this)[0][i] * powf(-1, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -1393,13 +1393,13 @@ MatrixMxN MatrixMxN::SubMatrix(int ligneIndex, int columnIndex) const
 	MatrixMxN sM(nbLigne-1,nbColumn-1);
 
 	int ligneToJump = 0;
-	for (int ligne{ 0 }; ligne < sM.nbLigne; ++ligne, ++ligneToJump)
+	for (unsigned int ligne{ 0 }; ligne < sM.nbLigne; ++ligne, ++ligneToJump)
 	{
 		if (ligne == ligneIndex)
 			++ligneToJump;
 
 		int columnToJump = 0;
-		for (int column{ 0 }; column < sM.nbColumn; ++column, ++columnToJump)
+		for (unsigned int column{ 0 }; column < sM.nbColumn; ++column, ++columnToJump)
 		{
 			if (column == columnIndex)
 				++columnToJump;
@@ -1464,7 +1464,7 @@ void MatrixMxN::Reverse()
 	MatrixMxN mGauss = Augmented((*this));
 	mGauss.GaussianElimination();
 	int i = 0;
-	for (int col = mGauss.nbColumn/2; col < mGauss.nbColumn;++i, ++col)
+	for (unsigned int col = mGauss.nbColumn/2; col < mGauss.nbColumn;++i, ++col)
 	{
 		(*this)[i] = mGauss[col];
 	}
@@ -1478,7 +1478,7 @@ MatrixMxN& MatrixMxN::operator=(const MatrixMxN& m2)
 	delete[] columns;
 	columns = new VectorND[nbColumn];
 
-	for (int i = 0; i < nbColumn; ++i)
+	for (unsigned int i = 0; i < nbColumn; ++i)
 	{
 		columns[i] = m2[i];
 	}
@@ -1508,13 +1508,13 @@ void MatrixMxN::operator-=(const MatrixMxN& m2)
 	Add(op);
 }
 
-VectorND& MatrixMxN::operator[](int index)
+VectorND& MatrixMxN::operator[](unsigned int index)
 {
 	assert(index < nbColumn);
 	return *reinterpret_cast<VectorND*>(&columns[0] + index);
 }
 
-VectorND MatrixMxN::operator[](int index) const
+VectorND MatrixMxN::operator[](unsigned int index) const
 {
 	assert(index < nbColumn);
 	return *reinterpret_cast<VectorND*>(&columns[0] + index);
@@ -1612,12 +1612,12 @@ MatrixMxN Augmented(const MatrixMxN& m)
 
 	MatrixMxN augmented(m.nbLigne,m.nbColumn*2);
 	MatrixMxN identity = Identity_MatrixMxN(m.nbLigne);
-	int col = 0;
+	unsigned int col = 0;
 	for (; col < m.nbColumn; ++col)
 	{
 		augmented[col] = m[col];
 	}
-	for (int colIdentity = 0; col < augmented.nbColumn; ++col,++colIdentity)
+	for (unsigned int colIdentity = 0; col < augmented.nbColumn; ++col,++colIdentity)
 	{
 		augmented[col] = identity[colIdentity];
 	}
@@ -1666,7 +1666,7 @@ bool operator==(const MatrixMxN& m1, const MatrixMxN& m2)
 		ErrorSize();
 		return false;
 	}
-	for (int i = 0; i < m1.nbColumn; i++)
+	for (unsigned int i = 0; i < m1.nbColumn; i++)
 	{
 		if (m1[i] != m2[i])
 			return false;

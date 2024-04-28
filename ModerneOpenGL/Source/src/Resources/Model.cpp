@@ -76,7 +76,6 @@ void Model::LoadModel(std::string nameObjFile)
         else if (str == "f")
         {
             int countVertex =0;
-            std::vector<Vertex> polygon;
 
             while (iss >> str)
             {
@@ -120,36 +119,26 @@ void Model::LoadModel(std::string nameObjFile)
                 Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1];
                 vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
 
-                polygon.push_back(vertex);
-                //vertices.push_back(vertex);
+                vertices.push_back(vertex);
                 ++countVertex;
             }
 
-            for (int indexInPoly = 0; indexInPoly < polygon.size(); ++indexInPoly)
+            int nbVertexInVector = vertices.size();
+
+            indeces.push_back(nbVertexInVector - countVertex + 0);
+            indeces.push_back(nbVertexInVector - countVertex + 1);
+            indeces.push_back(nbVertexInVector - countVertex + 2);
+            
+            if (countVertex > 3)
             {
-                if (indexInPoly < 3)
+                for (int indexInPoly = 3; indexInPoly < countVertex; ++indexInPoly)
                 {
-                    //sans index tab
-                    vertices.push_back(polygon[indexInPoly]);
-                    //indeces.push_back();
-                }
-                else
-                {
-                    vertices.push_back(polygon[0]);
-                    vertices.push_back(polygon[indexInPoly-1]);
-                    vertices.push_back(polygon[indexInPoly]);
+                    indeces.push_back(nbVertexInVector - countVertex);
+                    indeces.push_back(nbVertexInVector - countVertex + indexInPoly - 1);
+                    indeces.push_back(nbVertexInVector - countVertex + indexInPoly);
+
                 }
             }
-
-            //if (countVertex >= 3)
-            //{
-            // 
-            // //012
-            // //023
-            // //034
-            // //0..
-            //    //quad;
-            //}
         }
     }
     file.close();

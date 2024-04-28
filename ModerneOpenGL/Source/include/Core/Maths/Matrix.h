@@ -398,8 +398,8 @@ public:
 	//Subtract this matrix by m2
 	void operator-=(const MatrixMxN& m2);
 	//Return the vector to the index given in the matrix if it's not out of range
-	VectorND& operator[](int index);
-	VectorND operator[](int index) const;
+	VectorND& operator[](unsigned int index);
+	VectorND operator[](unsigned int index) const;
 };
 //If square matrix ~~> Return a vector with the components of the diagonal of the matrix
 VectorND Diagonal(const MatrixMxN& m);

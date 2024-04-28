@@ -1238,7 +1238,7 @@ VectorND::VectorND(unsigned int _size)
 	:size(_size)
 {
 	values = new float[size];
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		values[i] = 0.f;
 	}
@@ -1248,7 +1248,7 @@ VectorND::VectorND(float* _values, unsigned int _size)
 	:size(_size)
 {
 	values = new float[size];
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		values[i] = _values[i];
 	}
@@ -1286,7 +1286,7 @@ VectorND::VectorND(const VectorND& v)
 	size = v.size;
 
 	values = new float[size];
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		values[i] = v.values[i];
 	}
@@ -1298,7 +1298,7 @@ VectorND::VectorND(const VectorND& p1, const VectorND& p2)
 	{
 		size = p1.size;
 		values = new float[size];
-		for (int i{ 0 }; i < size; ++i)
+		for (unsigned int i{ 0 }; i < size; ++i)
 		{
 			values[i] = p2.values[i] - p1.values[i];
 		}
@@ -1320,7 +1320,7 @@ VectorND::~VectorND()
 void VectorND::PrintVector() const
 {
 	printf("\n");
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		printf("{%f}\n", values[i]);
 	}
@@ -1328,7 +1328,7 @@ void VectorND::PrintVector() const
 
 void VectorND::Opposite()
 {
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		values[i] *= -1;
 	}
@@ -1338,7 +1338,7 @@ void VectorND::Add(const VectorND& v2)
 {
 	if (size == v2.size)
 	{
-		for (int i{ 0 }; i < size; ++i)
+		for (unsigned int i{ 0 }; i < size; ++i)
 		{
 			values[i] += v2.values[i];
 		}
@@ -1349,7 +1349,7 @@ void VectorND::Add(const VectorND& v2)
 
 void VectorND::Add(float f)
 {
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		values[i] += f;
 	}
@@ -1359,7 +1359,7 @@ void VectorND::TensorialProduct(const VectorND& v2)
 {
 	if (size == v2.size)
 	{
-		for (int i{ 0 }; i < size; ++i)
+		for (unsigned int i{ 0 }; i < size; ++i)
 		{
 			values[i] *= v2.values[i];
 		}
@@ -1373,7 +1373,7 @@ float VectorND::DotProduct(const VectorND& v2) const
 	if (size == v2.size)
 	{
 		float dotResult = { 0.f };
-		for (int i{ 0 }; i < size; ++i)
+		for (unsigned int i{ 0 }; i < size; ++i)
 		{
 			dotResult += values[i] * v2.values[i] ;
 		}
@@ -1386,7 +1386,7 @@ float VectorND::DotProduct(const VectorND& v2) const
 
 void VectorND::Product(float f)
 {
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		values[i] *= f;
 	}
@@ -1434,9 +1434,9 @@ void VectorND::Product(const MatrixMxN& m)
 	{
 		VectorND copy(size);
 
-		for (int i{ 0 }; i < m.nbLigne ; ++i)
+		for (unsigned int i{ 0 }; i < m.nbLigne ; ++i)
 		{
-			for (int j = 0; j < m.nbColumn; ++j)
+			for (unsigned int j = 0; j < m.nbColumn; ++j)
 			{
 				copy[i] += m[j][i] * (*this)[j];
 			}
@@ -1452,7 +1452,7 @@ VectorND VectorND::MidPoint(const VectorND& p2) const
 	if (size == p2.size)
 	{
 		VectorND midPoint(size);
-		for (int i{ 0 }; i < size; ++i)
+		for (unsigned int i{ 0 }; i < size; ++i)
 		{
 			midPoint.values[i] =  (values[i] + p2[i])/2.f;
 		}
@@ -1469,7 +1469,7 @@ float VectorND::Distance(const VectorND& p2) const
 	{
 		float distance = 0.f;
 
-		for (int i{ 0 }; i < size; ++i)
+		for (unsigned int i{ 0 }; i < size; ++i)
 		{
 			distance += ((p2[i] - values[i]) * (p2[i] - values[i]));
 		}
@@ -1483,7 +1483,7 @@ float VectorND::Distance(const VectorND& p2) const
 float VectorND::SquaredNorm() const
 {
 	float sqNorm = 0.f;
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		sqNorm += (values[i] * values[i]);
 	}
@@ -1503,7 +1503,7 @@ void VectorND::Normalize()
 float VectorND::FindMaxInColumn()
 {
 	float max = fabsf((*this)[0]);
-	for (int i = 1; i < size; i++)
+	for (unsigned int i = 1; i < size; i++)
 	{
 		if (fabsf((*this)[i]) > fabsf(max))
 			max = (*this)[i];
@@ -1514,7 +1514,7 @@ float VectorND::FindMaxInColumn()
 int VectorND::FindMaxInColumn(int indiceLigne,float& max)
 {
 	max = fabsf((*this)[indiceLigne]);
-	int i = indiceLigne + 1;
+	unsigned int i = indiceLigne + 1;
 	int k = indiceLigne;
 	for (; i < size; i++)
 	{
@@ -1532,7 +1532,7 @@ VectorND& VectorND::operator=(const VectorND& v1)
 	delete[] values;
 	size = v1.size;
 	values = new float[size];
-	for (int i{ 0 }; i < size; ++i)
+	for (unsigned int i{ 0 }; i < size; ++i)
 	{
 		(*this)[i] = v1[i];
 	}
@@ -1588,13 +1588,13 @@ void VectorND::operator/=(float f)
 	Product(1.f / f);
 }
 
-float& VectorND::operator[](int index)
+float& VectorND::operator[](unsigned int index)
 {
 	assert(index < size);
 	return *static_cast<float*>(&values[0] + index);
 }
 
-float VectorND::operator[](int index) const
+float VectorND::operator[](unsigned int index) const
 {
 	assert(index < size);
 	return *static_cast<float*>(&values[0] + index);
@@ -1731,7 +1731,7 @@ bool operator==(const VectorND& v1, const VectorND& v2)
 {
 	if (v1.size == v2.size)
 	{
-		for (int i{ 0 }; i < v1.size; ++i)
+		for (unsigned int i{ 0 }; i < v1.size; ++i)
 		{
 			if (fabsf(v1[i] - v2[i]) > 0.0001f)
 				return false;

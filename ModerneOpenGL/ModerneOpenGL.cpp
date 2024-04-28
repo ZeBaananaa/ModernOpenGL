@@ -28,7 +28,7 @@ void testLog()
 
 int main()
 {
-    Model pyra("pyramid.obj");
+    Model pyra("AlienAnimal.obj");
 
     testLog();
     Log::Get().Destroy();
