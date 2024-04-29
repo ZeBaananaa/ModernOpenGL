@@ -31,8 +31,9 @@ void testLog()
 int main()
 {
     //Model pyra("AlienAnimal.obj");
+    ResourceManager::Get().Create<Model>("pyramid.obj");
     ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-    ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+    ResourceManager::Get().Get<Model>("pyramid.obj");
     testLog();
 
     DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());

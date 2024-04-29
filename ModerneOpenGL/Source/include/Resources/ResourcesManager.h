@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <map>
+#include "Log.h"
 __interface IResource
 {
 	virtual void Load(std::string name);
@@ -42,11 +43,12 @@ public:
 			{
 				resource = new Model(name);
 
-				if (IsKeyInList(name))
+				DEBUG_LOG("Does the resource " + name + " already exist ?");
+				if(IsKeyInList(name))
 				{
 					Delete(name);
 				}
-			
+				
 				resources[name] = resource;
 			}
 		}

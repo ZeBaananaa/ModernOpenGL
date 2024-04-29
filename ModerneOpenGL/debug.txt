@@ -1,4 +1,10 @@
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(35): The resource : AlienAnimal.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource pyramid.obj already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : pyramid.obj doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource AlienAnimal.obj already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : AlienAnimal.obj doesn't exist.
 
 hello world 7 8
 hello world 4.000000
@@ -10,7 +16,7 @@ hello world 4.000000
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(28): ayoo 5 6
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(38): 
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(39): 
 {  0.562500    0.000000    0.000000    0.000000  }
 {  0.000000    1.000000    0.000000    0.000000  }
 {  0.000000    0.000000    1.000100    -0.200020  }
