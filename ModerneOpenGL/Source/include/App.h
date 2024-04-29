@@ -3,12 +3,17 @@
 #define GLEW_STATIC 1
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <mutex>
+
+#include "MathPerso.h"
 
 class Application
 {
 public:
-     Application() = default;
      ~Application() = default;
+
+     static Application& Get();
+     static void Destroy();
 
     int32_t m_width = 1280;
     int32_t m_height = 720;
@@ -21,6 +26,25 @@ public:
     void Terminate();
     void Update();
     void Render();
+
+    void SetWindowSize(float width, float height);
+
+    static Vector2D oldMousePos;
+    void RotationMouse();
+    void UpdateDeltaTime();
+
+    static double GetDeltaTime()
+    {
+        return deltaTime;
+    }
+
+private:
+    static Application* instance;
+    Application() = default;
+
+    std::chrono::steady_clock::time_point start;
+    std::chrono::steady_clock::time_point end;
+    static double deltaTime;
 };
 
 //Vertex g_Triangles[] = { Vertex{{-0.5f,-0.5f},   {1.f,0.f,0.f}},

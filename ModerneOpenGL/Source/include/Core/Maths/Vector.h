@@ -504,8 +504,8 @@ public:
 	//this = Product(this,1/f)
 	void operator/=(float f);
 	//Return the value to the index given in the vector if it's not out of range
-	float& operator[](int index);
-	float operator[](int index) const;
+	float& operator[](unsigned int index);
+	float operator[](unsigned int index) const;
 };
 
 //Return vector -v

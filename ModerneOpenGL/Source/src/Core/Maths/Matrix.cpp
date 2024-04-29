@@ -159,6 +159,9 @@ Vector2D& Matrix2x2::operator[](int index)
 		return col1;
 	else if (index == 1)
 		return col2;
+
+
+	return col1;
 }
 
 Vector2D Matrix2x2::operator[](int index) const
@@ -168,6 +171,8 @@ Vector2D Matrix2x2::operator[](int index) const
 		return col1;
 	else if (index == 1)
 		return col2;
+
+	return col1;
 }
 
 /////////////////// fct out of class ///////////////////
@@ -308,7 +313,7 @@ Matrix3x3::Matrix3x3(const MatrixMxN& m)
 {
 	if (m.nbColumn == 3 && m.nbLigne == 3)
 	{
-		for (int i{ 0 }; i < m.nbColumn; ++i)
+		for (unsigned int i{ 0 }; i < m.nbColumn; ++i)
 		{
 			(*this)[i] = m[i];
 		}
@@ -437,7 +442,7 @@ float Matrix3x3::DeterminantRec() const
 	float det = 0.f;
 	for (int i{ 0 }; i <= 2; ++i)
 	{
-		det += (*this)[0][i] * powf(-1, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -509,6 +514,8 @@ Vector3D& Matrix3x3::operator[](int index)
 		return col2;
 	else if (index == 2)
 		return col3;
+
+	return col1;
 }
 
 Vector3D Matrix3x3::operator[](int index) const
@@ -520,6 +527,8 @@ Vector3D Matrix3x3::operator[](int index) const
 		return col2;
 	else if (index == 2)
 		return col3;
+
+	return col1;
 }
 
 
@@ -702,7 +711,7 @@ Matrix4x4::Matrix4x4(const MatrixMxN& m)
 {
 	if (m.nbColumn == 4 && m.nbLigne == 4)
 	{
-		for (int i{ 0 }; i < m.nbColumn; ++i)
+		for (unsigned int i{ 0 }; i < m.nbColumn; ++i)
 		{
 			(*this)[i] = m[i];
 		}
@@ -760,6 +769,24 @@ void Matrix4x4::PrintMatrix() const
 		printf("}\n");
 	}
 	printf("\n");
+}
+
+std::string Matrix4x4::ToString() const
+{
+	std::string result = "\n";
+	
+	for (int i{ 0 }; i <= 3; ++i)
+	{
+		result += "{";
+
+		for (int j{ 0 }; j <= 3; ++j)
+		{
+			result += "  " + std::to_string((*this)[j][i]) + "  ";
+		}
+		result += "}\n";
+	}
+	result += "\n";
+	return result;
 }
 
 Vector4D Matrix4x4::Diagonal() const
@@ -845,7 +872,7 @@ float Matrix4x4::DeterminantRec() const
 	float det = 0.f;
 	for (int i{ 0 }; i <= 3; ++i)
 	{
-		det += (*this)[0][i] * powf(-1, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -918,6 +945,8 @@ Vector4D& Matrix4x4::operator[](int index)
 		return col3;
 	else if (index == 3)
 		return col4;
+
+	return col1;
 }
 
 Vector4D Matrix4x4::operator[](int index) const
@@ -931,6 +960,8 @@ Vector4D Matrix4x4::operator[](int index) const
 		return col3;
 	else if (index == 3)
 		return col4;
+
+	return col1;
 }
 
 /////////////////// fct out of class ///////////////////
@@ -1110,7 +1141,7 @@ void Matrix4x4ToFloat(const Matrix4x4& m, float* f)
 
 /////////////////////////////////////////////////////////////
 
-Matrix4x4 viewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3D& up)
+Matrix4x4 ViewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3D& up)
 {
 	Vector3D f = Normalize(forward);
 	Vector3D r = Normalize(CrossProduct(f, up));
@@ -1122,7 +1153,7 @@ Matrix4x4 viewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3
 		, {-DotProduct(r,eye),-DotProduct(u,eye),-DotProduct(f,eye),1.f} };
 }
 
-Matrix4x4 frustumMatrix(float left, float right, float bottom, float top, float near, float far)
+Matrix4x4 FrustumMatrix(float left, float right, float bottom, float top, float near, float far)
 {
 	return { { (2.f * near) / (right - left), 0.f, 0.f, 0.f }
 		   , { 0.f, (2.f * near) / (top - bottom), 0.f, 0.f }
@@ -1130,7 +1161,7 @@ Matrix4x4 frustumMatrix(float left, float right, float bottom, float top, float 
 		   ,{ 0.f,0.f, -1.f,0.f } };
 }
 
-Matrix4x4 orthoMatrix(float left, float right, float bottom, float top, float near, float far)
+Matrix4x4 OrthoMatrix(float left, float right, float bottom, float top, float near, float far)
 {
 	return { { 2.f / (right - left), 0.f, 0.f, 0.f }
 		, { 0.f, 2.f / (top - bottom), 0.f, 0.f }
@@ -1138,7 +1169,7 @@ Matrix4x4 orthoMatrix(float left, float right, float bottom, float top, float ne
 		,{ -((right + left) / (right - left)),-((top + bottom) / (top - bottom)),((far + near) / (far - near)),1.f } };
 }
 
-Matrix4x4 perspectiveMatrix(float fovY, float aspect, float near, float far)
+Matrix4x4 PerspectiveMatrix(float fovY, float aspect, float near, float far)
 {
 	float s = 1.f / (tanf((fovY / 2.f) * (PI / 180.f)));
 	float sX = 1.f / (aspect * tanf((fovY / 2.f) * (PI / 180.f)));
@@ -1157,7 +1188,7 @@ MatrixMxN::MatrixMxN(int _nbLigne, int _nbColumn)
 
 	columns = new VectorND[nbColumn];
 
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = VectorND(nbLigne);
 	}
@@ -1169,11 +1200,11 @@ MatrixMxN::MatrixMxN(float* values, int _nbLigne, int _nbColumn)
 	nbColumn = _nbColumn;
 	int sizeValues = 0;
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		this->columns[i].size = nbLigne;
 		columns[i].values = new float[nbLigne];
-		for (int j = 0; j < nbLigne; ++j,++sizeValues)
+		for (unsigned int j = 0; j < nbLigne; ++j,++sizeValues)
 		{
 			columns[i][j] = values[sizeValues];
 		}
@@ -1186,7 +1217,7 @@ MatrixMxN::MatrixMxN(const VectorND* _col, int _nbLigne, int _nbColumn)
 	nbColumn = _nbColumn;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = _col[i];
 	}
@@ -1198,7 +1229,7 @@ MatrixMxN::MatrixMxN(const Matrix2x2& m)
 	nbColumn = 2;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1210,7 +1241,7 @@ MatrixMxN::MatrixMxN(const Matrix3x3& m)
 	nbColumn = 3;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1222,7 +1253,7 @@ MatrixMxN::MatrixMxN(const Matrix4x4& m)
 	nbColumn = 4;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1234,7 +1265,7 @@ MatrixMxN::MatrixMxN(const MatrixMxN& m)
 	nbLigne = m.nbLigne;
 
 	columns = new VectorND[nbColumn];
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		columns[i] = m[i];
 	}
@@ -1248,10 +1279,10 @@ MatrixMxN::~MatrixMxN()
 void MatrixMxN::PrintMatrix() const
 {
 	printf("\n");
-	for (int i{ 0 }; i < nbLigne; ++i)
+	for (unsigned int i{ 0 }; i < nbLigne; ++i)
 	{
 		printf("{");
-		for (int j{ 0 }; j < nbColumn; ++j)
+		for (unsigned int j{ 0 }; j < nbColumn; ++j)
 		{
 			printf("  %f  ", (*this)[j][i]);
 		}
@@ -1265,7 +1296,7 @@ VectorND MatrixMxN::Diagonal() const
 	if (nbColumn == nbLigne)
 	{
 		VectorND v(nbColumn);
-		for (int i = 0; i < nbColumn; ++i)
+		for (unsigned int i = 0; i < nbColumn; ++i)
 		{
 			v[i] = (*this)[i][i];
 		}
@@ -1280,7 +1311,7 @@ float MatrixMxN::Trace() const
 {
 	VectorND diag = Diagonal();
 	float result = 0.f;
-	for (int i = 0; i < diag.size; ++i)
+	for (unsigned int i = 0; i < diag.size; ++i)
 	{
 		result += diag[i];
 	}
@@ -1289,7 +1320,7 @@ float MatrixMxN::Trace() const
 
 void MatrixMxN::Opposite()
 {
-	for (int i = 0; i < nbColumn; ++i)
+	for (unsigned int i = 0; i < nbColumn; ++i)
 	{
 		(*this)[i].Opposite();
 	}
@@ -1301,9 +1332,9 @@ void MatrixMxN::Transpose()
 	int newNbColum = nbLigne;
 	MatrixMxN transpose(newNbLigne, newNbColum);
 
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
-		for (int j{ 0 }; j < nbLigne; ++j)
+		for (unsigned int j{ 0 }; j < nbLigne; ++j)
 		{
 			transpose[j][i] = (*this)[i][j];
 		}
@@ -1315,9 +1346,9 @@ void MatrixMxN::Add(const MatrixMxN& m2)
 {
 	if (nbColumn == m2.nbColumn && nbLigne == nbLigne)
 	{
-		for (int i{ 0 }; i < nbColumn; ++i)
+		for (unsigned int i{ 0 }; i < nbColumn; ++i)
 		{
-			for (int j{ 0 }; j < nbLigne; ++j)
+			for (unsigned int j{ 0 }; j < nbLigne; ++j)
 			{
 				(*this)[i][j] += m2[i][j];
 			}
@@ -1329,7 +1360,7 @@ void MatrixMxN::Add(const MatrixMxN& m2)
 
 void MatrixMxN::Product(float f)
 {
-	for (int i{ 0 }; i < nbColumn; ++i)
+	for (unsigned int i{ 0 }; i < nbColumn; ++i)
 	{
 		(*this)[i].Product(f);
 	}
@@ -1341,11 +1372,11 @@ void MatrixMxN::Product(const MatrixMxN& m2)
 	{
 		MatrixMxN result(nbLigne,m2.nbColumn);
 
-		for (int columnRes = 0; columnRes < result.nbColumn; ++columnRes)
+		for (unsigned int columnRes = 0; columnRes < result.nbColumn; ++columnRes)
 		{
-			for (int ligne = 0; ligne < nbLigne; ++ligne)
+			for (unsigned int ligne = 0; ligne < nbLigne; ++ligne)
 			{
-				for (int column = 0; column < nbColumn; ++column)
+				for (unsigned int column = 0; column < nbColumn; ++column)
 				{
 					result[columnRes][ligne] += (*this)[column][ligne] * m2[columnRes][column];
 				}
@@ -1376,9 +1407,9 @@ float MatrixMxN::Determinant() const
 float MatrixMxN::DeterminantRec() const
 {
 	float det = 0.f;
-	for (int i{ 0 }; i < nbLigne; ++i)
+	for (unsigned int i{ 0 }; i < nbLigne; ++i)
 	{
-		det += (*this)[0][i] * powf(-1, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -1393,13 +1424,13 @@ MatrixMxN MatrixMxN::SubMatrix(int ligneIndex, int columnIndex) const
 	MatrixMxN sM(nbLigne-1,nbColumn-1);
 
 	int ligneToJump = 0;
-	for (int ligne{ 0 }; ligne < sM.nbLigne; ++ligne, ++ligneToJump)
+	for (unsigned int ligne{ 0 }; ligne < sM.nbLigne; ++ligne, ++ligneToJump)
 	{
 		if (ligne == ligneIndex)
 			++ligneToJump;
 
 		int columnToJump = 0;
-		for (int column{ 0 }; column < sM.nbColumn; ++column, ++columnToJump)
+		for (unsigned int column{ 0 }; column < sM.nbColumn; ++column, ++columnToJump)
 		{
 			if (column == columnIndex)
 				++columnToJump;
@@ -1464,7 +1495,7 @@ void MatrixMxN::Reverse()
 	MatrixMxN mGauss = Augmented((*this));
 	mGauss.GaussianElimination();
 	int i = 0;
-	for (int col = mGauss.nbColumn/2; col < mGauss.nbColumn;++i, ++col)
+	for (unsigned int col = mGauss.nbColumn/2; col < mGauss.nbColumn;++i, ++col)
 	{
 		(*this)[i] = mGauss[col];
 	}
@@ -1478,7 +1509,7 @@ MatrixMxN& MatrixMxN::operator=(const MatrixMxN& m2)
 	delete[] columns;
 	columns = new VectorND[nbColumn];
 
-	for (int i = 0; i < nbColumn; ++i)
+	for (unsigned int i = 0; i < nbColumn; ++i)
 	{
 		columns[i] = m2[i];
 	}
@@ -1508,13 +1539,13 @@ void MatrixMxN::operator-=(const MatrixMxN& m2)
 	Add(op);
 }
 
-VectorND& MatrixMxN::operator[](int index)
+VectorND& MatrixMxN::operator[](unsigned int index)
 {
 	assert(index < nbColumn);
 	return *reinterpret_cast<VectorND*>(&columns[0] + index);
 }
 
-VectorND MatrixMxN::operator[](int index) const
+VectorND MatrixMxN::operator[](unsigned int index) const
 {
 	assert(index < nbColumn);
 	return *reinterpret_cast<VectorND*>(&columns[0] + index);
@@ -1612,12 +1643,12 @@ MatrixMxN Augmented(const MatrixMxN& m)
 
 	MatrixMxN augmented(m.nbLigne,m.nbColumn*2);
 	MatrixMxN identity = Identity_MatrixMxN(m.nbLigne);
-	int col = 0;
+	unsigned int col = 0;
 	for (; col < m.nbColumn; ++col)
 	{
 		augmented[col] = m[col];
 	}
-	for (int colIdentity = 0; col < augmented.nbColumn; ++col,++colIdentity)
+	for (unsigned int colIdentity = 0; col < augmented.nbColumn; ++col,++colIdentity)
 	{
 		augmented[col] = identity[colIdentity];
 	}
@@ -1666,7 +1697,7 @@ bool operator==(const MatrixMxN& m1, const MatrixMxN& m2)
 		ErrorSize();
 		return false;
 	}
-	for (int i = 0; i < m1.nbColumn; i++)
+	for (unsigned int i = 0; i < m1.nbColumn; i++)
 	{
 		if (m1[i] != m2[i])
 			return false;

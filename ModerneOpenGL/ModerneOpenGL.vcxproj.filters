@@ -36,6 +36,10 @@
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Source\src\LowRenderer\Camera.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\src\LowRenderer\Mesh.cpp">
     <ClCompile Include="Source\src\glad.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>

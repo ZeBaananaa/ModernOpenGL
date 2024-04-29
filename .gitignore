@@ -86,6 +86,9 @@ StyleCopReport.xml
 *.ilk
 *.meta
 *.obj
+!ModerneOpenGL/Assets/Meshes/pyramid.obj
+!ModerneOpenGL/Assets/Meshes/AlienAnimal.obj
+
 *.iobj
 *.pch
 *.pdb

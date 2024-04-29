@@ -3,6 +3,9 @@
 #include "Assertion.h"
 //#include <cstdint>
 #include "Log.h"
+#include "App.h"
+#include "Camera.h"
+#include "Model.h"
 #include "MathPerso.h"
 #include "App.h"
 #include "InputHandler.h"
@@ -44,9 +47,7 @@ int Init()
 	glfwSetKeyCallback(window, InputHandler::KeyboardCallback);
 	glfwSetCursorPosCallback(window, InputHandler::MouseCallback);
 
-	Application app;
-	app.Initialise();
-
+	Application::Get().Initialise();
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))
@@ -55,7 +56,7 @@ int Init()
 		glClearColor(0.15f, 0.15f, 1.f, 1.f);
 
 		/* Render here */
-		app.Update();
+		Application::Get().Update();
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(window);
@@ -67,15 +68,25 @@ int Init()
 		glfwPollEvents();
 	}
 
-	app.Terminate();
+	Application::Get().Terminate();
 	glfwTerminate();
 	return 0;
 }
 
 int main()
 {
+    //Model pyra("AlienAnimal.obj");
+    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+    ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+
 	Init();
 
+    DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
+
+    Log::Destroy();
+    Application::Destroy();
+    Camera::Destroy();
+    ResourceManager::Destroy();
 	Log::Get().Destroy();
 
 	return EXIT_SUCCESS;
