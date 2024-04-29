@@ -1,5 +1,6 @@
 #include "Camera.h"
 #include "App.h"
+#include <Core/InputHandler.h>
 Camera* Camera::instance = nullptr;
 
 Camera& Camera::Get()
@@ -41,50 +42,43 @@ void Camera::Update()
 
 void Camera::CheckMoveInput()
 {
-    if (true)
+    float movementSpeed = speed * Application::GetDeltaTime();
+
+    if (InputHandler::IsKeyDown(GLFW_KEY_LEFT))
     {
         //left
-        //float speed = cam->speed * ImGui::GetIO().DeltaTime;
-
         Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
         Move(Product(localAxisX3D, -speed));
     }
-    if (true)
+    if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT))
     {
         //rigth
-        //float speed = cam->speed * ImGui::GetIO().DeltaTime;
-
         Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
         Move(Product(localAxisX3D, speed));
     }
-    if (true)
+    if (InputHandler::IsKeyDown(GLFW_KEY_UP))
     {
         //front
-        //float speed = cam->speed * ImGui::GetIO().DeltaTime;
-
         Move(Product(GetDirection(), speed));
     }
-    if (true)
+    if (InputHandler::IsKeyDown(GLFW_KEY_DOWN))
     {
         //back
-        //float speed = cam->speed * ImGui::GetIO().DeltaTime;
-
         Move(Product(GetDirection(), -speed));
     }
-    if (true)
+    if (InputHandler::IsKeyDown(GLFW_KEY_A))
     {
         //up
-        //float speed = cam->speed * ImGui::GetIO().DeltaTime;
-
         Move(Product(Vector3D::axeY, speed));
     }
-    if (true)
+    if (InputHandler::IsKeyDown(GLFW_KEY_E))
     {
         //down
-        //float speed = cam->speed * ImGui::GetIO().DeltaTime;
-
         Move(Product(Vector3D::axeY, -speed));
     }
+
+    //std::cout << "Camera Pos : " << center.ToString() << std::endl;
+    //std::cout << "Eye Pos : " << eye.ToString() << std::endl;
 }
 
 void Camera::Move(const Vector3D& t)

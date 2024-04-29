@@ -1,8 +1,9 @@
 #pragma once
 //si vous utilisez gle32s.lib (et donc pas de dll)
 #define GLEW_STATIC 1
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <mutex>
 
 #include "MathPerso.h"
 
@@ -28,12 +29,22 @@ public:
 
     void SetWindowSize(float width, float height);
 
-    static Vector2D posMouse;
-    void RotationMouse(int x, int y);
+    static Vector2D oldMousePos;
+    void RotationMouse();
+    void UpdateDeltaTime();
+
+    static double GetDeltaTime()
+    {
+        return deltaTime;
+    }
 
 private:
     static Application* instance;
     Application() = default;
+
+    std::chrono::steady_clock::time_point start;
+    std::chrono::steady_clock::time_point end;
+    static double deltaTime;
 };
 
 //Vertex g_Triangles[] = { Vertex{{-0.5f,-0.5f},   {1.f,0.f,0.f}},

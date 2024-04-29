@@ -2,7 +2,10 @@
 #include "Model.h"
 
 #include "Camera.h"
-Vector2D Application::posMouse = { 0.f,0.f };
+#include <Core/InputHandler.h>
+
+Vector2D Application::oldMousePos = { 0.f,0.f };
+double Application::deltaTime = 0;
 Application* Application::instance = nullptr;
 
 Application& Application::Get()
@@ -35,7 +38,6 @@ bool Application::Initialise()
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 3, g_Indices, GL_STATIC_DRAW);
-
 
 #define POSITION 0
 #define NORMAL 3
@@ -70,6 +72,9 @@ void Application::Terminate()
 
 void Application::Update()
 {
+    UpdateDeltaTime();
+    Camera::Get().Update();
+    RotationMouse();
     Render();
 }
 
@@ -84,6 +89,14 @@ void Application::Render()
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, nullptr);
 }
 
+void Application::UpdateDeltaTime()
+{
+    end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(duration);
+    deltaTime = duration.count();
+}
+
 void Application::SetWindowSize(float width, float height)
 {
     m_width = width;
@@ -92,15 +105,16 @@ void Application::SetWindowSize(float width, float height)
 }
 
 
-void Application::RotationMouse(int x, int y)
+void Application::RotationMouse()
 {
     Camera* cam = &Camera::Get();
-    Vector2D newPosMouse((float)x, (float)y);
-    Vector2D dirMouse = Application::posMouse - newPosMouse;
+    Vector2D newMousePos = InputHandler::GetMousePos();
+
+    Vector2D dirMouse = Application::oldMousePos - newMousePos;
 
     Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, cam->GetDirection()));
 
     cam->Rotation(dirMouse.x / 500.f, Vector3D::axeY, cam->GetEye());
     cam->Rotation(dirMouse.y / 500.f, localAxisX3D, cam->GetEye());
-    Application::posMouse = newPosMouse;
+    Application::oldMousePos = newMousePos;
 }
