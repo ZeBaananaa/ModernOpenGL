@@ -45,7 +45,8 @@ int Init()
 
 	/* Handle Keyboard & Mouse Inputs */
 	glfwSetKeyCallback(window, InputHandler::KeyboardCallback);
-	glfwSetCursorPosCallback(window, InputHandler::MouseCallback);
+	glfwSetCursorPosCallback(window, InputHandler::MouseCursorCallback);
+	glfwSetMouseButtonCallback(window, InputHandler::MouseButtonCallback);	
 
 	Application::Get().Initialise();
 

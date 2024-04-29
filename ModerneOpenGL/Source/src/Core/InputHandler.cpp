@@ -1,18 +1,17 @@
 #include "InputHandler.h"
 #include "Log.h"
-constexpr int INPUTHANDLER_NONE = -1;
 
 std::vector<int> InputHandler::m_CurrentKeyStatus(400, 0);
-std::vector<int> InputHandler::m_OldKeyStatus(400, 0);
+std::vector<int> InputHandler::m_MouseButtonKeyStatus(12, 0);
 Vector2D InputHandler::mousePos(0.f, 0.f);
 
 InputHandler::~InputHandler()
 {
 	m_CurrentKeyStatus.clear();
-	m_OldKeyStatus.clear();
+	m_MouseButtonKeyStatus.clear();
 
 	delete &m_CurrentKeyStatus;
-	delete &m_OldKeyStatus;
+	delete &m_MouseButtonKeyStatus;
 }
 
 void InputHandler::KeyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -20,7 +19,12 @@ void InputHandler::KeyboardCallback(GLFWwindow* window, int key, int scancode, i
 	m_CurrentKeyStatus[key] = action;
 }
 
-void InputHandler::MouseCallback(GLFWwindow* window, double xpos, double ypos)
+void InputHandler::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
+{
+	m_MouseButtonKeyStatus[button] = action;
+}
+
+void InputHandler::MouseCursorCallback(GLFWwindow* window, double xpos, double ypos)
 {
 	SetMousePos(xpos, ypos);
 }
@@ -40,7 +44,12 @@ bool InputHandler::IsKeyReleased(int key)
 	return m_CurrentKeyStatus[key] == GLFW_RELEASE;
 }
 
-bool InputHandler::IsKeyUnused(int key)
+bool InputHandler::IsMousePressed(int button)
 {
-	return m_CurrentKeyStatus[key] == INPUTHANDLER_NONE;
+	return m_MouseButtonKeyStatus[button] == GLFW_PRESS;
+}
+
+bool InputHandler::IsMouseReleased(int button)
+{
+	return m_MouseButtonKeyStatus[button] == GLFW_RELEASE;
 }
