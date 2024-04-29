@@ -12,6 +12,7 @@
     <ClCompile Include="Source\src\glad.c" />
     <ClCompile Include="Source\src\Resources\Model.cpp" />
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
+    <ClCompile Include="Source\include\Resources\Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />

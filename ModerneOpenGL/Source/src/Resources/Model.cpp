@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "Model.h"
 
+#include <unordered_map>
 Model::Model(std::string nameObjFile)
 {
     Load("Assets/Meshes/"+nameObjFile);
@@ -19,6 +20,18 @@ void Model::UnLoad()
     delete this;
 }
 
+int Model::GetIndexVertexInVertices(Vertex v)
+{
+    size_t i = 0;
+    for (; i < vertices.size(); i++)
+    {
+        if (v == vertices[i])
+            return i;
+    }
+
+    return i;
+}
+
 void Model::Load(std::string nameObjFile)
 {
     std::ifstream file;
@@ -33,7 +46,7 @@ void Model::Load(std::string nameObjFile)
     std::string str;
     std::string line;
 
-    std::vector<Vector3D> verticesObj;
+    std::vector<Vector3D> verticesPosObj;
     Vector3D v;
 
     std::vector<Vector2D> textCoordObj;
@@ -41,6 +54,8 @@ void Model::Load(std::string nameObjFile)
 
     std::vector<Vector3D> normalObj;
     Vector3D vn;
+
+    std::map<std::string,Vertex> indexVertex;
 
     Vertex vertex;
 
@@ -57,7 +72,7 @@ void Model::Load(std::string nameObjFile)
                 v[indexInVector3D] = std::stof(str);
             }
 
-            verticesObj.push_back(v);
+            verticesPosObj.push_back(v);
         }
         else if (str == "vt")
         {
@@ -81,8 +96,7 @@ void Model::Load(std::string nameObjFile)
         }
         else if (str == "f")
         {
-            int countVertex =0;
-
+            std::vector<int> indexVertexPolygon;
             while (iss >> str)
             {
                 std::string vertexInOrder;
@@ -97,7 +111,7 @@ void Model::Load(std::string nameObjFile)
                     }
                 }
 
-                Vector3D currentVertexPosition = verticesObj[std::stoi(vertexInOrder) - 1];
+                Vector3D currentVertexPosition = verticesPosObj[std::stoi(vertexInOrder) - 1];
                 vertex.position.x = currentVertexPosition.x; vertex.position.y = currentVertexPosition.y; vertex.position.z = currentVertexPosition.z;
 
                 ++i;
@@ -125,27 +139,45 @@ void Model::Load(std::string nameObjFile)
                 Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1];
                 vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
 
-                vertices.push_back(vertex);
-                ++countVertex;
+                auto it = indexVertex.find(str);
+                if (it == indexVertex.end())
+                {
+                    indexVertex[str] = vertex;
+                    vertices.push_back(vertex);
+                    indexVertexPolygon.push_back(vertices.size() - 1);
+                }
+                else
+                {
+                    /*int indexInMap = std::distance(indexVertex.begin(), it) - 1;
+                    if (indexInMap < 0)
+                        indexInMap = 0;*/
+
+                    indexVertexPolygon.push_back(GetIndexVertexInVertices(vertex));
+                }
             }
 
-            int nbVertexInVector = vertices.size();
+            int nbVertexInPoly = indexVertexPolygon.size();
 
-            indeces.push_back(nbVertexInVector - countVertex + 0);
-            indeces.push_back(nbVertexInVector - countVertex + 1);
-            indeces.push_back(nbVertexInVector - countVertex + 2);
-            
-            if (countVertex > 3)
+            indeces.push_back(indexVertexPolygon[0]);
+            indeces.push_back(indexVertexPolygon[1]);
+            indeces.push_back(indexVertexPolygon[2]);
+
+            if (nbVertexInPoly > 3)
             {
-                for (int indexInPoly = 3; indexInPoly < countVertex; ++indexInPoly)
+                for (int indexInPoly = 3; indexInPoly < nbVertexInPoly; ++indexInPoly)
                 {
-                    indeces.push_back(nbVertexInVector - countVertex);
-                    indeces.push_back(nbVertexInVector - countVertex + indexInPoly - 1);
-                    indeces.push_back(nbVertexInVector - countVertex + indexInPoly);
+                    indeces.push_back(indexVertexPolygon[0]);
+                    indeces.push_back(indexVertexPolygon[indexInPoly - 1]);
+                    indeces.push_back(indexVertexPolygon[indexInPoly]);
                 }
             }
         }
     }
+
+    normalObj.clear();
+    textCoordObj.clear();
+    verticesPosObj.clear();
+
     file.close();
     return;
 }

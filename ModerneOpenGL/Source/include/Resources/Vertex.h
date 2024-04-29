@@ -12,6 +12,8 @@ struct Vertex
 	//GLfloat color[];
 };
 
+bool operator==(const Vertex& v1, const Vertex& v2);
+
 //Vertex g_Triangles[] = {{-0.5f,-0.5f},
 //						{0.5f,-0.5f},	
 //						{0.f,0.5f} };

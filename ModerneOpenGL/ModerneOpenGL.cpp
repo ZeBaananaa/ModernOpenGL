@@ -77,13 +77,13 @@ int Init()
 int main()
 {
     ResourceManager::Get().Create<Model>("pyramid.obj");
-    ResourceManager::Get().Get<Model>("pyramid.obj");
+    Model* m =ResourceManager::Get().Get<Model>("pyramid.obj");
     //ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-    //ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+	//Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
 
-	Init();
+	//Init();
 
-    DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
+    //DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
 
     Log::Destroy();
     Application::Destroy();
