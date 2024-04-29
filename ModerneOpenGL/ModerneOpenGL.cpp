@@ -78,8 +78,8 @@ int main()
 {
     ResourceManager::Get().Create<Model>("pyramid.obj");
     Model* m =ResourceManager::Get().Get<Model>("pyramid.obj");
-    //ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-	//Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+	Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
 
 	//Init();
 

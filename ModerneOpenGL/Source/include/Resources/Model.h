@@ -16,5 +16,4 @@ public:
 	void UnLoad()override;
 private:
 	void Load(std::string nameObjFile) override;
-	int GetIndexVertexInVertices(Vertex v);
 };

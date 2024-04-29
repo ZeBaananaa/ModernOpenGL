@@ -2,8 +2,7 @@
 #include <sstream>
 #include "Log.h"
 #include "Model.h"
-
-#include <unordered_map>
+#include <algorithm>
 Model::Model(std::string nameObjFile)
 {
     Load("Assets/Meshes/"+nameObjFile);
@@ -18,18 +17,6 @@ Model::~Model()
 void Model::UnLoad()
 {
     delete this;
-}
-
-int Model::GetIndexVertexInVertices(Vertex v)
-{
-    size_t i = 0;
-    for (; i < vertices.size(); i++)
-    {
-        if (v == vertices[i])
-            return i;
-    }
-
-    return i;
 }
 
 void Model::Load(std::string nameObjFile)
@@ -54,8 +41,6 @@ void Model::Load(std::string nameObjFile)
 
     std::vector<Vector3D> normalObj;
     Vector3D vn;
-
-    std::map<std::string,Vertex> indexVertex;
 
     Vertex vertex;
 
@@ -139,20 +124,15 @@ void Model::Load(std::string nameObjFile)
                 Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1];
                 vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
 
-                auto it = indexVertex.find(str);
-                if (it == indexVertex.end())
+                auto it = std::find(vertices.begin(), vertices.end(), vertex);
+                if (it == vertices.end())
                 {
-                    indexVertex[str] = vertex;
                     vertices.push_back(vertex);
                     indexVertexPolygon.push_back(vertices.size() - 1);
                 }
                 else
-                {
-                    /*int indexInMap = std::distance(indexVertex.begin(), it) - 1;
-                    if (indexInMap < 0)
-                        indexInMap = 0;*/
-
-                    indexVertexPolygon.push_back(GetIndexVertexInVertices(vertex));
+                {   
+                    indexVertexPolygon.push_back(it - vertices.begin());
                 }
             }
 
