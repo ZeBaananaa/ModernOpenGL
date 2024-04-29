@@ -2,7 +2,7 @@
 #include <string>
 #include <map>
 #include "Log.h"
-__interface IResource
+interface IResource
 {
 	virtual void Load(std::string name);
 	virtual void UnLoad();
