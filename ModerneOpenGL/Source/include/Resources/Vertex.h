@@ -6,7 +6,6 @@
 
 struct Vertex
 {
-	//attributte du sommet
 	Vector3D position;
 	Vector3D normal;
 	Vector2D textureUV;

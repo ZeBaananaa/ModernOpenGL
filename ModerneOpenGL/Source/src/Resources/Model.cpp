@@ -1,26 +1,32 @@
-#include "Model.h"
 #include <fstream>
 #include <sstream>
+#include "Log.h"
+#include "Model.h"
 
 Model::Model(std::string nameObjFile)
 {
-    LoadModel("Assets/Meshes/"+nameObjFile);
+    Load("Assets/Meshes/"+nameObjFile);
 }
 
 Model::~Model()
+{
+    UnLoad();
+}
+
+void Model::UnLoad()
 {
     vertices.clear();
     indeces.clear();
 }
 
-void Model::LoadModel(std::string nameObjFile)
+void Model::Load(std::string nameObjFile)
 {
     std::ifstream file;
 
     file.open(nameObjFile);
     if (!file.is_open())
     {
-        printf("this file doesn't exist\n");
+        DEBUG_LOG("This file doesn't exist (" + nameObjFile + ")");
         return;
     }
 

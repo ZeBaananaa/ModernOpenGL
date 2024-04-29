@@ -25,20 +25,22 @@ void testLog()
     Vector4D v(1.f, 2.f, 3.f, 4.f);
     Log::Get().Print(v.ToString());
 
-    DEBUG_LOG("ayoo %d %d", 5, 6));
+    DEBUG_LOG("ayoo %d %d", 5, 6);
 }
 
 int main()
 {
-    Model pyra("AlienAnimal.obj");
-
+    //Model pyra("AlienAnimal.obj");
+    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+    ResourceManager::Get().Get<Model>("AlienAnimal.obj");
     testLog();
-    
-    DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString()));
+
+    DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
 
     Log::Destroy();
     Application::Destroy();
     Camera::Destroy();
+    ResourceManager::Destroy();
     return 0;
 }
 
