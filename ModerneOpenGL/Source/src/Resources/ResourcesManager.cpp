@@ -5,10 +5,17 @@ ResourceManager* ResourceManager::instance = nullptr;
 
 ResourceManager::~ResourceManager()
 {
+    std::vector<std::string> lstName;
+
     for (auto it = resources.begin(); it != resources.end(); ++it)
     {
-        Delete(it->first);
+        lstName.push_back(it->first);
     }
+
+    for (size_t i = 0; i < lstName.size(); i++)
+        Delete(lstName[i]);
+
+    lstName.clear();
 }
 
 ResourceManager& ResourceManager::Get()
@@ -46,7 +53,8 @@ void ResourceManager::Delete(std::string name)
     if (IsKeyInList(name))
     {
         auto it = resources.find(name);
-        delete it->second;
+        //delete it->second;
+        it->second->UnLoad();
         resources.erase(it);
     }
 
@@ -54,7 +62,7 @@ void ResourceManager::Delete(std::string name)
 std::string ResourceManager::GetExtension(std::string name)
 {
     int index = name.find('.');
-    std::string result = "-1";
+    std::string result = "";
 
     if (index < 0)
         DEBUG_LOG("No extension detected in name : " + name);
@@ -68,7 +76,7 @@ std::string ResourceManager::GetExtension(std::string name)
 
 bool ResourceManager::CheckExtension(std::string extension)
 {
-    if (extension == "-1")
+    if (extension == "")
     {
         return false;
     }

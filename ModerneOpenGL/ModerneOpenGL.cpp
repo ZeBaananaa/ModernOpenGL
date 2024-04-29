@@ -75,9 +75,10 @@ int Init()
 
 int main()
 {
-    //Model pyra("AlienAnimal.obj");
-    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-    ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+    ResourceManager::Get().Create<Model>("pyramid.obj");
+    ResourceManager::Get().Get<Model>("pyramid.obj");
+    //ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+    //ResourceManager::Get().Get<Model>("AlienAnimal.obj");
 
 	Init();
 

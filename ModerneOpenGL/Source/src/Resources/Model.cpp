@@ -10,13 +10,13 @@ Model::Model(std::string nameObjFile)
 
 Model::~Model()
 {
-    UnLoad();
+    vertices.clear();
+    indeces.clear();
 }
 
 void Model::UnLoad()
 {
-    vertices.clear();
-    indeces.clear();
+    delete this;
 }
 
 void Model::Load(std::string nameObjFile)
@@ -142,7 +142,6 @@ void Model::Load(std::string nameObjFile)
                     indeces.push_back(nbVertexInVector - countVertex);
                     indeces.push_back(nbVertexInVector - countVertex + indexInPoly - 1);
                     indeces.push_back(nbVertexInVector - countVertex + indexInPoly);
-
                 }
             }
         }
