@@ -63,9 +63,6 @@ int Init()
 		if (InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 			return EXIT_SUCCESS;
 
-		std::cout << "Mouse pos X : " << InputHandler::GetMousePos().x << std::endl;
-		std::cout << "Mouse pos Y : " << InputHandler::GetMousePos().y << std::endl;
-
 		/* Poll for and process events */
 		glfwPollEvents();
 	}
