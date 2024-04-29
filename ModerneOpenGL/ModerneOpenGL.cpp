@@ -1,19 +1,15 @@
 // ModerneOpenGL.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
+
+
 #include "Assertion.h"
-//Test Assert
-bool on = true;
-#include <iostream>
-
-//si vous utilisez gle32s.lib (et donc pas de dll)
-#define GLEW_STATIC 1
-#include <glad/glad.h>
-
 //#include <cstdint>
 #include "Log.h"
 #include "MathPerso.h"
 #include "App.h"
 #include "InputHandler.h"
+
+#include <glad/glad.h>
+#include <iostream>
 
 int Init()
 {
@@ -59,6 +55,15 @@ int Init()
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
+        if (InputHandler::IsKeyPressed(GLFW_KEY_SPACE))
+            std::cout << "Key Pressed" << std::endl;
+
+        if (InputHandler::IsKeyDown(GLFW_KEY_SPACE))
+            std::cout << "Key Down" << std::endl;
+
+        if (InputHandler::IsKeyReleased(GLFW_KEY_SPACE))
+            std::cout << "Key Released" << std::endl;
+
         /* Poll for and process events */
         glfwPollEvents();
     }
@@ -76,5 +81,6 @@ int main()
     Init();
 
     Log::Get().Destroy();
+
     return 0;
 }
