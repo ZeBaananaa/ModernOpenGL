@@ -1,5 +1,7 @@
 #include "Camera.h"
 #include "App.h"
+#include "Log.h"
+
 #include <Core/InputHandler.h>
 Camera* Camera::instance = nullptr;
 
@@ -48,37 +50,37 @@ void Camera::CheckMoveInput()
     {
         //left
         Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
-        Move(Product(localAxisX3D, -speed));
+        Move(Product(localAxisX3D, -movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT))
     {
         //rigth
         Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
-        Move(Product(localAxisX3D, speed));
+        Move(Product(localAxisX3D, movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_UP))
     {
         //front
-        Move(Product(GetDirection(), speed));
+        Move(Product(GetDirection(), movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_DOWN))
     {
         //back
-        Move(Product(GetDirection(), -speed));
+        Move(Product(GetDirection(), -movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_A))
     {
         //up
-        Move(Product(Vector3D::axeY, speed));
+        Move(Product(Vector3D::axeY, movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_E))
     {
         //down
-        Move(Product(Vector3D::axeY, -speed));
+        Move(Product(Vector3D::axeY, -movementSpeed));
     }
 
-    std::cout << "Camera Pos : " << center.ToString() << std::endl;
-    std::cout << "Eye Pos : " << eye.ToString() << std::endl;
+    //std::cout << "Position : " << center.ToString() << std::endl;
+    //std::cout << "Direction : " << eye.ToString() << std::endl;
 }
 
 void Camera::Move(const Vector3D& t)

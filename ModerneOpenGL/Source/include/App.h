@@ -42,7 +42,6 @@ private:
     static Application* instance;
     Application() = default;
 
-    std::chrono::steady_clock::time_point start;
     std::chrono::steady_clock::time_point end;
     static double deltaTime;
 };

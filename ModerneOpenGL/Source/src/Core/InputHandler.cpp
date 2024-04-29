@@ -1,4 +1,5 @@
 #include "InputHandler.h"
+#include "Log.h"
 constexpr int INPUTHANDLER_NONE = -1;
 
 std::vector<int> InputHandler::m_CurrentKeyStatus(400, 0);
@@ -22,6 +23,7 @@ void InputHandler::KeyboardCallback(GLFWwindow* window, int key, int scancode, i
 void InputHandler::MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
 	SetMousePos(xpos, ypos);
+	DEBUG_LOG(mousePos.ToString());
 }
 
 bool InputHandler::IsKeyPressed(int key)

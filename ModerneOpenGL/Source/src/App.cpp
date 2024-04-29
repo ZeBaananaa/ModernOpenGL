@@ -5,7 +5,7 @@
 #include <Core/InputHandler.h>
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
-double Application::deltaTime = 0;
+double Application::deltaTime = 0.f;
 Application* Application::instance = nullptr;
 
 Application& Application::Get()
@@ -91,10 +91,12 @@ void Application::Render()
 
 void Application::UpdateDeltaTime()
 {
-    end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> duration = end - start;
-    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(duration);
-    deltaTime = duration.count();
+    std::chrono::duration<double> newEnd = std::chrono::steady_clock::now() - end;
+    end = std::chrono::steady_clock::now();
+
+
+    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(newEnd);
+    deltaTime = newEnd.count();
 }
 
 void Application::SetWindowSize(float width, float height)
