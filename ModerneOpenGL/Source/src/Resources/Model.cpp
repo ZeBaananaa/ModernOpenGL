@@ -2,7 +2,7 @@
 #include <sstream>
 #include "Log.h"
 #include "Model.h"
-#include <algorithm>
+
 Model::Model(std::string nameObjFile)
 {
     Load("Assets/Meshes/"+nameObjFile);
