@@ -139,6 +139,7 @@ Vector3D Transform::GetLocalRotation()
 {
 	return localRotation;
 }
+
 void Transform::SetLocalRotation(Vector3D newRotation)
 {
 	localRotation = newRotation;
@@ -149,10 +150,12 @@ void Transform::SetLocalRotation(Vector3D newRotation)
 		children[i]->recalculateGlobalT = true;
 	}
 }
+
 Vector3D Transform::GetLocalScale()
 {
 	return localScale;
 }
+
 void Transform::SetLocalScale(Vector3D newScale)
 {
 	localScale = newScale;
