@@ -7,7 +7,7 @@ VkImage textureImage;
 class  Textures : public IResource
 {
 public:
-	Textures(std::filesystem::path const& filename)
+	Textures(std::filesystem::path const& filename);
 
 };
 
