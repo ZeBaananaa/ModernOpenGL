@@ -30,7 +30,7 @@ int Init()
 	{
 		std::cout << "Cannot create GLFW Window... \nAborting!" << std::endl;
 		glfwTerminate();
-		return -EXIT_FAILURE;
+		return -1;
 	}
 
 	/* Make the window's context current */
@@ -40,7 +40,7 @@ int Init()
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize GLAD... \nAborting!" << std::endl;
-		return -EXIT_FAILURE;
+		return -1;
 	}
 
 	/* Handle Keyboard & Mouse Inputs */
@@ -63,7 +63,7 @@ int Init()
 		glfwSwapBuffers(window);
 
 		if (InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
-			return EXIT_SUCCESS;
+			return 0;
 
 		/* Poll for and process events */
 		glfwPollEvents();
@@ -77,13 +77,13 @@ int Init()
 int main()
 {
     ResourceManager::Get().Create<Model>("pyramid.obj");
-    ResourceManager::Get().Get<Model>("pyramid.obj");
-    //ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-    //ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+    Model* m =ResourceManager::Get().Get<Model>("pyramid.obj");
+    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+	Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
 
-	Init();
+	//Init();
 
-    DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
+    //DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
 
     Log::Destroy();
     Application::Destroy();
@@ -91,5 +91,5 @@ int main()
     ResourceManager::Destroy();
 	Log::Get().Destroy();
 
-	return EXIT_SUCCESS;
+	return 0;
 }
