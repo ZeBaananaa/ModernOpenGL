@@ -1,17 +1,14 @@
-#include <fstream>
-#include <sstream>
-#include "Log.h"
 #include "Model.h"
 
 Model::Model(std::string nameObjFile)
 {
-    Load("Assets/Meshes/"+nameObjFile);
+    Load("Assets/Meshes/" + nameObjFile);
 }
 
 Model::~Model()
 {
     vertices.clear();
-    indeces.clear();
+    indexes.clear();
 }
 
 void Model::UnLoad()
@@ -142,17 +139,17 @@ void Model::Load(std::string nameObjFile)
 
             int nbVertexInPoly = indexVertexPolygon.size();
 
-            indeces.push_back(indexVertexPolygon[0]);
-            indeces.push_back(indexVertexPolygon[1]);
-            indeces.push_back(indexVertexPolygon[2]);
+            indexes.push_back(indexVertexPolygon[0]);
+            indexes.push_back(indexVertexPolygon[1]);
+            indexes.push_back(indexVertexPolygon[2]);
 
             if (nbVertexInPoly > 3)
             {
                 for (int indexInPoly = 3; indexInPoly < nbVertexInPoly; ++indexInPoly)
                 {
-                    indeces.push_back(indexVertexPolygon[0]);
-                    indeces.push_back(indexVertexPolygon[indexInPoly - 1]);
-                    indeces.push_back(indexVertexPolygon[indexInPoly]);
+                    indexes.push_back(indexVertexPolygon[0]);
+                    indexes.push_back(indexVertexPolygon[indexInPoly - 1]);
+                    indexes.push_back(indexVertexPolygon[indexInPoly]);
                 }
             }
         }
@@ -164,4 +161,46 @@ void Model::Load(std::string nameObjFile)
 
     file.close();
     return;
+}
+
+Model::Buffer::Buffer()
+{
+    glGenBuffers(1, &buffer);
+}
+
+Model::Buffer::~Buffer()
+{
+    glDeleteBuffers(1, &buffer);
+}
+
+void Model::Buffer::Bind(GLenum type)
+{
+    glBindBuffer(type, buffer);
+}
+
+void Model::Buffer::SetData(GLenum type, GLsizeiptr size, const GLvoid* data, GLenum usage)
+{
+    glBufferData(type, size, data, usage);
+}
+
+Model::VertexAttributes::VertexAttributes()
+{
+    vertex = _vertex;
+    glGenVertexArrays(1, &vertex);
+}
+
+Model::VertexAttributes::~VertexAttributes()
+{
+    glDeleteVertexArrays(1, &vertex);
+}
+
+void Model::VertexAttributes::Bind()
+{
+    glBindVertexArray(vertex);
+}
+
+void Model::VertexAttributes::SetAttributes(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void* pointer)
+{
+    glVertexAttribPointer(index, size, type, normalized, stride, pointer);
+    glEnableVertexAttribArray(index);
 }

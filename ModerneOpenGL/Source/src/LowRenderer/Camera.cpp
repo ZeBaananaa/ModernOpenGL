@@ -3,6 +3,7 @@
 #include "Log.h"
 
 #include <Core/InputHandler.h>
+#include <Utils/Time.h>
 Camera* Camera::instance = nullptr;
 
 Camera& Camera::Get()
@@ -44,7 +45,7 @@ void Camera::Update()
 
 void Camera::CheckMoveInput()
 {
-    float movementSpeed = speed * Application::GetDeltaTime();
+    float movementSpeed = speed * Time::DeltaTime();
 
     if (InputHandler::IsKeyDown(GLFW_KEY_LEFT))
     {

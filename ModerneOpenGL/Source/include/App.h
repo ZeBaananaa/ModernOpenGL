@@ -1,9 +1,6 @@
 #pragma once
-//si vous utilisez gle32s.lib (et donc pas de dll)
-#define GLEW_STATIC 1
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <mutex>
 
 #include "MathPerso.h"
 #include "Shader.h"
@@ -15,6 +12,7 @@ public:
 
      static Application& Get();
      static void Destroy();
+     static GLFWwindow* window;
 
     int32_t m_width = 1280;
     int32_t m_height = 720;
@@ -31,19 +29,15 @@ public:
 
     static Vector2D oldMousePos;
     void RotationMouse();
-    void UpdateDeltaTime();
-
-    static double GetDeltaTime()
-    {
-        return deltaTime;
-    }
 
 private:
     static Application* instance;
     Application() = default;
 
-    std::chrono::steady_clock::time_point end;
-    static double deltaTime;
+    void InitShaders();
+    void InitResources();
+    void InitCallbacks();
+
     Shader shader;
 };
 

@@ -147,6 +147,7 @@
     <ClCompile Include="Source\src\Resources\Model.cpp" />
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
     <ClCompile Include="Source\src\Resources\Shader.cpp" />
+    <ClCompile Include="Source\src\Utils\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="Source\include\Resources\Shader.h" />
     <ClInclude Include="Source\include\Resources\Texture.h" />
     <ClInclude Include="Source\include\Resources\Vertex.h" />
+    <ClInclude Include="Source\include\Utils\Time.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Example_Shader.frag" />
