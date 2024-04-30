@@ -33,7 +33,7 @@ void Model::Load(std::string nameObjFile)
     std::string str;
     std::string line;
 
-    std::vector<Vector3D> verticesPosObj;
+    std::vector<Vector3D> posObj;
     Vector3D v;
 
     std::vector<Vector2D> textCoordObj;
@@ -41,6 +41,8 @@ void Model::Load(std::string nameObjFile)
 
     std::vector<Vector3D> normalObj;
     Vector3D vn;
+
+    std::map<std::string, int> tupleIndex;
 
     Vertex vertex;
 
@@ -57,7 +59,7 @@ void Model::Load(std::string nameObjFile)
                 v[indexInVector3D] = std::stof(str);
             }
 
-            verticesPosObj.push_back(v);
+            posObj.push_back(v);
         }
         else if (str == "vt")
         {
@@ -84,55 +86,57 @@ void Model::Load(std::string nameObjFile)
             std::vector<int> indexVertexPolygon;
             while (iss >> str)
             {
-                std::string vertexInOrder;
-                int i = 0;
-                for (i; i < str.length(); ++i)
+                auto it = tupleIndex.find(str);
+                if (it == tupleIndex.end())
                 {
-                    if (str[i] == '/')
-                        break;
-                    else
+                    tupleIndex[str] = vertices.size();
+
+                    std::string vertexInOrder;
+                    int i = 0;
+                    for (i; i < str.length(); ++i)
                     {
-                        vertexInOrder += str[i];
+                        if (str[i] == '/')
+                            break;
+                        else
+                        {
+                            vertexInOrder += str[i];
+                        }
                     }
-                }
+                    Vector3D currentVertexPosition = posObj[std::stoi(vertexInOrder) - 1];
+                    vertex.position.x = currentVertexPosition.x; vertex.position.y = currentVertexPosition.y; vertex.position.z = currentVertexPosition.z;
 
-                Vector3D currentVertexPosition = verticesPosObj[std::stoi(vertexInOrder) - 1];
-                vertex.position.x = currentVertexPosition.x; vertex.position.y = currentVertexPosition.y; vertex.position.z = currentVertexPosition.z;
-
-                ++i;
-                std::string textCoordsInOrder;
-                for (; i < str.length(); ++i)
-                {
-                    if (str[i] == '/')
-                        break;
-                    else
-                        textCoordsInOrder += str[i];
-                }
-                Vector2D currentVertexUV = textCoordObj[std::stoi(textCoordsInOrder) - 1];
-                vertex.textureUV.x = currentVertexUV.x; vertex.textureUV.y = currentVertexUV.y;
+                    ++i;
+                    std::string textCoordsInOrder;
+                    for (; i < str.length(); ++i)
+                    {
+                        if (str[i] == '/')
+                            break;
+                        else
+                            textCoordsInOrder += str[i];
+                    }
+                    Vector2D currentVertexUV = textCoordObj[std::stoi(textCoordsInOrder) - 1];
+                    vertex.textureUV.x = currentVertexUV.x; vertex.textureUV.y = currentVertexUV.y;
 
 
-                ++i;
-                std::string normalInOrder;
-                for (; i < str.length(); ++i)
-                {
-                    if (str[i] == '/')
-                        break;
-                    else
-                        normalInOrder += str[i];
-                }
-                Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1];
-                vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
+                    ++i;
+                    std::string normalInOrder;
+                    for (; i < str.length(); ++i)
+                    {
+                        if (str[i] == '/')
+                            break;
+                        else
+                            normalInOrder += str[i];
+                    }
+                    Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1];
+                    vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
 
-                auto it = std::find(vertices.begin(), vertices.end(), vertex);
-                if (it == vertices.end())
-                {
+
+                    indexVertexPolygon.push_back(tupleIndex[str]);
                     vertices.push_back(vertex);
-                    indexVertexPolygon.push_back(vertices.size() - 1);
                 }
                 else
-                {   
-                    indexVertexPolygon.push_back(it - vertices.begin());
+                {
+                    indexVertexPolygon.push_back(it->second);
                 }
             }
 
@@ -156,7 +160,7 @@ void Model::Load(std::string nameObjFile)
 
     normalObj.clear();
     textCoordObj.clear();
-    verticesPosObj.clear();
+    posObj.clear();
 
     file.close();
     return;
