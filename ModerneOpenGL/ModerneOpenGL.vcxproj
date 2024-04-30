@@ -146,6 +146,7 @@
     <ClCompile Include="Source\src\Resources\Model.cpp" />
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
     <ClCompile Include="Source\src\Resources\Shader.cpp" />
+    <ClCompile Include="Source\src\Utils\Time.cpp" />
     <ClCompile Include="Source\src\Resources\Vertex.cpp" />
     <ClCompile Include="Source\src\Scene\GameObject.cpp" />
     <ClCompile Include="Source\src\Scene\MeshRenderer.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Source\include\Resources\Shader.h" />
     <ClInclude Include="Source\include\Resources\Texture.h" />
     <ClInclude Include="Source\include\Resources\Vertex.h" />
+    <ClInclude Include="Source\include\Utils\Time.h" />
     <ClInclude Include="Source\include\Scene\Components.h" />
     <ClInclude Include="Source\include\Scene\GameObject.h" />
     <ClInclude Include="Source\include\Scene\IComponent.h" />

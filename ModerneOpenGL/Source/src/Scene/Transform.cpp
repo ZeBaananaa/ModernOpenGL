@@ -1,9 +1,10 @@
 #include "GameObject.h"
 
-Transform::Transform()
+Transform::Transform(bool root)
 {
 	gameObject = nullptr;
-	SceneGraph::Get().root->AddChildren(this);
+	if(!root)
+		SceneGraph::Get().root->AddChildren(this);
 }
 
 Transform::Transform(GameObject* _gameObject)

@@ -9,7 +9,7 @@ GameObject::GameObject(Transform* _parent)
 GameObject::GameObject(std::string modelName, Transform* _parent)
 {
 	transform = new Transform(this, _parent);
-	components.push_back(new MeshRenderer(modelName));
+	components.push_back(new MeshRenderer(this,modelName));
 }
 
 GameObject::~GameObject()

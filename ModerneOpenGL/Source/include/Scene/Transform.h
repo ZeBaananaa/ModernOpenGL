@@ -7,7 +7,7 @@ class GameObject;
 class Transform : public IComponent
 {
 public:
-	Transform();
+	Transform(bool root = false);
 	Transform(GameObject* _gameObject);
 	Transform(GameObject* _gameObject,Transform* _parent);
 	~Transform();
@@ -43,6 +43,6 @@ private :
 	Vector3D localRotation;
 	Vector3D localScale;
 
-	Transform* parent;
+	Transform* parent = nullptr;
 };
 

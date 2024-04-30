@@ -2,12 +2,12 @@
 
 #include "App.h"
 #include "Model.h"
-
 #include "Camera.h"
+#include "Utils/Time.h"
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
-double Application::deltaTime = 0.f;
 Application* Application::instance = nullptr;
+GLFWwindow* Application::window = nullptr;
 
 Application& Application::Get()
 {
@@ -25,46 +25,36 @@ void Application::Destroy()
     }
 }
 
-bool Application::Initialise()
+void Application::InitShaders()
 {
     shader.SetVertexShader("Assets/Shaders/Example_Shader.vert");
     shader.SetFragmentShader("Assets/Shaders/Example_Shader.frag");
     shader.Link();
+}
 
-    glGenBuffers(1, &m_VBO);
-    glGenBuffers(1, &m_EBO);
-    glGenVertexArrays(1, &m_VAO);
+void Application::InitCallbacks()
+{
+    /* Handle Keyboard & Mouse Inputs */
+    glfwSetKeyCallback(Application::window, InputHandler::KeyboardCallback);
+    glfwSetCursorPosCallback(Application::window, InputHandler::MouseCursorCallback);
+    glfwSetMouseButtonCallback(Application::window, InputHandler::MouseButtonCallback);
+}
 
-    glBindVertexArray(m_VAO);
-    // array car utilise par glDrawArrays()
-    glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-    //if data == null juste alloue memoire
-  //  glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
+void Application::InitResources()
+{
+    /* Resource Loading */
+    ResourceManager::Get().Create<Model>("pyramid.obj");
+    Model* m = ResourceManager::Get().Get<Model>("pyramid.obj");
+    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+    Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+}
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * indexes.size(0, g_Indices, GL_STATIC_DRAW);
+bool Application::Initialise()
+{
+    InitResources();
+    InitCallbacks();
+    InitShaders();
 
-#define POSITION 0
-#define NORMAL 3
-#define Texture 4
-    // indice vbo si plusieur vbo (pos,couleur,ect.) ici tout dans 1 /nbcomposants/type composants/noramaliser?/size of struct
-  
-    glVertexAttribPointer(POSITION, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, position));
-    glEnableVertexAttribArray(POSITION);
-
-    glVertexAttribPointer(NORMAL, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, normal));
-    glEnableVertexAttribArray(NORMAL);
-
-    glVertexAttribPointer(Texture, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, textureUV));
-    glEnableVertexAttribArray(Texture);
-
-#undef POSITION
-#undef NORMAL
-#undef Texture
-
-    glBindVertexArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     return true;
 }
 
@@ -77,7 +67,7 @@ void Application::Terminate()
 
 void Application::Update()
 {
-    UpdateDeltaTime();
+    Time::Update();
     Camera::Get().Update();
     RotationMouse();
     Render();
@@ -86,22 +76,20 @@ void Application::Update()
 void Application::Render()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    glBindVertexArray(m_VAO);
+    
+    Model* pyramid = ResourceManager::Get().Get<Model>("pyramid.obj");
+    pyramid->vertexAttributes.Bind();
+    pyramid->vbo.Bind(GL_ARRAY_BUFFER);
+    pyramid->vbo.SetData(GL_ARRAY_BUFFER, sizeof(Vertex) * pyramid->vertices.size(), pyramid->vertices.data(), GL_STATIC_DRAW);
 
-    //draw arrays ou elements
-    //glDrawArrays(GL_TRIANGLES, 0, 6);
+    pyramid->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
+    pyramid->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * pyramid->indexes.size(), pyramid->indexes.data(), GL_STATIC_DRAW);
+    pyramid->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
+    pyramid->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(3 * sizeof(float)));
+    pyramid->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)(6 * sizeof(float)));
 
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, nullptr);
-}
+    pyramid->vertexAttributes.Bind();
 
-void Application::UpdateDeltaTime()
-{
-    std::chrono::duration<double> newEnd = std::chrono::steady_clock::now() - end;
-    end = std::chrono::steady_clock::now();
-
-
-    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(newEnd);
-    deltaTime = newEnd.count();
 }
 
 void Application::SetWindowSize(float width, float height)
