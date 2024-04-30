@@ -236,6 +236,8 @@ public:
 
 	//Display
 	void PrintMatrix() const;
+	std::string ToString() const;
+
 	//Return a vector with the components of the diagonal of the matrix
 	Vector4D Diagonal() const;
 	//Return the sum of the components of the diagonal of the matrix
@@ -326,13 +328,13 @@ bool operator!=(const Matrix4x4& m1, const Matrix4x4& m2);
 void Matrix4x4ToFloat(const Matrix4x4& m, float* f);
 
 //View matrix from Camera. Need eye,forward vector and up
-Matrix4x4 viewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3D& up);
+Matrix4x4 ViewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3D& up);
 //Frustrum matrixis like perspective Matrix but define without fov
-Matrix4x4 frustumMatrix(float left, float right, float bottom, float top, float near, float far);
+Matrix4x4 FrustumMatrix(float left, float right, float bottom, float top, float near, float far);
 //Ortho matrix from camera if multiplied by View and Model matrix create MVP matrix for rendering
-Matrix4x4 orthoMatrix(float left, float right, float bottom, float top, float near, float far);
+Matrix4x4 OrthoMatrix(float left, float right, float bottom, float top, float near, float far);
 //Perspective matrix from camera if multiplied by View and Model matrix create MVP matrix for rendering
-Matrix4x4 perspectiveMatrix(float fovY, float aspect, float near, float far);
+Matrix4x4 PerspectiveMatrix(float fovY, float aspect, float near, float far);
 
 //////////////////////////////////////// MatrixMxN ////////////////////////////////////////
 class MatrixMxN
@@ -398,8 +400,8 @@ public:
 	//Subtract this matrix by m2
 	void operator-=(const MatrixMxN& m2);
 	//Return the vector to the index given in the matrix if it's not out of range
-	VectorND& operator[](int index);
-	VectorND operator[](int index) const;
+	VectorND& operator[](unsigned int index);
+	VectorND operator[](unsigned int index) const;
 };
 //If square matrix ~~> Return a vector with the components of the diagonal of the matrix
 VectorND Diagonal(const MatrixMxN& m);

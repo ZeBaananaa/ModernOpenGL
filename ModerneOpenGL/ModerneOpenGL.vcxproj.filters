@@ -1,62 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Source\src\App.cpp" />
+    <ClCompile Include="Source\src\Core\Debug\Log.cpp" />
+    <ClCompile Include="Source\src\Core\InputHandler.cpp" />
+    <ClCompile Include="Source\src\Core\Maths\Matrix.cpp" />
+    <ClCompile Include="Source\src\Core\Maths\Vector.cpp" />
+    <ClCompile Include="ModerneOpenGL.cpp" />
+    <ClCompile Include="Source\src\LowRenderer\Camera.cpp" />
+    <ClCompile Include="Source\src\LowRenderer\Mesh.cpp" />
+    <ClCompile Include="Source\src\glad.c" />
+    <ClCompile Include="Source\src\Resources\Model.cpp" />
+    <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ModerneOpenGL.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\src\Core\Maths\Matrix.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\src\Core\Maths\Vector.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\src\Core\Debug\Log.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\src\Resources\RessourceManager.cpp">
-    <ClCompile Include="Source\src\Core\Debug\Assertion.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\src\App.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
+    <ClInclude Include="Source\include\App.h" />
+    <ClInclude Include="Source\include\Core\DataStructure\Graph.h" />
+    <ClInclude Include="Source\include\Core\Debug\Assertion.h" />
+    <ClInclude Include="Source\include\Core\Debug\Log.h" />
+    <ClInclude Include="Source\include\Core\InputHandler.h" />
+    <ClInclude Include="Source\include\Core\Maths\MathPerso.h" />
+    <ClInclude Include="Source\include\Core\Maths\Matrix.h" />
+    <ClInclude Include="Source\include\Core\Maths\Vector.h" />
+    <ClInclude Include="Source\include\glad\glad.h" />
+    <ClInclude Include="Source\include\KHR\khrplatform.h" />
+    <ClInclude Include="Source\include\LowRenderer\Camera.h" />
+    <ClInclude Include="Source\include\LowRenderer\Light.h" />
+    <ClInclude Include="Source\include\LowRenderer\Mesh.h" />
+    <ClInclude Include="Source\include\Physics\Transform.h" />
+    <ClInclude Include="Source\include\Resources\Model.h" />
+    <ClInclude Include="Source\include\Resources\ResourcesManager.h" />
+    <ClInclude Include="Source\include\Resources\Scene.h" />
+    <ClInclude Include="Source\include\Resources\Shader.h" />
+    <ClInclude Include="Source\include\Resources\Texture.h" />
+    <ClInclude Include="Source\include\Resources\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vertex.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\include\Core\Maths\MathPerso.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\include\Core\Maths\Matrix.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\include\Core\Maths\Vector.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\include\Core\Debug\Log.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\include\Core\Debug\Assertion.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\include\Resources\RessourceManager.h">
-    <ClInclude Include="Source\include\App.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

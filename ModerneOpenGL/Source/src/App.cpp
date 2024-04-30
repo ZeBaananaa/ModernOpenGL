@@ -1,4 +1,28 @@
 #include "App.h"
+#include "Model.h"
+
+#include "Camera.h"
+#include <Core/InputHandler.h>
+
+Vector2D Application::oldMousePos = { 0.f,0.f };
+double Application::deltaTime = 0.f;
+Application* Application::instance = nullptr;
+
+Application& Application::Get()
+{
+    if (instance == nullptr)
+        instance = new Application();
+    return *instance;
+}
+
+void Application::Destroy()
+{
+    if (instance)
+    {
+        delete instance;
+        instance = nullptr;
+    }
+}
 
 bool Application::Initialise()
 {
@@ -11,24 +35,27 @@ bool Application::Initialise()
     glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
     //if data == null juste alloue memoire
     //glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 3, g_Triangles, GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 6, sablier, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 3, g_Indices, GL_STATIC_DRAW);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 6, g_IndicesSablier, GL_STATIC_DRAW);
 
 #define POSITION 0
-#define COLOR 3
+#define NORMAL 3
+#define Texture 4
     // indice vbo si plusieur vbo (pos,couleur,ect.) ici tout dans 1 /nbcomposants/type composants/noramaliser?/size of struct
-    //pos
-    glVertexAttribPointer(POSITION, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, position));
+  
+    glVertexAttribPointer(POSITION, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, position));
     glEnableVertexAttribArray(POSITION);
-    //color
-    glVertexAttribPointer(COLOR, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, color));
-    glEnableVertexAttribArray(COLOR);
+
+    glVertexAttribPointer(NORMAL, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+    glEnableVertexAttribArray(NORMAL);
+
+    glVertexAttribPointer(Texture, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, textureUV));
+    glEnableVertexAttribArray(Texture);
 
 #undef POSITION
-#undef COLOR
+#undef NORMAL
+#undef Texture
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -45,6 +72,9 @@ void Application::Terminate()
 
 void Application::Update()
 {
+    UpdateDeltaTime();
+    Camera::Get().Update();
+    RotationMouse();
     Render();
 }
 
@@ -55,5 +85,38 @@ void Application::Render()
 
     //draw arrays ou elements
     //glDrawArrays(GL_TRIANGLES, 0, 6);
+
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, nullptr);
+}
+
+void Application::UpdateDeltaTime()
+{
+    std::chrono::duration<double> newEnd = std::chrono::steady_clock::now() - end;
+    end = std::chrono::steady_clock::now();
+
+
+    std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(newEnd);
+    deltaTime = newEnd.count();
+}
+
+void Application::SetWindowSize(float width, float height)
+{
+    m_width = width;
+    m_height = height;
+    Camera::Get().recalculateProjection = true;
+}
+
+
+void Application::RotationMouse()
+{
+    Camera* cam = &Camera::Get();
+    Vector2D newMousePos = InputHandler::GetMousePos();
+
+    Vector2D dirMouse = Application::oldMousePos - newMousePos;
+
+    Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, cam->GetDirection()));
+
+    cam->Rotation(dirMouse.x / 500.f, Vector3D::axeY, cam->GetEye());
+    cam->Rotation(dirMouse.y / 500.f, localAxisX3D, cam->GetEye());
+    Application::oldMousePos = newMousePos;
 }

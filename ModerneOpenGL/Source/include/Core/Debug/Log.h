@@ -8,7 +8,10 @@
 #include <stdarg.h>
 
 #include <Windows.h>
-#define DEBUG_LOG(txt,...)(Debug_Log(txt,__FILE__, __LINE__,__VA_ARGS__)
+#include <fstream>
+
+//#define __FILENAME__ (strrchr(__FILE__, '\') ? strrchr(FILE, '\') + 1 : __FILE__)
+#define DEBUG_LOG(txt,...)(Debug_Log(txt,__FILE__, __LINE__,__VA_ARGS__))
 
 class Log
 {

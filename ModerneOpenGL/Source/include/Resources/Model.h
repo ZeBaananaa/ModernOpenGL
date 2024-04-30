@@ -2,8 +2,9 @@
 #include <string>
 #include <vector>
 #include "Vertex.h"
+#include "ResourcesManager.h"
 
-class Model
+class Model : public IResource
 {
 public:
 	Model(std::string nameObjFile);
@@ -12,8 +13,7 @@ public:
 	std::vector<Vertex> vertices;
 	std::vector<uint32_t> indeces;
 
+	void UnLoad()override;
 private:
-	void LoadModel(std::string nameObjFile);
-
-
+	void Load(std::string nameObjFile) override;
 };
