@@ -13,7 +13,6 @@
     <ClCompile Include="Source\src\Resources\Model.cpp" />
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
     <ClCompile Include="Source\src\Resources\Shader.cpp" />
-    <ClCompile Include="Source\src\Resources\IResource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />
@@ -39,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="Assets\Shaders\Example_Shader.glsl" />
+    <None Include="Assets\Shaders\Example_Shader.vert" />
+    <None Include="Assets\Shaders\Example_Shader.frag" />
   </ItemGroup>
 </Project>

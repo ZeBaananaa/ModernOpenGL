@@ -1,8 +1,9 @@
+#include <Core/InputHandler.h>
+
 #include "App.h"
 #include "Model.h"
 
 #include "Camera.h"
-#include <Core/InputHandler.h>
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
 double Application::deltaTime = 0.f;
@@ -26,6 +27,10 @@ void Application::Destroy()
 
 bool Application::Initialise()
 {
+    shader.SetVertexShader("Assets/Shaders/Example_Shader.vert");
+    shader.SetFragmentShader("Assets/Shaders/Example_Shader.frag");
+    shader.Link();
+
     glGenBuffers(1, &m_VBO);
     glGenBuffers(1, &m_EBO);
     glGenVertexArrays(1, &m_VAO);

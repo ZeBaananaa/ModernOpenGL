@@ -9,8 +9,8 @@ uniform mat4 normalMat; // transpose inverte MVP
 out PosOut
 {
     vec3 newPos;
-    vec2 uvPos;
     vec3 normalPos;
+    vec2 uvPos;
 } posOut;
 
 // ligne - colonne 

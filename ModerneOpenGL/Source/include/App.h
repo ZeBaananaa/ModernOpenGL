@@ -6,6 +6,7 @@
 #include <mutex>
 
 #include "MathPerso.h"
+#include "Shader.h"
 
 class Application
 {
@@ -20,7 +21,6 @@ public:
     GLuint m_VBO = 0;
     GLuint m_EBO = 0;
     GLuint m_VAO = 0;
-
 
     bool Initialise();
     void Terminate();
@@ -44,6 +44,7 @@ private:
 
     std::chrono::steady_clock::time_point end;
     static double deltaTime;
+    Shader shader;
 };
 
 //Vertex g_Triangles[] = { Vertex{{-0.5f,-0.5f},   {1.f,0.f,0.f}},
