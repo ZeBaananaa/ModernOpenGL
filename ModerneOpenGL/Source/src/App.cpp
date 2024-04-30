@@ -39,10 +39,10 @@ bool Application::Initialise()
     // array car utilise par glDrawArrays()
     glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
     //if data == null juste alloue memoire
-    //glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 3, g_Triangles, GL_STATIC_DRAW);
+  //  glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * 3, g_Indices, GL_STATIC_DRAW);
+    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint16_t) * indexes.size(0, g_Indices, GL_STATIC_DRAW);
 
 #define POSITION 0
 #define NORMAL 3

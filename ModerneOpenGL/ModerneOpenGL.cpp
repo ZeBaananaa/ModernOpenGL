@@ -51,7 +51,7 @@ int Init()
 	Application::Get().Initialise();
 
 	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(window))
+	while (!glfwWindowShouldClose(window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{
 		// Set background color to blue
 		glClearColor(0.15f, 0.15f, 1.f, 1.f);
@@ -61,9 +61,6 @@ int Init()
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(window);
-
-		if (InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
-			return 0;
 
 		/* Poll for and process events */
 		glfwPollEvents();
@@ -81,7 +78,7 @@ int main()
     ResourceManager::Get().Create<Model>("AlienAnimal.obj");
 	Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
 
-	//Init();
+	Init();
 
     //DEBUG_LOG(Camera::Get().GetProjectionMatrix().ToString());
 

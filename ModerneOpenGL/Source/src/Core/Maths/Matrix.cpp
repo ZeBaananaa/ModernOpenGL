@@ -1068,8 +1068,8 @@ Matrix4x4 Scaling_Matrix4x4(const Vector3D& scaling)
 Matrix4x4 TRS(const Vector3D& translation, const Vector3D& rotation, const Vector3D& scaling, bool rad)
 {
 	Vector3D rota = rotation;
-	if (rad == false)
-		rota = rota * PI / 180;
+	if (!rad)
+		rota = rota * PI / 180.f;
 	
 	return  Translation_Matrix4x4(translation) * Rotation_Matrix4x4(rota) *Scaling_Matrix4x4(scaling);
 }
