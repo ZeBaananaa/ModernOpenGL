@@ -1,0 +1,49 @@
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource cube.obj already exist ?
+
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : cube.obj doesn't exist.
+
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\Shader.cpp(104): ERROR LINKING SHADER The  shader uses varying Color, but previous shader does not write to it.
+Out of resource error.
+
+
+
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(73): global pos before : 
+
+{4.000000}
+{0.000000}
+{0.000000}
+ 
+global rota before : 
+
+{0.000000}
+{45.000000}
+{0.000000}
+ 
+global scale before : 
+
+{0.500000}
+{0.500000}
+{0.500000}
+ 
+
+
+C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(77): global pos before : 
+
+{1.000000}
+{0.000000}
+{0.000000}
+ 
+global rota before : 
+
+{0.000000}
+{0.000000}
+{0.000000}
+ 
+global scale before : 
+
+{1.000000}
+{1.000000}
+{1.000000}
+ 
+
+

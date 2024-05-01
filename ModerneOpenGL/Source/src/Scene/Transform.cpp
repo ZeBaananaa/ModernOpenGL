@@ -1,36 +1,83 @@
 #include "GameObject.h"
 
-Transform::Transform(bool root)
+Transform::Transform(bool isRoot)
 {
 	gameObject = nullptr;
-	if(!root)
-		SceneGraph::Get().root->AddChildren(this);
+
+	if(!isRoot)
+		SetParent(SceneGraph::Get().root);
+
+	SetZero();
 }
 
 Transform::Transform(GameObject* _gameObject)
 {
-	gameObject = _gameObject;
-	SceneGraph::Get().root->AddChildren(this);
+	if (_gameObject)
+		gameObject = _gameObject;
+	
+	SetParent(SceneGraph::Get().root);
+
+	SetZero();
 }
 
 Transform::Transform(GameObject* _gameObject, Transform* _parent)
 {
-	gameObject = _gameObject;
-	if(_parent)
-		_parent->AddChildren(this);
+	if (_gameObject)
+		gameObject = _gameObject;
+
+	if (_parent)
+		SetParent(_parent);
 	else
-		SceneGraph::Get().root->AddChildren(this);
+		SetParent(SceneGraph::Get().root);
+
+	SetZero();
+}
+
+Transform::Transform(Vector3D position, Vector3D rotation, Vector3D scale, GameObject* _gameObject, Transform* _parent)
+{
+
+	if (_gameObject)
+		gameObject = _gameObject;
+
+	if (_parent)
+		SetParent(_parent);
+	else
+		SetParent(SceneGraph::Get().root);
+
+
+	localPosition = position;
+	localRotation = rotation;
+	localScale = scale;
+
+	recalculateLocalT = true;
+	GetLocalTransform();
+	GetGlobalTransform();
 }
 
 
 Transform::~Transform()
 {
-	delete gameObject;
+	if(gameObject != nullptr)
+		delete gameObject;
+
+	if (parent)
+		parent->RemoveChildren(this);
+
 	for (size_t i = 0; i < children.size(); i++)
 	{
 		children[i]->Delete();
 	}
 	children.clear();
+}
+
+void Transform::SetZero()
+{
+	localPosition = Vector3D::zero;
+	localRotation = Vector3D::zero;
+	localScale = Vector3D::one;
+
+	localTransform = Identity_Matrix4x4();
+	globalTransform = Identity_Matrix4x4();
 }
 
 void Transform::Update()
@@ -48,7 +95,6 @@ void Transform::Delete()
 	delete this;
 }
 
-
 void Transform::SetParent(Transform* _parent)
 {
 	if (parent != nullptr)
@@ -61,12 +107,25 @@ void Transform::SetParent(Transform* _parent)
 		parent = SceneGraph::Get().root;
 	
 	parent->AddChildren(this);
+
+	SetLocalTransformOnParentChange();
+}
+
+void Transform::SetChildrenRecalculateGlobalTransform()
+{
+	for (size_t i = 0; i < children.size(); i++)
+	{
+		children[i]->recalculateGlobalT = true;
+		children[i]->SetChildrenRecalculateGlobalTransform();
+	}
 }
 
 void Transform::AddChildren(Transform* child)
 {
 	if (child == nullptr)
 		return;
+
+	child->recalculateGlobalT = true;
 
 	children.push_back(child);
 }
@@ -84,40 +143,37 @@ void Transform::RemoveChildren(Transform* child)
 	}
 }
 
+#pragma region Local Transform
+
+void Transform::SetLocalTransformOnParentChange()
+{
+	//check if every thing is up to date
+	GetGlobalTransform();
+
+	Matrix4x4 reverseParentRotation_G = Reverse(Rotation_Matrix4x4(parent->GetGlobalRotation()));
+	Matrix4x4 reverseParentScale_G = Reverse(Scaling_Matrix4x4(parent->GetGlobalScale()));
+
+	localRotation = reverseParentRotation_G * static_cast<Vector4D>(SceneGraph::Get().root->localRotation);
+	localScale = reverseParentScale_G * static_cast<Vector4D>(SceneGraph::Get().root->localScale);
+	localPosition = reverseParentScale_G * reverseParentRotation_G * static_cast<Vector4D>(GetGlobalPosition() - parent->GetGlobalPosition());
+
+	recalculateLocalT = true;
+	GetLocalTransform();
+	GetGlobalTransform();
+
+	SetChildrenRecalculateGlobalTransform();
+}
 
 Matrix4x4 Transform::GetLocalTransform()
 {
 	if (recalculateLocalT)
 	{
 		recalculateLocalT = false;
+		recalculateGlobalT = true;
 		localTransform = TRS(localPosition,localRotation,localScale);
 	}
 	
 	return localTransform;
-}
-
-Matrix4x4 Transform::GetGlobalTransform()
-{
-	if (parent == nullptr)
-		return localTransform;
-
-	if (recalculateLocalT)
-	{
-		GetLocalTransform();
-	}
-	if (recalculateGlobalT)
-	{
-		recalculateGlobalT = false;
-		globalTransform = parent->GetGlobalTransform() * localTransform;
-	}
-
-	return globalTransform;
-}
-
-
-Vector3D Transform::GetGlobalPosition()
-{
-	return GetGlobalTransform() * static_cast<Vector4D>(localPosition);
 }
 
 Vector3D Transform::GetLocalPosition()
@@ -130,10 +186,7 @@ void Transform::SetLocalPosition(Vector3D newPosition)
 	localPosition = newPosition;
 	recalculateLocalT = true;
 
-	for (size_t i = 0; i < children.size(); i++)
-	{
-		children[i]->recalculateGlobalT = true;
-	}
+	SetChildrenRecalculateGlobalTransform();
 }
 
 Vector3D Transform::GetLocalRotation()
@@ -146,10 +199,7 @@ void Transform::SetLocalRotation(Vector3D newRotation)
 	localRotation = newRotation;
 	recalculateLocalT = true;
 
-	for (size_t i = 0; i < children.size(); i++)
-	{
-		children[i]->recalculateGlobalT = true;
-	}
+	SetChildrenRecalculateGlobalTransform();
 }
 
 Vector3D Transform::GetLocalScale()
@@ -162,8 +212,61 @@ void Transform::SetLocalScale(Vector3D newScale)
 	localScale = newScale;
 	recalculateLocalT = true;
 
-	for (size_t i = 0; i < children.size(); i++)
-	{
-		children[i]->recalculateGlobalT = true;
-	}
+	SetChildrenRecalculateGlobalTransform();
 }
+#pragma endregion
+
+#pragma region Global Transform
+
+Matrix4x4 Transform::GetGlobalTransform()
+{
+	if (parent == nullptr)
+		return localTransform;
+
+	if (recalculateLocalT)
+	{
+		GetLocalTransform();
+	}
+	
+	if (recalculateGlobalT)
+	{
+		recalculateGlobalT = false;
+		globalTransform = parent->GetGlobalTransform() * localTransform;
+
+		GetGlobalPosition();
+		GetGlobalRotation();
+		GetGlobalScale();
+	}
+
+	return globalTransform;
+}
+
+Vector3D Transform::GetGlobalPosition()
+{
+	globalPosition = GetGlobalTransform().col4;
+	return globalPosition;
+}
+
+Vector3D Transform::GetGlobalRotation()
+{
+	if (parent == nullptr)
+		return localRotation;
+
+	globalRotation = localRotation + parent->GetGlobalRotation();
+	return globalRotation;
+}
+
+Vector3D Transform::GetGlobalScale()
+{
+	if (parent == nullptr)
+		return localScale;
+
+	globalScale = TensorialProduct(localScale,parent->GetGlobalScale());
+	return globalScale;
+}
+#pragma endregion
+
+
+
+
+

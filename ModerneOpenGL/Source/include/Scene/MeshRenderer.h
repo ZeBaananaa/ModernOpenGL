@@ -8,7 +8,7 @@ class MeshRenderer : public IComponent
 public:
 	MeshRenderer(GameObject* gameObject);
 	MeshRenderer(GameObject* gameObject,std::string modelName);
-	~MeshRenderer() = default;
+	~MeshRenderer();
 
 	void Update() override;
 	void Delete() override;

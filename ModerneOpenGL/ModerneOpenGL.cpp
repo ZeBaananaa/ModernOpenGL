@@ -13,6 +13,10 @@
 #include <glad/glad.h>
 #include <iostream>
 
+#include "GameObject.h"
+#include "Components.h"
+#include "SceneGraph.h"
+
 void Destroy()
 {
 	Application::Get().Terminate();
@@ -22,7 +26,8 @@ void Destroy()
 	Application::Destroy();
 	Camera::Destroy();
 	ResourceManager::Destroy();
-	Log::Get().Destroy();
+	Log::Destroy();
+	SceneGraph::Destroy();
 }
 
 void InitWindow()
@@ -51,26 +56,44 @@ void InitWindow()
 	}
 }
 
+
 int main()
 {
 	InitWindow();
 	Application::Get().Initialise();
 
-	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(Application::window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
-	{
-		// Set background color to blue
-		glClearColor(0.15f, 0.15f, 1.f, 1.f);
+	SceneGraph::Get();
 
-		/* Render here */
-		Application::Get().Update();
+	GameObject* c0 = new GameObject({ 3,0,0 }, Vector3D::zero, Vector3D::one, "cube.obj");
+	GameObject* c1 = new GameObject(Vector3D::axeX, { 0,45,0 }, { 0.5f,0.5f,0.5f }, "cube.obj", c0->transform);
+	//GameObject* c2 = new GameObject({ 1.5f,0,0.5f }, {0, 0, 0},Vector3D::one, "cube.obj",c1->transform);
 
-		/* Swap front and back buffers */
-		glfwSwapBuffers(Application::window);
+	DEBUG_LOG("global pos before : \n" + c1->transform->GetGlobalPosition().ToString() + " \n"
+	+ "global rota before : \n" + c1->transform->GetGlobalRotation().ToString() + " \n"
+	+ "global scale before : \n" + c1->transform->GetGlobalScale().ToString() + " \n");
+	c1->transform->SetParent(SceneGraph::Get().root);
+	DEBUG_LOG("global pos before : \n" + c1->transform->GetGlobalPosition().ToString() + " \n"
+		+ "global rota before : \n" + c1->transform->GetGlobalRotation().ToString() + " \n"
+		+ "global scale before : \n" + c1->transform->GetGlobalScale().ToString() + " \n");
 
-		/* Poll for and process events */
-		glfwPollEvents();
-	}
+	printf("\n");
+
+	///* Loop until the user closes the window */
+	//while (!glfwWindowShouldClose(Application::window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
+	//{
+	//	// Set background color to blue
+	//	glClearColor(0.15f, 0.15f, 1.f, 1.f);
+
+	//	/* Render here */
+	//	Application::Get().Update();
+
+	//	/* Swap front and back buffers */
+	//	glfwSwapBuffers(Application::window);
+
+	//	/* Poll for and process events */
+	//	glfwPollEvents();
+	//}
+
 	Destroy();
 	return 0;
 }

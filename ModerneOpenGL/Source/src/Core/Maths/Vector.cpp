@@ -2,16 +2,19 @@
 #include <iostream>
 #include "Matrix.h"
 
-Vector2D Vector2D::origin2D = { 0.f,0.f };
+Vector2D Vector2D::zero = { 0.f,0.f };
+Vector2D Vector2D::one = { 1.f,1.f };
 Vector2D Vector2D::axeX = { 1.f,0.f };
 Vector2D Vector2D::axeY = { 0.f,1.f };
 
-Vector3D Vector3D::origin3D = { 0.f,0.f,0.f };
+Vector3D Vector3D::zero = { 0.f,0.f,0.f };
+Vector3D Vector3D::one = { 1.f,1.f,1.f };
 Vector3D Vector3D::axeX = { 1.f,0.f,0.f };
 Vector3D Vector3D::axeY = { 0.f,1.f,0.f };
 Vector3D Vector3D::axeZ = { 0.f,0.f,1.f };
 
-Vector4D Vector4D::origin4D = { 0.f,0.f,0.f,0.f };
+Vector4D Vector4D::zero = { 0.f,0.f,0.f,0.f };
+Vector4D Vector4D::one = { 1.f,1.f,1.f,1.f };
 Vector4D Vector4D::axeX = { 1.f,0.f,0.f,0.f };
 Vector4D Vector4D::axeY = { 0.f,1.f,0.f,0.f };
 Vector4D Vector4D::axeZ = { 0.f,0.f,1.f,0.f };
@@ -182,7 +185,7 @@ void Vector2D::Translate(const Vector2D& t)
 
 void Vector2D::Rotate(float angle, const Vector2D& anchor)
 {
-	if (anchor == origin2D)
+	if (anchor == zero)
 	{
 		Product(Rotation_Matrix2x2(angle));
 	}
@@ -196,7 +199,7 @@ void Vector2D::Rotate(float angle, const Vector2D& anchor)
 
 void Vector2D::Scale(float scaleXY, const Vector2D& anchor)
 {
-	if (anchor == origin2D)
+	if (anchor == zero)
 	{
 		Product(scaleXY);
 	}
@@ -208,7 +211,7 @@ void Vector2D::Scale(float scaleXY, const Vector2D& anchor)
 
 void Vector2D::Scale(const Vector2D& scaleXY, const Vector2D& anchor)
 {
-	if (anchor == origin2D)
+	if (anchor == zero)
 	{
 		TensorialProduct(scaleXY);
 	}
@@ -627,7 +630,7 @@ void Vector3D::Rotate(float angle, const Vector3D& axis, const Vector3D& anchor)
 	Vector3D copy = axis;
 	copy.Normalize();
 
-	if (anchor != origin3D)
+	if (anchor != zero)
 		(*this) -= anchor;
 
 	if (copy == axeX)
@@ -639,13 +642,13 @@ void Vector3D::Rotate(float angle, const Vector3D& axis, const Vector3D& anchor)
 	else
 		Product(Rotation_Matrix3x3(angle, copy));
 	
-	if (anchor != origin3D)
+	if (anchor != zero)
 		(*this) += anchor;
 }
 
 void Vector3D::Scale(float scale, const Vector3D& anchor)
 {
-	if (anchor == origin3D)
+	if (anchor == zero)
 	{
 		Product(scale);
 	}
@@ -657,7 +660,7 @@ void Vector3D::Scale(float scale, const Vector3D& anchor)
 
 void Vector3D::Scale(const Vector3D& scaleXYZ, const Vector3D& anchor)
 {
-	if (anchor == origin3D)
+	if (anchor == zero)
 	{
 		TensorialProduct(scaleXYZ);
 	}

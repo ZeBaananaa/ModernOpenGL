@@ -1052,7 +1052,7 @@ Matrix4x4 Translation_Matrix4x4(const Vector3D& translation)
 
 Matrix4x4 Rotation_Matrix4x4(const Vector3D& rotation)
 {
-	return (Matrix4x4(RotationX_Matrix3x3(rotation.x))* Matrix4x4(RotationY_Matrix3x3(rotation.y))) * Matrix4x4(RotationZ_Matrix3x3(rotation.z));
+	return Matrix4x4(RotationX_Matrix3x3(rotation.x)) * Matrix4x4(RotationY_Matrix3x3(rotation.y)) * Matrix4x4(RotationZ_Matrix3x3(rotation.z));
 }
 
 Matrix4x4 Scaling_Matrix4x4(const Vector3D& scaling)
@@ -1071,7 +1071,7 @@ Matrix4x4 TRS(const Vector3D& translation, const Vector3D& rotation, const Vecto
 	if (!rad)
 		rota = rota * PI / 180.f;
 	
-	return  Translation_Matrix4x4(translation) * Rotation_Matrix4x4(rota) *Scaling_Matrix4x4(scaling);
+	return Translation_Matrix4x4(translation) * Rotation_Matrix4x4(rota) * Scaling_Matrix4x4(scaling);
 }
 
 Matrix4x4 operator+(const Matrix4x4& m1, const Matrix4x4& m2)

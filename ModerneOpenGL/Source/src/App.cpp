@@ -43,10 +43,10 @@ void Application::InitCallbacks()
 void Application::InitResources()
 {
     /* Resource Loading */
-    ResourceManager::Get().Create<Model>("pyramid.obj");
-    Model* m = ResourceManager::Get().Get<Model>("pyramid.obj");
-    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-    Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+    ResourceManager::Get().Create<Model>("cube.obj");
+    //ResourceManager::Get().Create<Model>("sphere.obj");
+    //ResourceManager::Get().Create<Model>("pyramid.obj");
+    //ResourceManager::Get().Create<Model>("AlienAnimal.obj");
 }
 
 bool Application::Initialise()

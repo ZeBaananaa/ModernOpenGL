@@ -14,6 +14,12 @@ MeshRenderer::MeshRenderer(GameObject* gameObject,std::string modelName)
 	this->model = ResourceManager::Get().Get<Model>(modelName);
 }
 
+MeshRenderer::~MeshRenderer()
+{
+	model = nullptr;
+	gameObject = nullptr;
+}
+
 void MeshRenderer::Update()
 {
 	if (model)
