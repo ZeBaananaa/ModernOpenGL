@@ -1,13 +1,8 @@
-C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource cube.obj already exist ?
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource cube.obj already exist ?
 
-C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : cube.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : cube.obj doesn't exist.
 
-C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\Shader.cpp(104): ERROR LINKING SHADER The  shader uses varying Color, but previous shader does not write to it.
-Out of resource error.
-
-
-
-C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(73): global pos before : 
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(73): global pos before : 
 
 {4.000000}
 {0.000000}
@@ -27,23 +22,63 @@ global scale before :
  
 
 
-C:\Users\lolx9\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(77): global pos before : 
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(76): local pos before : 
 
 {1.000000}
 {0.000000}
 {0.000000}
  
-global rota before : 
+local rota before : 
 
 {0.000000}
+{45.000000}
+{0.000000}
+ 
+local scale before : 
+
+{0.500000}
+{0.500000}
+{0.500000}
+ 
+
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(80): global pos after : 
+
+{4.000000}
 {0.000000}
 {0.000000}
  
-global scale before : 
+global rota after : 
 
-{1.000000}
-{1.000000}
-{1.000000}
+{0.000000}
+{45.000000}
+{0.000000}
+ 
+global scale after : 
+
+{0.500000}
+{0.500000}
+{0.500000}
+ 
+
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\ModerneOpenGL.cpp(83): local pos after : 
+
+{4.000000}
+{0.000000}
+{0.000000}
+ 
+local rota after : 
+
+{0.000000}
+{45.000000}
+{0.000000}
+ 
+local scale after : 
+
+{0.500000}
+{0.500000}
+{0.500000}
  
 
 

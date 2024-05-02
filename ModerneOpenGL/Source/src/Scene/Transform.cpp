@@ -148,13 +148,13 @@ void Transform::RemoveChildren(Transform* child)
 void Transform::SetLocalTransformOnParentChange()
 {
 	//check if every thing is up to date
-	GetGlobalTransform();
+	recalculateGlobalT = false;
 
 	Matrix4x4 reverseParentRotation_G = Reverse(Rotation_Matrix4x4(parent->GetGlobalRotation()));
 	Matrix4x4 reverseParentScale_G = Reverse(Scaling_Matrix4x4(parent->GetGlobalScale()));
 
-	localRotation = reverseParentRotation_G * static_cast<Vector4D>(SceneGraph::Get().root->localRotation);
-	localScale = reverseParentScale_G * static_cast<Vector4D>(SceneGraph::Get().root->localScale);
+	localRotation = reverseParentRotation_G * static_cast<Vector4D>(GetGlobalRotation());
+	localScale = reverseParentScale_G * static_cast<Vector4D>(GetGlobalScale());
 	localPosition = reverseParentScale_G * reverseParentRotation_G * static_cast<Vector4D>(GetGlobalPosition() - parent->GetGlobalPosition());
 
 	recalculateLocalT = true;

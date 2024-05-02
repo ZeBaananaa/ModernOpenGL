@@ -64,35 +64,23 @@ int main()
 
 	SceneGraph::Get();
 
-	GameObject* c0 = new GameObject({ 3,0,0 }, Vector3D::zero, Vector3D::one, "cube.obj");
-	GameObject* c1 = new GameObject(Vector3D::axeX, { 0,45,0 }, { 0.5f,0.5f,0.5f }, "cube.obj", c0->transform);
-	//GameObject* c2 = new GameObject({ 1.5f,0,0.5f }, {0, 0, 0},Vector3D::one, "cube.obj",c1->transform);
+	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one, "cube.obj");
 
-	DEBUG_LOG("global pos before : \n" + c1->transform->GetGlobalPosition().ToString() + " \n"
-	+ "global rota before : \n" + c1->transform->GetGlobalRotation().ToString() + " \n"
-	+ "global scale before : \n" + c1->transform->GetGlobalScale().ToString() + " \n");
-	c1->transform->SetParent(SceneGraph::Get().root);
-	DEBUG_LOG("global pos before : \n" + c1->transform->GetGlobalPosition().ToString() + " \n"
-		+ "global rota before : \n" + c1->transform->GetGlobalRotation().ToString() + " \n"
-		+ "global scale before : \n" + c1->transform->GetGlobalScale().ToString() + " \n");
+	/* Loop until the user closes the window */
+	while (!glfwWindowShouldClose(Application::window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
+	{
+		// Set background color to blue
+		glClearColor(0.15f, 0.15f, 1.f, 1.f);
 
-	printf("\n");
+		/* Render here */
+		Application::Get().Update();
 
-	///* Loop until the user closes the window */
-	//while (!glfwWindowShouldClose(Application::window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
-	//{
-	//	// Set background color to blue
-	//	glClearColor(0.15f, 0.15f, 1.f, 1.f);
+		/* Swap front and back buffers */
+		glfwSwapBuffers(Application::window);
 
-	//	/* Render here */
-	//	Application::Get().Update();
-
-	//	/* Swap front and back buffers */
-	//	glfwSwapBuffers(Application::window);
-
-	//	/* Poll for and process events */
-	//	glfwPollEvents();
-	//}
+		/* Poll for and process events */
+		glfwPollEvents();
+	}
 
 	Destroy();
 	return 0;
