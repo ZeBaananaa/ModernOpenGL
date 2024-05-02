@@ -4,6 +4,7 @@
 
 #include "MathPerso.h"
 #include "Shader.h"
+#include "Utils/WindowHandler.h"
 
 class Application
 {
@@ -12,7 +13,7 @@ public:
 
      static Application& Get();
      static void Destroy();
-     static GLFWwindow* window;
+     GLFWwindow* window;
 
     int32_t m_width = 1280;
     int32_t m_height = 720;

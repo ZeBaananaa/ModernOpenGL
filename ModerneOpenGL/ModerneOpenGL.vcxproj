@@ -135,9 +135,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\include\Resources\Vertex.cpp" />
+    <ClCompile Include="Source\src\Utils\WindowHandler.cpp" />
     <ClCompile Include="Source\src\App.cpp" />
     <ClCompile Include="Source\src\Core\Debug\Log.cpp" />
-    <ClCompile Include="Source\src\Core\InputHandler.cpp" />
+    <ClCompile Include="Source\src\Utils\InputHandler.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Matrix.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Vector.cpp" />
     <ClCompile Include="ModerneOpenGL.cpp" />
@@ -154,7 +155,7 @@
     <ClInclude Include="Source\include\Core\DataStructure\Graph.h" />
     <ClInclude Include="Source\include\Core\Debug\Assertion.h" />
     <ClInclude Include="Source\include\Core\Debug\Log.h" />
-    <ClInclude Include="Source\include\Core\InputHandler.h" />
+    <ClInclude Include="Source\include\Utils\InputHandler.h" />
     <ClInclude Include="Source\include\Core\Maths\MathPerso.h" />
     <ClInclude Include="Source\include\Core\Maths\Matrix.h" />
     <ClInclude Include="Source\include\Core\Maths\Vector.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Source\include\Resources\Texture.h" />
     <ClInclude Include="Source\include\Resources\Vertex.h" />
     <ClInclude Include="Source\include\Utils\Time.h" />
+    <ClInclude Include="Source\include\Utils\WindowHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Example_Shader.frag" />

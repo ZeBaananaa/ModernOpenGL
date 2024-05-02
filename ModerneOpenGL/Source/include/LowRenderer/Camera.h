@@ -23,7 +23,7 @@ public:
 	void SetFov(float newFov);
 	void SetNearFar(float newNear, float newFar);
 	
-	float speed{ 250.f };
+	float speed{ 10.f };
 	bool recalculateView = true;
 	bool recalculateProjection = true;
 	bool recalculateVP = true;

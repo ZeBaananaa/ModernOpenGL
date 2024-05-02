@@ -8,7 +8,7 @@
 #include "Model.h"
 #include "MathPerso.h"
 #include "App.h"
-#include "InputHandler.h"
+#include "Utils/InputHandler.h"
 
 #include <glad/glad.h>
 #include <iostream>
@@ -32,8 +32,9 @@ void InitWindow()
 		return;
 
 	/* Create a windowed mode window and its OpenGL context */
-	Application::window = glfwCreateWindow(640, 480, "Modern OpenGL", NULL, NULL);
-	if (!Application::window)
+
+	GLFWwindow* window = glfwCreateWindow(1280, 720, "Modern OpenGL", NULL, NULL);
+	if (!window)
 	{
 		std::cout << "Cannot create GLFW Window... \nAborting!" << std::endl;
 		glfwTerminate();
@@ -41,7 +42,7 @@ void InitWindow()
 	}
 
 	/* Make the window's context current */
-	glfwMakeContextCurrent(Application::window);
+	glfwMakeContextCurrent(window);
 
 	/* Init glad after context is defined */
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -49,15 +50,20 @@ void InitWindow()
 		std::cout << "Failed to initialize GLAD... \nAborting!" << std::endl;
 		return;
 	}
+
+	glEnable(GL_DEPTH_TEST);
+
+	Application::Get().window = window;
 }
 
 int main()
 {
 	InitWindow();
+
 	Application::Get().Initialise();
 
 	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(Application::window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
+	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{
 		// Set background color to blue
 		glClearColor(0.15f, 0.15f, 1.f, 1.f);
@@ -66,7 +72,7 @@ int main()
 		Application::Get().Update();
 
 		/* Swap front and back buffers */
-		glfwSwapBuffers(Application::window);
+		glfwSwapBuffers(Application::Get().window);
 
 		/* Poll for and process events */
 		glfwPollEvents();

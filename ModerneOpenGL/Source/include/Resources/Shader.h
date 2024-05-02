@@ -12,6 +12,11 @@ public:
 	bool SetFragmentShader(std::filesystem::path const& filename);
 	bool Link();
 
+	int GetProgram()
+	{
+		return shaderProgram;
+	}
+
 private:
 	int vertexShader;
 	int fragmentShader;
