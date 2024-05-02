@@ -99,7 +99,7 @@ void Model::Load(std::string nameObjFile)
                             vertexInOrder += str[i];
                         }
                     }
-                    Vector3D currentVertexPosition = posObj[std::stoi(vertexInOrder) - 1];
+                    Vector3D currentVertexPosition = posObj[std::stoi(vertexInOrder) - 1.f];
                     vertex.position.x = currentVertexPosition.x; vertex.position.y = currentVertexPosition.y; vertex.position.z = currentVertexPosition.z;
 
                     ++i;
@@ -111,7 +111,7 @@ void Model::Load(std::string nameObjFile)
                         else
                             textCoordsInOrder += str[i];
                     }
-                    Vector2D currentVertexUV = textCoordObj[std::stoi(textCoordsInOrder) - 1];
+                    Vector2D currentVertexUV = textCoordObj[std::stoi(textCoordsInOrder) - 1.f];
                     vertex.textureUV.x = currentVertexUV.x; vertex.textureUV.y = currentVertexUV.y;
 
 
@@ -124,7 +124,7 @@ void Model::Load(std::string nameObjFile)
                         else
                             normalInOrder += str[i];
                     }
-                    Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1];
+                    Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1.f];
                     vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
 
 
@@ -148,7 +148,7 @@ void Model::Load(std::string nameObjFile)
                 for (int indexInPoly = 3; indexInPoly < nbVertexInPoly; ++indexInPoly)
                 {
                     indexes.push_back(indexVertexPolygon[0]);
-                    indexes.push_back(indexVertexPolygon[indexInPoly - 1]);
+                    indexes.push_back(indexVertexPolygon[indexInPoly - 1.f]);
                     indexes.push_back(indexVertexPolygon[indexInPoly]);
                 }
             }
@@ -185,7 +185,6 @@ void Model::Buffer::SetData(GLenum type, GLsizeiptr size, const GLvoid* data, GL
 
 Model::VertexAttributes::VertexAttributes()
 {
-    vertex = _vertex;
     glGenVertexArrays(1, &vertex);
 }
 

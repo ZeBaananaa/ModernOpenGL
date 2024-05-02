@@ -44,9 +44,10 @@ void Application::InitResources()
 {
     /* Resource Loading */
     ResourceManager::Get().Create<Model>("pyramid.obj");
-    Model* m = ResourceManager::Get().Get<Model>("pyramid.obj");
-    ResourceManager::Get().Create<Model>("AlienAnimal.obj");
-    Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
+    //Model* m = ResourceManager::Get().Get<Model>("pyramid.obj");
+
+    //ResourceManager::Get().Create<Model>("AlienAnimal.obj");
+    //Model* m2 = ResourceManager::Get().Get<Model>("AlienAnimal.obj");
 }
 
 bool Application::Initialise()
@@ -54,6 +55,41 @@ bool Application::Initialise()
     InitResources();
     InitCallbacks();
     InitShaders();
+
+
+
+
+
+
+
+
+
+    GLfloat verts[] =
+    {
+        0.f, 1.f,
+        -1.f, -1.f,
+        1.f, -1.f
+    };
+
+    GLuint myBuffID;
+    glGenBuffers(1, &myBuffID);
+    glBindBuffer(GL_ARRAY_BUFFER, myBuffID);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return true;
 }
@@ -78,18 +114,30 @@ void Application::Render()
     glClear(GL_COLOR_BUFFER_BIT);
     
     Model* pyramid = ResourceManager::Get().Get<Model>("pyramid.obj");
-    pyramid->vertexAttributes.Bind();
-    pyramid->vbo.Bind(GL_ARRAY_BUFFER);
-    pyramid->vbo.SetData(GL_ARRAY_BUFFER, sizeof(Vertex) * pyramid->vertices.size(), pyramid->vertices.data(), GL_STATIC_DRAW);
+    glViewport(0, 0, 640, 480);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 
-    pyramid->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
-    pyramid->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * pyramid->indexes.size(), pyramid->indexes.data(), GL_STATIC_DRAW);
-    pyramid->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
-    pyramid->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(3 * sizeof(float)));
-    pyramid->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)(6 * sizeof(float)));
+    //glBindVertexArray(m_VAO);
+    //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, nullptr);
 
-    pyramid->vertexAttributes.Bind();
 
+
+
+
+
+
+
+    //pyramid->vertexAttributes.Bind();
+    //pyramid->vbo.Bind(GL_ARRAY_BUFFER);
+    //pyramid->vbo.SetData(GL_ARRAY_BUFFER, sizeof(Vertex) * pyramid->vertices.size(), pyramid->vertices.data(), GL_STATIC_DRAW);
+
+    //pyramid->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
+    //pyramid->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * pyramid->indexes.size(), pyramid->indexes.data(), GL_STATIC_DRAW);
+    //pyramid->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
+    //pyramid->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(3 * sizeof(float)));
+    //pyramid->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)(6 * sizeof(float)));
+
+    //pyramid->vertexAttributes.Bind();
 }
 
 void Application::SetWindowSize(float width, float height)
