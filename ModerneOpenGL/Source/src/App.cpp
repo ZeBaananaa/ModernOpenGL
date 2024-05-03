@@ -132,7 +132,7 @@ void Application::RotationMouse()
 	if (InputHandler::IsMousePressed(GLFW_MOUSE_BUTTON_2))
 	{
 		/* Invert input direction to make movements more intuitive & user-friendly */
-		cam->Rotation(-dirMouse.x / 500.f, Vector3D::axeY, cam->GetEye());
+		cam->Rotation(dirMouse.x / 500.f, Vector3D::axeY, cam->GetEye());
 		cam->Rotation(-dirMouse.y / 500.f, localAxisX3D, cam->GetEye());
 	}
 	Application::oldMousePos = newMousePos;

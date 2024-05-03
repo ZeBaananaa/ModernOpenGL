@@ -1146,11 +1146,11 @@ Matrix4x4 ViewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3
 	Vector3D f = Normalize(forward);
 	Vector3D r = Normalize(CrossProduct(f, up));
 	Vector3D u = Normalize(CrossProduct(r, f));
-	r.Opposite();
+
 	return { {r.x,u.x,f.x,0.f}
 		, {r.y,u.y,f.y,0.f}
 		, {r.z,u.z,f.z,0.f}
-		, {DotProduct(r,eye),DotProduct(u,eye),DotProduct(f,eye),1.f} };
+		, {-DotProduct(r,eye),-DotProduct(u,eye),-DotProduct(f,eye),1.f} };
 }
 
 Matrix4x4 FrustumMatrix(float left, float right, float bottom, float top, float near, float far)

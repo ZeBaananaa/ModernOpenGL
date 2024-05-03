@@ -62,12 +62,12 @@ void Camera::CheckMoveInput()
     if (InputHandler::IsKeyDown(GLFW_KEY_UP) || InputHandler::IsKeyPressed(GLFW_KEY_UP))
     {
         //front
-        Move(Product(GetDirection(), -movementSpeed));
+        Move(Product(GetDirection(), movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_DOWN) || InputHandler::IsKeyPressed(GLFW_KEY_DOWN))
     {
         //back
-        Move(Product(GetDirection(), movementSpeed));
+        Move(Product(GetDirection(), -movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_A) || InputHandler::IsKeyPressed(GLFW_KEY_A))
     {
@@ -79,9 +79,6 @@ void Camera::CheckMoveInput()
         //down
         Move(Product(Vector3D::axeY, -movementSpeed));
     }
-
-    //std::cout << "Position : " << center.ToString() << std::endl;
-    //std::cout << "Direction : " << eye.ToString() << std::endl;
 }
 
 void Camera::Move(const Vector3D& t)
@@ -109,7 +106,7 @@ Vector3D Camera::GetCenter()
 
 Vector3D Camera::GetDirection()
 {
-    Vector3D direction(eye, center);
+    Vector3D direction(center,eye);
     return Normalize(direction);
 }
 

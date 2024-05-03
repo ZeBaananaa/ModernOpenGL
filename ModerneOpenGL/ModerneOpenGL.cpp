@@ -75,9 +75,9 @@ int main()
 
 	SceneGraph::Get();
 
-	GameObject* c1 = new GameObject({ -5,0,0 }, Vector3D::zero, Vector3D::one * 3, "sphere.obj");
-	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one*2, "Alien.obj");
-	GameObject* c2 = new GameObject({ 5,0,0 }, Vector3D::zero, Vector3D::one, "pyramid.obj");
+	GameObject* c1 = new GameObject({ -5,0,0 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj");
+	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one*0.1f, "Alien.obj");
+	GameObject* c2 = new GameObject({ 5,0,0 }, {90,0,0}, Vector3D::one, "pyramid.obj");
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))

@@ -28,9 +28,7 @@ void MeshRenderer::Update()
 		model->vertexAttributes.Bind();
 		MVP = Camera::Get().GetVPMatrix() * gameObject->transform->GetGlobalTransform();
 
-		float tab[16];
-		Matrix4x4ToFloat(MVP, tab);
-		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "MVP"), 1, false, tab); // True = transposed
+		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "MVP"), 1, false, &MVP.col1.x); // True = transposed
 
 		glDrawElements(GL_TRIANGLES, model->indexes.size(), GL_UNSIGNED_INT, 0);
 	}
