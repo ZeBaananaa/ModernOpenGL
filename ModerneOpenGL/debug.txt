@@ -1,0 +1,6 @@
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource pyramid.obj already exist ?
+
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : pyramid.obj doesn't exist.
+
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : cube.obj doesn't exist.
+

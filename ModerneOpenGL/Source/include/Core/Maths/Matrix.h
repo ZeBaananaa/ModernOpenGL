@@ -304,7 +304,7 @@ Matrix4x4 Rotation_Matrix4x4(const Vector3D& rotation);
 //Gives the scaling matrix create by the vector3D in params 
 Matrix4x4 Scaling_Matrix4x4(const Vector3D& scaling);
 //Gives the model matrix of an object. Rotation in radian or degree.
-Matrix4x4 TRS(const Vector3D& translation, const Vector3D& rotation, const Vector3D& scaling, bool rad = true);
+Matrix4x4 TRS(const Vector3D& translation, const Vector3D& rotation, const Vector3D& scaling, bool rad = false);
 
 //m1 + m2
 Matrix4x4 operator+(const Matrix4x4& m1, const Matrix4x4& m2);

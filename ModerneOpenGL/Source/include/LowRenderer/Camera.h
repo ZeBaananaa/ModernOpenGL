@@ -12,7 +12,7 @@ public:
 	void Update();
 	void CheckMoveInput();
 	void Move(const Vector3D& t);
-	void Rotation(float angle, Vector3D axis, Vector3D anchor = Vector3D::origin3D);
+	void Rotation(float angle, Vector3D axis, Vector3D anchor = Vector3D::zero);
 
 	Vector3D GetEye();
 	Vector3D GetCenter();

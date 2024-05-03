@@ -31,7 +31,7 @@ x86/
 [Aa][Rr][Mm]64/
 bld/
 [Bb]in/
-[Oo]bj/
+#[Oo]bj/
 [Ll]og/
 [Ll]ogs/
 libs/glew/doc/
@@ -85,9 +85,9 @@ StyleCopReport.xml
 *_h.h
 *.ilk
 *.meta
-*.obj
-!ModerneOpenGL/Assets/Meshes/pyramid.obj
-!ModerneOpenGL/Assets/Meshes/AlienAnimal.obj
+#*.obj
+
+
 
 *.iobj
 *.pch

@@ -12,9 +12,13 @@
     <ClCompile Include="Source\src\glad.c" />
     <ClCompile Include="Source\src\Resources\Model.cpp" />
     <ClCompile Include="Source\src\Resources\ResourcesManager.cpp" />
-    <ClCompile Include="Source\include\Resources\Vertex.cpp" />
     <ClCompile Include="Source\src\Resources\Shader.cpp" />
     <ClCompile Include="Source\src\Utils\Time.cpp" />
+    <ClCompile Include="Source\src\Scene\Transform.cpp" />
+    <ClCompile Include="Source\src\Scene\SceneGraph.cpp" />
+    <ClCompile Include="Source\src\Scene\GameObject.cpp" />
+    <ClCompile Include="Source\src\Resources\Vertex.cpp" />
+    <ClCompile Include="Source\src\Scene\MeshRenderer.cpp" />
     <ClCompile Include="Source\src\Utils\WindowHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +44,12 @@
     <ClInclude Include="Source\include\Resources\Vertex.h" />
     <ClInclude Include="Source\include\Utils\Time.h" />
     <ClInclude Include="Source\include\Utils\WindowHandler.h" />
+    <ClInclude Include="Source\include\Scene\Transform.h" />
+    <ClInclude Include="Source\include\Scene\SceneGraph.h" />
+    <ClInclude Include="Source\include\Scene\GameObject.h" />
+    <ClInclude Include="Source\include\Scene\IComponent.h" />
+    <ClInclude Include="Source\include\Scene\MeshRenderer.h" />
+    <ClInclude Include="Source\include\Scene\Components.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

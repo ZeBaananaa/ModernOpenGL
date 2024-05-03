@@ -13,6 +13,10 @@
 #include <glad/glad.h>
 #include <iostream>
 
+#include "GameObject.h"
+#include "Components.h"
+#include "SceneGraph.h"
+
 void Destroy()
 {
 	Application::Get().Terminate();
@@ -22,7 +26,8 @@ void Destroy()
 	Application::Destroy();
 	Camera::Destroy();
 	ResourceManager::Destroy();
-	Log::Get().Destroy();
+	Log::Destroy();
+	SceneGraph::Destroy();
 }
 
 void InitWindow()
@@ -61,11 +66,16 @@ void InitWindow()
 	Application::Get().window = window;
 }
 
+
 int main()
 {
 	InitWindow();
 
 	Application::Get().Initialise();
+
+	SceneGraph::Get();
+
+	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one, "cube.obj");
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
@@ -79,6 +89,7 @@ int main()
 		/* Poll for and process events */
 		glfwPollEvents();
 	}
+
 	Destroy();
 	return 0;
 }

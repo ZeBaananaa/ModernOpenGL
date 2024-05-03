@@ -68,11 +68,11 @@ public:
 	//Add this and t
 	void Translate(const Vector2D& t);
 	//Angle in radian ; anchor default = {0,0}
-	void Rotate(float angle, const Vector2D& anchor = origin2D);
+	void Rotate(float angle, const Vector2D& anchor = zero);
 	//Scaling XY with this scale ; anchor default = {0,0}
-	void Scale(float scaleXY, const Vector2D& anchor = origin2D);
+	void Scale(float scaleXY, const Vector2D& anchor = zero);
 	//Scaling XY with the rigth values of the scale vector
-	void Scale(const Vector2D& scaleXY, const Vector2D& anchor = origin2D);
+	void Scale(const Vector2D& scaleXY, const Vector2D& anchor = zero);
 
 	//this = Add(this,v2) 
 	void operator+=(const Vector2D& v2);
@@ -91,7 +91,9 @@ public:
 	float& operator[](int index);
 
 	//{0,0}
-	static Vector2D origin2D;
+	static Vector2D zero;
+	//{1,1}
+	static Vector2D one;
 	//{1,0}
 	static Vector2D axeX;
 	//{0,1}
@@ -132,11 +134,11 @@ float GetAngleSigned(const Vector2D& v1, const Vector2D& v2);
 //Return vector v + t
 Vector2D Translate(const Vector2D& v, const Vector2D& t);
 //Return vector v with a rotation of the angle in radian from the anchor (default = {0,0})
-Vector2D Rotate(const Vector2D& v, float angle, const Vector2D& anchor = Vector2D::origin2D);
+Vector2D Rotate(const Vector2D& v, float angle, const Vector2D& anchor = Vector2D::zero);
 //Return vector v scaled by the scaleXY from the anchor (default = {0,0})
-Vector2D Scale(const Vector2D& v, float scaleXY, const Vector2D& anchor = Vector2D::origin2D);
+Vector2D Scale(const Vector2D& v, float scaleXY, const Vector2D& anchor = Vector2D::zero);
 //Return vector v scaled by the rigth values of the scaleXY vector from the anchor (default = {0,0})
-Vector2D Scale(const Vector2D& v, const Vector2D& scaleXY, const Vector2D& anchor = Vector2D::origin2D);
+Vector2D Scale(const Vector2D& v, const Vector2D& scaleXY, const Vector2D& anchor = Vector2D::zero);
 
 //Return vector v1 + v2
 Vector2D operator+(const Vector2D& v1, const Vector2D& v2);
@@ -217,11 +219,11 @@ public:
 	//Add this and t
 	void Translate(const Vector3D& t);
 	//Angle in radian ; give the axis of the rotation;  anchor default = {0,0,0}
-	void Rotate(float angle, const Vector3D& axis, const Vector3D& anchor = origin3D);
+	void Rotate(float angle, const Vector3D& axis, const Vector3D& anchor = zero);
 	//Scaling XYZ with this scale ; anchor default = {0,0}
-	void Scale(float scale, const Vector3D& anchor = origin3D);
+	void Scale(float scale, const Vector3D& anchor = zero);
 	//Scaling XYZ with the rigth values of the scale vector
-	void Scale(const Vector3D& scaleXYZ, const Vector3D& anchor = origin3D);
+	void Scale(const Vector3D& scaleXYZ, const Vector3D& anchor = zero);
 
 	//this = Add(this,v2) 
 	void operator+=(const Vector3D& v2);
@@ -240,7 +242,9 @@ public:
 	float& operator[](int index);
 
 	//{0,0,0}
-	static Vector3D origin3D;
+	static Vector3D zero;
+	//{1,1,1}
+	static Vector3D one;
 	//{1,0,0}
 	static Vector3D axeX;
 	//{0,1,0}
@@ -280,11 +284,11 @@ float GetAngle(const Vector3D& v1, const Vector3D& v2);
 //Return vector v + t
 Vector3D Translate(const Vector3D& v, const Vector3D& t);
 //Return vector v with a rotation of the angle in radian from the anchor (default = {0,0,0}) around the given axis
-Vector3D Rotate(const Vector3D& v, float angle, const Vector3D& axis, const Vector3D& anchor = Vector3D::origin3D);
+Vector3D Rotate(const Vector3D& v, float angle, const Vector3D& axis, const Vector3D& anchor = Vector3D::zero);
 //Return vector v scaled by the scaleXYZ from the anchor (default = {0,0,0})
-Vector3D Scale(const Vector3D& v, float scale, const Vector3D& anchor = Vector3D::origin3D);
+Vector3D Scale(const Vector3D& v, float scale, const Vector3D& anchor = Vector3D::zero);
 //Return vector v scaled by the rigth values of the scaleXYZ vector from the anchor (default = {0,0,0})
-Vector3D Scale(const Vector3D& v, const Vector3D& scaleXYZ, const Vector3D& anchor = Vector3D::origin3D);
+Vector3D Scale(const Vector3D& v, const Vector3D& scaleXYZ, const Vector3D& anchor = Vector3D::zero);
 
 //Return vector v1 + v2
 Vector3D operator+(const Vector3D& v1, const Vector3D& v2);
@@ -373,7 +377,9 @@ public:
 	float& operator[](int index);
 
 	//{0,0,0,0}
-	static Vector4D origin4D;
+	static Vector4D zero;
+	//{1,1,1,1}
+	static Vector4D one;
 	//{1,0,0,0}
 	static Vector4D axeX;
 	//{0,1,0,0}

@@ -1,5 +1,6 @@
 #include "Shader.h"
 #include "glad/glad.h"
+#include <string>
 
 Shader::Shader()
 {
@@ -35,7 +36,8 @@ bool Shader::SetVertexShader(std::filesystem::path const& filename)
 		if (!success)
 		{
 			glGetShaderInfoLog(vertexShader, sizeof(log), NULL, log);
-			DEBUG_LOG("ERROR COMPILING VERTEX SHADER %c\n", log);
+			std::string l = log;
+			DEBUG_LOG("ERROR COMPILING VERTEX SHADER "+ l + "\n");
 			return false;
 		}
 		else
@@ -68,7 +70,8 @@ bool Shader::SetFragmentShader(std::filesystem::path const& filename)
 		if (!success)
 		{
 			glGetShaderInfoLog(fragmentShader, sizeof(log), NULL, log);
-			DEBUG_LOG("ERROR COMPILING VERTEX SHADER %c\n", log);
+			std::string l = log;
+			DEBUG_LOG("ERROR COMPILING VERTEX SHADER" + l +"\n");
 			return false;
 		}
 		else
@@ -97,7 +100,8 @@ bool Shader::Link()
 		if (!success)
 		{
 			glGetProgramInfoLog(shaderProgram, sizeof(log), NULL, log);
-			DEBUG_LOG("ERROR LINKING SHADER %c\n", log);
+			std::string l = log;
+			DEBUG_LOG("ERROR LINKING SHADER "+l+"\n");
 			return false;
 		}
 		else

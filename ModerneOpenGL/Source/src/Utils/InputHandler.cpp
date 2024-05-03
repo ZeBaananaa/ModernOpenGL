@@ -10,6 +10,8 @@ InputHandler::~InputHandler()
 	m_CurrentKeyStatus.clear();
 	m_MouseButtonKeyStatus.clear();
 
+	m_CurrentKeyStatus.clear();
+	m_MouseButtonKeyStatus.clear();
 	delete &m_CurrentKeyStatus;
 	delete &m_MouseButtonKeyStatus;
 }
