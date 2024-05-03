@@ -1071,7 +1071,7 @@ Matrix4x4 TRS(const Vector3D& translation, const Vector3D& rotation, const Vecto
 	if (rad == false)
 		rota = rota * PI / 180;
 	
-	return  Translation_Matrix4x4(translation) * Rotation_Matrix4x4(rota) *Scaling_Matrix4x4(scaling);
+	return  Translation_Matrix4x4(translation) * Rotation_Matrix4x4(rota) * Scaling_Matrix4x4(scaling);
 }
 
 Matrix4x4 operator+(const Matrix4x4& m1, const Matrix4x4& m2)
@@ -1150,7 +1150,7 @@ Matrix4x4 ViewMatrix(const Vector3D& eye, const Vector3D& forward, const Vector3
 	return { {r.x,u.x,f.x,0.f}
 		, {r.y,u.y,f.y,0.f}
 		, {r.z,u.z,f.z,0.f}
-		, {-DotProduct(r,eye),-DotProduct(u,eye),-DotProduct(f,eye),1.f} };
+		, {DotProduct(r,eye),DotProduct(u,eye),DotProduct(f,eye),1.f} };
 }
 
 Matrix4x4 FrustumMatrix(float left, float right, float bottom, float top, float near, float far)

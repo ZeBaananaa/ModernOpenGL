@@ -99,7 +99,7 @@ void Model::Load(std::string nameObjFile)
                             vertexInOrder += str[i];
                         }
                     }
-                    Vector3D currentVertexPosition = posObj[std::stoi(vertexInOrder) - 1.f];
+                    Vector3D currentVertexPosition = posObj[std::stoull(vertexInOrder) - 1];
                     vertex.position.x = currentVertexPosition.x; vertex.position.y = currentVertexPosition.y; vertex.position.z = currentVertexPosition.z;
 
                     ++i;
@@ -111,7 +111,7 @@ void Model::Load(std::string nameObjFile)
                         else
                             textCoordsInOrder += str[i];
                     }
-                    Vector2D currentVertexUV = textCoordObj[std::stoi(textCoordsInOrder) - 1.f];
+                    Vector2D currentVertexUV = textCoordObj[std::stoull(textCoordsInOrder) - 1];
                     vertex.textureUV.x = currentVertexUV.x; vertex.textureUV.y = currentVertexUV.y;
 
 
@@ -124,7 +124,7 @@ void Model::Load(std::string nameObjFile)
                         else
                             normalInOrder += str[i];
                     }
-                    Vector3D currentVertexNormal = normalObj[std::stoi(normalInOrder) - 1.f];
+                    Vector3D currentVertexNormal = normalObj[std::stoull(normalInOrder) - 1];
                     vertex.normal.x = currentVertexNormal.x; vertex.normal.y = currentVertexNormal.y; vertex.normal.z = currentVertexNormal.z;
 
 
@@ -148,7 +148,7 @@ void Model::Load(std::string nameObjFile)
                 for (int indexInPoly = 3; indexInPoly < nbVertexInPoly; ++indexInPoly)
                 {
                     indexes.push_back(indexVertexPolygon[0]);
-                    indexes.push_back(indexVertexPolygon[indexInPoly - 1.f]);
+                    indexes.push_back(indexVertexPolygon[indexInPoly - 1]);
                     indexes.push_back(indexVertexPolygon[indexInPoly]);
                 }
             }

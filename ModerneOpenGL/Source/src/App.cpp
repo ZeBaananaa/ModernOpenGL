@@ -37,13 +37,16 @@ void Application::InitCallbacks()
 	glfwSetKeyCallback(Application::window, InputHandler::KeyboardCallback);
 	glfwSetCursorPosCallback(Application::window, InputHandler::MouseCursorCallback);
 	glfwSetMouseButtonCallback(Application::window, InputHandler::MouseButtonCallback);
-	glfwSetWindowSizeCallback(Application::window, WindowHandler::);
+
+	/* Window resizing & framebuffer callbacks */
+	glfwSetWindowSizeCallback(Application::window, WindowHandler::WindowResizeCallback);
+	glfwSetFramebufferSizeCallback(Application::window, WindowHandler::BufferResizeCallback);
 }
 
 void InitAlien()
 {
-	ResourceManager::Get().Create<Model>("Alien.obj");
-	Model* alien = ResourceManager::Get().Get<Model>("Alien.obj");
+	ResourceManager::Get().Create<Model>("pyramid.obj");
+	Model* alien = ResourceManager::Get().Get<Model>("pyramid.obj");
 
 	alien->vertexAttributes.Bind();
 	alien->vbo.Bind(GL_ARRAY_BUFFER);
@@ -91,16 +94,19 @@ void Application::Update()
 void Application::Render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glUseProgram(shader.GetProgram());
-	Model* alien = ResourceManager::Get().Get<Model>("Alien.obj");
 
-	Matrix4x4 MVP = Identity_Matrix4x4() * Camera::Get().GetVPMatrix();
+	// Set background color to blue
+	glClearColor(0.15f, 0.15f, 1.f, 1.f);
+
+	glUseProgram(shader.GetProgram());
+	Model* alien = ResourceManager::Get().Get<Model>("pyramid.obj");
+
+	Matrix4x4 MVP =  Camera::Get().GetVPMatrix() * TRS({ -10, -10, -10 }, { 0, 0, 0 }, { 10, 10, 10 });
 	float tab[16];
 	Matrix4x4ToFloat(MVP, tab);
 	glUniformMatrix4fv(glGetUniformLocation(shader.GetProgram(), "MVP"), 1, false, tab);
 
 	glDrawElements(GL_TRIANGLES, alien->indexes.size(), GL_UNSIGNED_INT, 0);
-
 }
 
 void Application::SetWindowSize(float width, float height)
@@ -122,7 +128,7 @@ void Application::RotationMouse()
 
 	if (InputHandler::IsMousePressed(GLFW_MOUSE_BUTTON_2))
 	{
-
+		/* Invert input direction to make movements more intuitive & user-friendly */
 		cam->Rotation(-dirMouse.x / 500.f, Vector3D::axeY, cam->GetEye());
 		cam->Rotation(-dirMouse.y / 500.f, localAxisX3D, cam->GetEye());
 	}

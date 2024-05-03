@@ -15,8 +15,8 @@ Camera& Camera::Get()
 
 Camera::Camera()
 {
-    eye = { 0.f,5.f,35.f };
-    center = { 0.f,5.f,30.f };
+    eye = { 0.f, 5.f, 30.f };
+    center = { 0.f, 5.f,35.f  };
     projectionMatrix = GetProjectionMatrix();
 }
 
@@ -100,6 +100,11 @@ void Camera::Rotation(float angle, Vector3D axis, Vector3D anchor)
 Vector3D Camera::GetEye()
 {
     return eye;
+}
+
+Vector3D Camera::GetCenter()
+{
+    return center;
 }
 
 Vector3D Camera::GetDirection()

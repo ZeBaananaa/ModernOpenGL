@@ -1,10 +1,12 @@
 #include "Utils/WindowHandler.h"
-
-Vector2D WindowHandler::currentWindowSize = Vector2D(1280, 720);
+#include <glad/glad.h>
 
 void WindowHandler::WindowResizeCallback(GLFWwindow* window, int width, int height)
 {
-	currentWindowSize = Vector2D(width, height);
-
 	Camera::Get().recalculateProjection = true;
+}
+
+void WindowHandler::BufferResizeCallback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
 }

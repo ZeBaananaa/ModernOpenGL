@@ -10,7 +10,5 @@ public:
     ~WindowHandler() = default;
 
     static void WindowResizeCallback(GLFWwindow* window, int width, int height);
-
-private:
-    static Vector2D currentWindowSize;
+    static void BufferResizeCallback(GLFWwindow* window, int width, int height);
 };

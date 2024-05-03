@@ -51,7 +51,12 @@ void InitWindow()
 		return;
 	}
 
+	/* Enable Depth Testing */
 	glEnable(GL_DEPTH_TEST);
+
+	/* Enable face culling & set it to back faces (Helps improve performances) */
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
 
 	Application::Get().window = window;
 }
@@ -65,9 +70,6 @@ int main()
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{
-		// Set background color to blue
-		glClearColor(0.15f, 0.15f, 1.f, 1.f);
-
 		/* Render here */
 		Application::Get().Update();
 

@@ -15,6 +15,7 @@ public:
 	void Rotation(float angle, Vector3D axis, Vector3D anchor = Vector3D::origin3D);
 
 	Vector3D GetEye();
+	Vector3D GetCenter();
 	Vector3D GetDirection();
 	Matrix4x4 GetViewMatrix();
 	Matrix4x4 GetProjectionMatrix();
