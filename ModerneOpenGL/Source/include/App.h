@@ -26,11 +26,10 @@ public:
     void Update();
     void Render();
 
-    void SetWindowSize(float width, float height);
-
     static Vector2D oldMousePos;
     void RotationMouse();
 
+    Shader shader;
 private:
     static Application* instance;
     Application() = default;
@@ -39,21 +38,4 @@ private:
     void InitResources();
     void InitCallbacks();
 
-    Shader shader;
 };
-
-//Vertex g_Triangles[] = { Vertex{{-0.5f,-0.5f},   {1.f,0.f,0.f}},
-//                            Vertex{{0.5f,-0.5f},    {0.f,1.f,0.f}},
-//                            Vertex{{0.f,0.5f},      {0.f,0.f,1.f}}
-//};
-//
-//Vertex sablier[] = { g_Triangles[0],     g_Triangles[1],    g_Triangles[2],
-//
-//                    Vertex{{-0.5f,1.f},   {1.f,0.f,0.f}},
-//                    Vertex{{0.5f,1.f},    {0.f,1.f,0.f}},
-//                    Vertex{{0.f,0.25f},      {0.f,0.f,1.f}}
-//};
-//
-//uint16_t g_Indices[] = { 0,1,2 };
-//
-//uint16_t g_IndicesSablier[] = { 0,1,5,4,3,5 };

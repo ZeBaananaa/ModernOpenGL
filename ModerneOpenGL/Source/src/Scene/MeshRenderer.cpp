@@ -2,6 +2,7 @@
 #include "ResourcesManager.h"
 #include "GameObject.h"
 #include "Camera.h"
+#include "App.h"
 
 MeshRenderer::MeshRenderer(GameObject* gameObject)
 {
@@ -24,8 +25,14 @@ void MeshRenderer::Update()
 {
 	if (model)
 	{
+		model->vertexAttributes.Bind();
 		MVP = Camera::Get().GetVPMatrix() * gameObject->transform->GetGlobalTransform();
-		// model->draw
+
+		float tab[16];
+		Matrix4x4ToFloat(MVP, tab);
+		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "MVP"), 1, false, tab); // True = transposed
+
+		glDrawElements(GL_TRIANGLES, model->indexes.size(), GL_UNSIGNED_INT, 0);
 	}
 }
 

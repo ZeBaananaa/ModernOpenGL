@@ -14,6 +14,7 @@ public:
 	void SetZero();
 
 	void Update();
+	void Render();
 	void Delete();
 
 	void SetParent(Transform* parent);

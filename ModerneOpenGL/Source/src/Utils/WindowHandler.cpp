@@ -1,8 +1,9 @@
 #include "Utils/WindowHandler.h"
-#include <glad/glad.h>
 
 void WindowHandler::WindowResizeCallback(GLFWwindow* window, int width, int height)
 {
+	Application::Get().m_width = width;
+	Application::Get().m_height = height;
 	Camera::Get().recalculateProjection = true;
 }
 

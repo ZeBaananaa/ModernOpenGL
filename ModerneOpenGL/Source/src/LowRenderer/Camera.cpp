@@ -16,7 +16,7 @@ Camera& Camera::Get()
 Camera::Camera()
 {
     eye = { 0.f, 5.f, 30.f };
-    center = { 0.f, 5.f,35.f  };
+    center = { 0.f, 5.f, 35.f  };
     projectionMatrix = GetProjectionMatrix();
 }
 
@@ -51,23 +51,23 @@ void Camera::CheckMoveInput()
     {
         //left
         Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
-        Move(Product(localAxisX3D, -movementSpeed));
+        Move(Product(localAxisX3D, movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT) || InputHandler::IsKeyPressed(GLFW_KEY_RIGHT))
     {
         //rigth
         Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
-        Move(Product(localAxisX3D, movementSpeed));
+        Move(Product(localAxisX3D, -movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_UP) || InputHandler::IsKeyPressed(GLFW_KEY_UP))
     {
         //front
-        Move(Product(GetDirection(), movementSpeed));
+        Move(Product(GetDirection(), -movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_DOWN) || InputHandler::IsKeyPressed(GLFW_KEY_DOWN))
     {
         //back
-        Move(Product(GetDirection(), -movementSpeed));
+        Move(Product(GetDirection(), movementSpeed));
     }
     if (InputHandler::IsKeyDown(GLFW_KEY_A) || InputHandler::IsKeyPressed(GLFW_KEY_A))
     {

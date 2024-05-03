@@ -2,6 +2,11 @@
 
 SceneGraph* SceneGraph::instance = nullptr;
 
+void SceneGraph::Render()
+{
+	root->Render();
+}
+
 SceneGraph::SceneGraph()
 {
 	root = new Transform(true);

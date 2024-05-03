@@ -4,6 +4,7 @@
 #include "Model.h"
 #include "Camera.h"
 #include "Utils/Time.h"
+#include "SceneGraph.h"
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
 Application* Application::instance = nullptr;
@@ -43,29 +44,38 @@ void Application::InitCallbacks()
 	glfwSetFramebufferSizeCallback(Application::window, WindowHandler::BufferResizeCallback);
 }
 
-void InitAlien()
+void InitModel(std::string modelName)
 {
-	ResourceManager::Get().Create<Model>("pyramid.obj");
-	Model* alien = ResourceManager::Get().Get<Model>("pyramid.obj");
+	Model* model = ResourceManager::Get().Create<Model>(modelName);
 
-	alien->vertexAttributes.Bind();
-	alien->vbo.Bind(GL_ARRAY_BUFFER);
-	alien->vbo.SetData(GL_ARRAY_BUFFER, sizeof(Vertex) * alien->vertices.size(), alien->vertices.data(), GL_STATIC_DRAW);
+	if (model == nullptr)
+	{
+		DEBUG_LOG("The model (" + modelName + ") doesn't exists!");
+		return;
+	}
 
-	alien->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
-	alien->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * alien->indexes.size(), alien->indexes.data(), GL_STATIC_DRAW);
-	alien->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
-	alien->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(3 * sizeof(float)));
-	alien->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)(6 * sizeof(float)));
+	model->vertexAttributes.Bind();
 
-	alien->vertexAttributes.Bind();
+	model->vbo.Bind(GL_ARRAY_BUFFER);
+	model->vbo.SetData(GL_ARRAY_BUFFER, sizeof(Vertex) * model->vertices.size(), model->vertices.data(), GL_STATIC_DRAW);
+
+	model->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
+	model->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * model->indexes.size(), model->indexes.data(), GL_STATIC_DRAW);
+	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
+	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(3 * sizeof(float)));
+	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)(6 * sizeof(float)));
 }
 
 void Application::InitResources()
 {
-	InitAlien();
-}
+	std::string path = "Assets/Meshes/";
 
+	for (const auto& entry : std::filesystem::directory_iterator(path))
+	{
+		InitModel(entry.path().filename().string());
+		std::cout << entry.path().filename() << std::endl;
+	}
+}
 
 bool Application::Initialise()
 {
@@ -99,23 +109,16 @@ void Application::Render()
 	glClearColor(0.15f, 0.15f, 1.f, 1.f);
 
 	glUseProgram(shader.GetProgram());
-	Model* alien = ResourceManager::Get().Get<Model>("pyramid.obj");
+	SceneGraph::Get().Render();
+	//Model* alien = ResourceManager::Get().Get<Model>("Alien.obj");
 
-	Matrix4x4 MVP =  Camera::Get().GetVPMatrix() * TRS({ -10, -10, -10 }, { 0, 0, 0 }, { 10, 10, 10 });
-	float tab[16];
-	Matrix4x4ToFloat(MVP, tab);
-	glUniformMatrix4fv(glGetUniformLocation(shader.GetProgram(), "MVP"), 1, false, tab);
+	//Matrix4x4 MVP =  Camera::Get().GetVPMatrix() * TRS({ -10, -10, -10 }, { 0, 0, 0 }, { 10, 10, 10 });
+	//float tab[16];
+	//Matrix4x4ToFloat(MVP, tab);
+	//glUniformMatrix4fv(glGetUniformLocation(shader.GetProgram(), "MVP"), 1, false, tab);
 
-	glDrawElements(GL_TRIANGLES, alien->indexes.size(), GL_UNSIGNED_INT, 0);
+	//glDrawElements(GL_TRIANGLES, alien->indexes.size(), GL_UNSIGNED_INT, 0);
 }
-
-void Application::SetWindowSize(float width, float height)
-{
-	m_width = width;
-	m_height = height;
-	Camera::Get().recalculateProjection = true;
-}
-
 
 void Application::RotationMouse()
 {

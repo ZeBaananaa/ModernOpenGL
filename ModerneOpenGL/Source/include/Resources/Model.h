@@ -19,7 +19,6 @@ public:
 	std::vector<uint32_t> indexes;
 	
 	void UnLoad() override;
-	Model* InitBuffer();
 
 private:
 	class Buffer

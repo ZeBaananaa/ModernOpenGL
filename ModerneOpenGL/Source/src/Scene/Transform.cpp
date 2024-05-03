@@ -80,13 +80,32 @@ void Transform::SetZero()
 	globalTransform = Identity_Matrix4x4();
 }
 
+
+
 void Transform::Update()
 {
-	gameObject->Update();
+	if(gameObject)
+		gameObject->Update();
 
 	for (size_t i = 0; i < children.size(); i++)
 	{
 		children[i]->gameObject->Update();
+	}
+}
+
+void Transform::Render()
+{
+	if (gameObject)
+	{
+		MeshRenderer* mesh = gameObject->GetComponent<MeshRenderer>();
+		if (mesh)
+			mesh->Update();
+	}
+		
+
+	for (size_t i = 0; i < children.size(); i++)
+	{
+		children[i]->gameObject->transform->Render();
 	}
 }
 

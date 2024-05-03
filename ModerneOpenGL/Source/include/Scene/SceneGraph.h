@@ -10,6 +10,8 @@ public:
 
 	Transform* root;
 
+	void Render();
+
 private:
 	SceneGraph();
 	static SceneGraph* instance;
