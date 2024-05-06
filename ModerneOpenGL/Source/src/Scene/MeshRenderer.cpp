@@ -27,8 +27,13 @@ void MeshRenderer::Update()
 	{
 		model->vertexAttributes.Bind();
 		MVP = Camera::Get().GetVPMatrix() * gameObject->transform->GetGlobalTransform();
-
 		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "MVP"), 1, false, &MVP.col1.x); // True = transposed
+
+		Matrix4x4 modelMatrix = gameObject->transform->GetGlobalTransform();
+		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "modelMatrix"), 1, false, &modelMatrix.col1.x);
+
+		Vector3D campos = Camera::Get().GetCenter();
+		glUniform3fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "viewPos"),1, &campos[0]);
 
 		glDrawElements(GL_TRIANGLES, model->indexes.size(), GL_UNSIGNED_INT, 0);
 	}

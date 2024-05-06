@@ -6,25 +6,26 @@ in layout (location = 2) vec3 normal;
 in layout (location = 3) vec3 color;
 
 uniform mat4x4 MVP;
-uniform mat4 normalMat; // transpose inverte MVP
+uniform mat4 modelMatrix;
 
-out PosOut
+out VertexOut
 {
-    vec3 newPos;
+    vec3 fragPos;
     vec3 normalPos;
     vec2 uvPos;
-} posOut;
+    vec4 fragColor;
+} vertexOut;
 
-out vec3 colorOut;
 // ligne - colonne 
 
 void main()
 {
-    posOut.uvPos = uv;
-    vec4 vec4Normal = vec4(normal.x, normal.y, normal.z, 1.f);
-    vec4 posVec4 = vec4(pos.x, pos.y, pos.z, 1.f);
-    posOut.normalPos = (normalMat * vec4Normal).xyz;
+    vec4 vec4Normal = vec4(normal, 1.f);
+    vec4 posVec4 = vec4(pos, 1.f);
     gl_Position = (MVP * posVec4);
-    posOut.newPos = gl_Position.xyz;
-    colorOut = vec3(1.f, 1.f, 1.f);
+
+    vertexOut.fragPos = vec3(modelMatrix * posVec4);
+    vertexOut.normalPos = mat3(transpose(inverse(modelMatrix))) * normal;
+    vertexOut.uvPos = uv;
+    vertexOut.fragColor = vec4(color,1.f);
 }
