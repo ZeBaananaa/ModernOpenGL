@@ -1,16 +1,43 @@
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource Alien.obj already exist ?
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Alien.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : Alien.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Alien.obj doesn't exist.
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource cube.obj already exist ?
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource cube.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : cube.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : cube.obj doesn't exist.
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource pyramid.obj already exist ?
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource pyramid.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : pyramid.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : pyramid.obj doesn't exist.
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(46): Does the resource sphere.obj already exist ?
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource shield.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : sphere.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : shield.obj doesn't exist.
 
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource sphere.obj already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : sphere.obj doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_obj.obj already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_obj.obj doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource alien.jpg already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : alien.jpg doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource baboon.jpg already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : baboon.jpg doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource black.png already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : black.png doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource shield.png already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : shield.png doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_Body.jpg already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_Body.

@@ -5,11 +5,14 @@
 #include "MathPerso.h"
 #include "Shader.h"
 #include "Utils/WindowHandler.h"
+#include "Light.h"
 
 class Application
 {
 public:
      ~Application() = default;
+
+     SpotLight* spot;
 
      static Application& Get();
      static void Destroy();

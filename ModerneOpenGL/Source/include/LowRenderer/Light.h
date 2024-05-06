@@ -31,4 +31,6 @@ struct SpotLight
 	float quadratic;
 	float cutoff;
 	float outerCutOff;
+
+	GLuint ubo;
 };

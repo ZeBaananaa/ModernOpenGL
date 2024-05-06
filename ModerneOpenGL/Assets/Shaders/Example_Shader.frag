@@ -28,6 +28,8 @@ layout (std140,binding = 4) uniform SpotLight
 	float u_CutOff;
 	float u_OuterCutOff;
 
+	int id;
+
 };
 
 //uniform int u_LightCount;
@@ -37,9 +39,18 @@ layout (std140,binding = 4) uniform SpotLight
 //};
 
 out vec4 FragColor;
+in PosOut
+{
+    vec3 newPos;
+    vec3 normalPos;
+    vec2 uvPos;
+} posIn;
+
+uniform sampler2D text;
 
 void main()
 {
+	vec4 textColor = texture(text, posIn.uvPos);
 	//ambient
 	vec3 ambient =  vec3(u_Ambient) * vec3(u_Color);
 
@@ -61,6 +72,6 @@ void main()
 	//float attenuation = 1.0/(u_Constant+u_Linear*dist+u_Quadratic*dist*dist);
 	//vec3 halfwayDir = normalize(lightDir+viewDir);
 
-	vec3 result =  (ambient + diffuse + specular) * vec3(vertexIn.fragColor);
+	vec3 result = (ambient + diffuse + specular) * vec3(textColor);
 	FragColor = vec4(result,1.0);
 }

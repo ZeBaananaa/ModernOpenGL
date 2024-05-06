@@ -6,8 +6,8 @@
 struct Vertex
 {
 	Vector3D position;
-	Vector3D normal;
 	Vector2D textureUV;
+	Vector3D normal;
 
 	//GLfloat color[];
 };

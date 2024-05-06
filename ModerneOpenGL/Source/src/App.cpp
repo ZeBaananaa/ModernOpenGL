@@ -5,6 +5,8 @@
 #include "Camera.h"
 #include "Utils/Time.h"
 #include "SceneGraph.h"
+#include <Resources/Texture.h>
+#include "Light.h"
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
 Application* Application::instance = nullptr;
@@ -20,6 +22,9 @@ void Application::Destroy()
 {
 	if (instance)
 	{
+		if (instance->spot)
+			delete instance->spot;
+
 		delete instance;
 		instance = nullptr;
 	}
@@ -30,6 +35,20 @@ void Application::InitShaders()
 	shader.SetVertexShader("Assets/Shaders/Example_Shader.vert");
 	shader.SetFragmentShader("Assets/Shaders/Example_Shader.frag");
 	shader.Link();
+
+
+	spot = new SpotLight();
+	spot->lightColor = Vector4D::one;
+	spot->lightPosition = { 0,5,0,1 };
+	spot->lightDirection = { 0,-1,0,0 };
+
+	spot->lightAmbientColor = { 1,1,1,1 };
+	spot->lightDiffuseColor = { 1,1,1,1 };
+	spot->lightSpecularColor = { 1,1,1,1 };
+
+	glGenBuffers(1, &spot->ubo);
+	glBufferData(spot->ubo, sizeof(SpotLight), &spot, GL_STATIC_DRAW);
+	glBindBufferBase(GL_UNIFORM_BUFFER, 4, spot->ubo);
 }
 
 void Application::InitCallbacks()
@@ -62,8 +81,9 @@ void InitModel(std::string modelName)
 	model->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
 	model->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * model->indexes.size(), model->indexes.data(), GL_STATIC_DRAW);
 	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
-	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(3 * sizeof(float)));
-	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)(6 * sizeof(float)));
+	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
+	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
+
 
 	/*
 	//crreation UBO (uniform buffer)
@@ -82,14 +102,33 @@ void InitModel(std::string modelName)
 	*/
 }
 
-void Application::InitResources()
+
+void InitTexture(std::string textureName)
+{
+	Texture* texture = ResourceManager::Get().Create<Texture>(textureName);
+
+	if (texture == nullptr)
+	{
+		DEBUG_LOG("The model (" + textureName + ") doesn't exists!");
+		return;
+	}
+}
+
+ void Application::InitResources()
 {
 	std::string path = "Assets/Meshes/";
+	std::string txtPath = "Assets/Textures/";
 
 	for (const auto& entry : std::filesystem::directory_iterator(path))
 	{
 		InitModel(entry.path().filename().string());
 		std::cout << entry.path().filename() << std::endl;
+	}
+
+	for (const auto& txtEntry : std::filesystem::directory_iterator(txtPath))
+	{
+		InitTexture(txtEntry.path().filename().string());
+		std::cout << txtEntry.path().filename() << std::endl;
 	}
 }
 
