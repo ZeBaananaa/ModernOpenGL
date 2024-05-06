@@ -21,7 +21,6 @@ public:
 
 	void Update();
 
-	std::string name = "";
 	Transform* transform = nullptr;
 	std::vector<IComponent*> components;
 

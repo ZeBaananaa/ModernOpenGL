@@ -65,6 +65,25 @@ void InitModel(std::string modelName)
 	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
 	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
 	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
+
+
+	/*
+	//crreation UBO (uniform buffer)
+	glGenBuffers(1, &UBO);
+	glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+	glBufferData(GL_UNIFORM_BUFFER, sizeof(Block),
+		uboData, GL_STREAM_DRAW);
+
+	//commet relier un UBO et un block
+	//1 choisir un binding point
+	glBindBufferBase(GL_UNIFORM_BUFFER, 42, UBO);
+	//2 recuperer l index de l'uniform block
+	int32_t index = glGetUniformBlockIndex(program, "Matrices");
+	//3 relier le block et l UBO sur le binding point
+	glUniformBlockBinding(program, index, 42);
+	*/
+	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
+	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
 }
 
 

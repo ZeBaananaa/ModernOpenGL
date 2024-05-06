@@ -60,13 +60,14 @@ Transform::~Transform()
 	if(gameObject != nullptr)
 		delete gameObject;
 
-	if (parent)
-		parent->RemoveChildren(this);
-
 	for (size_t i = 0; i < children.size(); i++)
 	{
 		children[i]->Delete();
+		--i;
 	}
+
+	if (parent)
+		parent->RemoveChildren(this);
 	children.clear();
 }
 

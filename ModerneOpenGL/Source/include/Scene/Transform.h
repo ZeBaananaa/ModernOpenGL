@@ -48,6 +48,10 @@ public:
 
 	bool recalculateLocalT = true;
 	bool recalculateGlobalT = true;
+
+
+	std::string name = "";
+
 private :
 	void SetLocalTransformOnParentChange();
 	void AddChildren(Transform* child);

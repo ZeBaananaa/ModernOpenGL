@@ -28,6 +28,7 @@ void Destroy()
 	ResourceManager::Destroy();
 	Log::Destroy();
 	SceneGraph::Destroy();
+	InputHandler::Destroy();
 }
 
 void InitWindow()
@@ -69,6 +70,11 @@ void InitWindow()
 
 int main()
 {
+	//#ifndef NDEBUG
+	//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//	//_CrtSetBreakAlloc(699402);
+	//#endif
+	
 	InitWindow();
 
 	Application::Get().Initialise();
