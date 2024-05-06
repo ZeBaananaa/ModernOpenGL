@@ -24,6 +24,7 @@ void Model::Load(std::string nameObjFile)
     if (!file.is_open())
     {
         DEBUG_LOG("This file doesn't exist (" + nameObjFile + ")");
+        file.close();
         return;
     }
 

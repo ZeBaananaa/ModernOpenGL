@@ -28,6 +28,7 @@ void Destroy()
 	ResourceManager::Destroy();
 	Log::Destroy();
 	SceneGraph::Destroy();
+	InputHandler::Destroy();
 }
 
 void InitWindow()
@@ -69,6 +70,11 @@ void InitWindow()
 
 int main()
 {
+	//#ifndef NDEBUG
+	//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//	//_CrtSetBreakAlloc(699402);
+	//#endif
+	
 	InitWindow();
 
 	Application::Get().Initialise();
@@ -76,8 +82,8 @@ int main()
 	SceneGraph::Get();
 
 	GameObject* c1 = new GameObject({ -5,0,0 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj");
-	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one*0.1f, "Alien.obj");
-	GameObject* c2 = new GameObject({ 5,0,0 }, {90,0,0}, Vector3D::one, "pyramid.obj");
+	GameObject* c0 = new GameObject({ 0,-1,0 }, Vector3D::zero, Vector3D::one*0.1f, "Alien.obj");
+	GameObject* c2 = new GameObject({ 5,0,0 }, {45,0,90}, Vector3D::one, "pyramid.obj");
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))

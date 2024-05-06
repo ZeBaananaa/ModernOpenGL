@@ -53,7 +53,6 @@ void ResourceManager::Delete(std::string name)
     if (IsKeyInList(name))
     {
         auto it = resources.find(name);
-        //delete it->second;
         it->second->UnLoad();
         resources.erase(it);
     }

@@ -5,15 +5,10 @@ std::vector<int> InputHandler::m_CurrentKeyStatus(400, 0);
 std::vector<int> InputHandler::m_MouseButtonKeyStatus(12, 0);
 Vector2D InputHandler::mousePos(0.f, 0.f);
 
-InputHandler::~InputHandler()
+void InputHandler::Destroy()
 {
 	m_CurrentKeyStatus.clear();
 	m_MouseButtonKeyStatus.clear();
-
-	m_CurrentKeyStatus.clear();
-	m_MouseButtonKeyStatus.clear();
-	delete &m_CurrentKeyStatus;
-	delete &m_MouseButtonKeyStatus;
 }
 
 void InputHandler::KeyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
