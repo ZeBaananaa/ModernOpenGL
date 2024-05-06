@@ -82,8 +82,6 @@ void InitModel(std::string modelName)
 	//3 relier le block et l UBO sur le binding point
 	glUniformBlockBinding(program, index, 42);
 	*/
-	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
-	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
 }
 
 

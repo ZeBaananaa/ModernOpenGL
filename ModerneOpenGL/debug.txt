@@ -1,21 +1,17 @@
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Alien.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : Alien.obj doesn't exist.
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Alien.obj doesn't exist.
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource cube.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : cube.obj doesn't exist.
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : cube.obj doesn't exist.
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource pyramid.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : pyramid.obj doesn't exist.
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : pyramid.obj doesn't exist.
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource shield.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(47): The resource : sphere.obj doesn't exist.
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : shield.obj doesn't exist.
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource sphere.obj already exist ?
