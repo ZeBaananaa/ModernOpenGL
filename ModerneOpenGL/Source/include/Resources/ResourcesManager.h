@@ -9,6 +9,7 @@ interface IResource
 };
 
 class Model;
+class Texture;
 class ResourceManager
 {
 public:
@@ -39,9 +40,9 @@ public:
 		
 		if (CheckExtension(extension))
 		{
-			if (extension == ".obj")
+			if (extension == ".obj" || extension == ".png" || extension == ".jpg")
 			{
-				resource = new Model(name);
+				resource = new T(name);
 
 				DEBUG_LOG("Does the resource " + name + " already exist ?");
 				if(IsKeyInList(name))
@@ -67,6 +68,6 @@ private:
 
 	std::map<std::string, IResource*> resources;
 
-	std::string lstExtension[1] = {".obj"};
-	int nbExtensionKnow = 1;
+	std::string lstExtension[3] = {".obj", ".png", ".jpg"};
+	int nbExtensionKnow = 3;
 };

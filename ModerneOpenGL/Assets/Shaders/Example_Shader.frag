@@ -1,9 +1,16 @@
 #version 330 core
 
-in vec3 colorOut;
 out vec4 FragColor;
+in PosOut
+{
+    vec3 newPos;
+    vec3 normalPos;
+    vec2 uvPos;
+} posIn;
+
+uniform sampler2D text;
 
 void main()
 {
-	FragColor = vec4(colorOut, 1.0);
+	FragColor = texture(text, posIn.uvPos);
 }

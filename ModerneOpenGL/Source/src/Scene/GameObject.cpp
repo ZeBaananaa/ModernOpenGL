@@ -6,16 +6,16 @@ GameObject::GameObject(Transform* _parent)
 	transform = new Transform(this,_parent);
 }
 
-GameObject::GameObject(std::string modelName, Transform* _parent)
+GameObject::GameObject(std::string modelName, std::string textureName, Transform* _parent)
 {
 	transform = new Transform(this, _parent);
-	components.push_back(new MeshRenderer(this,modelName));
+	components.push_back(new MeshRenderer(this, modelName, textureName));
 }
 
-GameObject::GameObject(Vector3D position, Vector3D rotation, Vector3D scale, std::string modelName, Transform* _parent)
+GameObject::GameObject(Vector3D position, Vector3D rotation, Vector3D scale, std::string modelName, std::string textureName, Transform* _parent)
 {
 	transform = new Transform(position,rotation,scale,this, _parent);
-	components.push_back(new MeshRenderer(this, modelName));
+	components.push_back(new MeshRenderer(this, modelName, textureName));
 }
 
 GameObject::~GameObject()

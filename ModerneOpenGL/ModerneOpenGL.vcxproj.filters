@@ -20,6 +20,7 @@
     <ClCompile Include="Source\src\Resources\Vertex.cpp" />
     <ClCompile Include="Source\src\Scene\MeshRenderer.cpp" />
     <ClCompile Include="Source\src\Utils\WindowHandler.cpp" />
+    <ClCompile Include="Source\src\Resources\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />
@@ -55,5 +56,9 @@
     <None Include="cpp.hint" />
     <None Include="Assets\Shaders\Example_Shader.vert" />
     <None Include="Assets\Shaders\Example_Shader.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\baboon.jpg" />
+    <Image Include="Assets\Textures\baboon.jpg" />
   </ItemGroup>
 </Project>

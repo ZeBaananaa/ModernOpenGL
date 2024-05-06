@@ -1,14 +1,25 @@
 #pragma once
+#include <glad/glad.h>
+#include <gl/GL.h>
+
 #include "ResourcesManager.h"
 
-uint32_t mipLevels;
-VkImage textureImage;
+#define STB_IMAGE_IMPLEMENTATION
 
-class  Textures : public IResource
+class Texture : public IResource
 {
 public:
-	Textures(std::filesystem::path const& filename);
+	Texture() = default;
+	Texture(std::string filename);
+	~Texture() = default;
 
+	void Load(std::string filename) override;
+
+	void Bind();
+	void Unbind();
+
+private:
+	unsigned char* data;
+	unsigned int texture;
+	int width, height, nrChannels;
 };
-
-
