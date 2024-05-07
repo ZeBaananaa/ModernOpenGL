@@ -18,9 +18,9 @@ C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\Mod
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : sphere.obj doesn't exist.
 
-C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_obj.obj already exist ?
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf.obj already exist ?
 
-C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_obj.obj doesn't exist.
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf.obj doesn't exist.
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource alien.jpg already exist ?
 
@@ -41,4 +41,6 @@ C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\Mod
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_Body.jpg already exist ?
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_Body.jpg doesn't exist.
+
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : baboon.jpg  doesn't exist.
 

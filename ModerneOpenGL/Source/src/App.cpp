@@ -63,8 +63,8 @@ void InitModel(std::string modelName)
 	model->ebo.Bind(GL_ELEMENT_ARRAY_BUFFER);
 	model->ebo.SetData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * model->indexes.size(), model->indexes.data(), GL_STATIC_DRAW);
 	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
-	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
-	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
+	model->vertexAttributes.SetAttributes(1, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
+	model->vertexAttributes.SetAttributes(2, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
 
 
 	/*
