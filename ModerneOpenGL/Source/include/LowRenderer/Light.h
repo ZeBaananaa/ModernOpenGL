@@ -1,36 +1,84 @@
 #pragma once
-#include "MathPerso.h"
+#include "glad/glad.h"
+
+struct vec4
+{
+	float x;
+	float y; 
+	float z; 
+	float w;
+};
 
 struct DirectionalLight
 {
-	Vector4D lightDirection;
+	vec4 lightColor;
 
-	Vector4D lightAmbientColor;
-	Vector4D lightDiffuseColor;
-	Vector4D lightSpecularColor;
+	vec4 lightDirection;
+
+	vec4 lightAmbientColor;
+	vec4 lightDiffuseColor;
+	vec4 lightSpecularColor;
+
+	int ONOff;
+	int filling1;
+	int filling2;
+	int filling3;
+	//vec4 ConstLinQuadOnOFF; // {constant,linear,quadratic,true/false}
+
+};
+
+struct PointLight
+{
+	vec4 lightColor;
+
+	vec4 lightPosition;
+
+	vec4 lightAmbientColor;
+	vec4 lightDiffuseColor;
+	vec4 lightSpecularColor;
 
 	float constant;
 	float linear;
 	float quadratic;
+	int ONOff;
 };
 
 struct SpotLight
 {
 	//rgba
-	Vector4D lightColor;
+	vec4 lightColor;
 
-	Vector4D lightPosition;
-	Vector4D lightDirection;
+	vec4 lightPosition;
+	vec4 lightDirection;
 
-	Vector4D lightAmbientColor;
-	Vector4D lightDiffuseColor;
-	Vector4D lightSpecularColor;
+	vec4 lightAmbientColor;
+	vec4 lightDiffuseColor;
+	vec4 lightSpecularColor;
 
+	//vec4 ConstLinQuadOnOFF;
 	float constant;
 	float linear;
 	float quadratic;
+	int ONOff;
+
 	float cutoff;
 	float outerCutOff;
+	float filling2;
+	float filling3;
+};
+
+
+struct LightManager
+{
+	DirectionalLight* directional[4];
+	PointLight* points[4];
+	SpotLight* spots[4];
 
 	GLuint ubo;
+
+	void SetUpDirectional();
+	void SetUpPoints();
+	void SetUpSpots();
+	void Init();
+	void Destroy();
 };

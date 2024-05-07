@@ -7,6 +7,11 @@ Texture::Texture(std::string filename)
 	Bind();
 }
 
+Texture::~Texture()
+{
+	delete [] data;
+}
+
 void Texture::Load(std::string filename)
 {
 	glGenTextures(1, &texture);
@@ -30,6 +35,11 @@ void Texture::Load(std::string filename)
 	{
 		DEBUG_LOG("This file doesn't exist (" + filename + ")");
 	}
+}
+
+void Texture::UnLoad()
+{
+	delete this;
 }
 
 void Texture::Bind()

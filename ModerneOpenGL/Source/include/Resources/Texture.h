@@ -11,9 +11,10 @@ class Texture : public IResource
 public:
 	Texture() = default;
 	Texture(std::string filename);
-	~Texture() = default;
+	~Texture();
 
 	void Load(std::string filename) override;
+	void UnLoad() override;
 
 	void Bind();
 	void Unbind();

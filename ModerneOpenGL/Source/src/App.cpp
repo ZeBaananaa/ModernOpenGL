@@ -8,8 +8,20 @@
 #include <Resources/Texture.h>
 #include "Light.h"
 
+#include "glad/glad.h"
+
 Vector2D Application::oldMousePos = { 0.f,0.f };
 Application* Application::instance = nullptr;
+
+Application::~Application()
+{
+	if (instance->lightManager)
+	{
+		instance->lightManager->Destroy();
+		delete instance->lightManager;
+		instance->lightManager = nullptr;
+	}
+}
 
 Application& Application::Get()
 {
@@ -22,9 +34,6 @@ void Application::Destroy()
 {
 	if (instance)
 	{
-		if (instance->spot)
-			delete instance->spot;
-
 		delete instance;
 		instance = nullptr;
 	}
@@ -36,19 +45,49 @@ void Application::InitShaders()
 	shader.SetFragmentShader("Assets/Shaders/Example_Shader.frag");
 	shader.Link();
 
+	
+	//spot = new SpotLight();
+	//spot->ubo = 0;
 
-	spot = new SpotLight();
-	spot->lightColor = Vector4D::one;
-	spot->lightPosition = { 0,5,0,1 };
+	//spot->u_float.x = 1;// = { 0,0,0,1 };
+	//spot->u_float.y = 1;
+	//spot->u_float.w = 1;
+	/*
+	spot->lightColor[0] = 1;
+	spot->lightColor[1] = 1;
+	spot->lightColor[2] = 1;
+	spot->lightColor[3] = 1;*/
+
+	/*spot->lightPosition = { 0,5,0,1 };
 	spot->lightDirection = { 0,-1,0,0 };
 
-	spot->lightAmbientColor = { 1,1,1,1 };
-	spot->lightDiffuseColor = { 1,1,1,1 };
-	spot->lightSpecularColor = { 1,1,1,1 };
+	spot->lightAmbientColor = { 1.f,1.f,1.f,1.f };
+	spot->lightDiffuseColor = { 1.f,1.f,1.f,1.f };
+	spot->lightSpecularColor = { 1.f,1.f,1.f,1.f };*/
 
-	glGenBuffers(1, &spot->ubo);
-	glBufferData(spot->ubo, sizeof(SpotLight), &spot, GL_STATIC_DRAW);
-	glBindBufferBase(GL_UNIFORM_BUFFER, 4, spot->ubo);
+	/*glGenBuffers(1, &spot->ubo);
+
+	unsigned int lights_index = glGetUniformBlockIndex(Application::Get().shader.GetProgram(), "SpotLight");
+	glUniformBlockBinding(Application::Get().shader.GetProgram(), lights_index, 2);
+	glBindBufferBase(GL_UNIFORM_BUFFER, 2, Application::Get().spot->ubo);
+
+
+	glBindBuffer(GL_UNIFORM_BUFFER, spot->ubo);
+	glBufferData(GL_UNIFORM_BUFFER, sizeof(SpotLight), &spot, GL_STATIC_DRAW);*/
+
+	glGenBuffers(1, &Application::Get().lightManager->ubo);
+
+	unsigned int test_index = glGetUniformBlockIndex(Application::Get().shader.GetProgram(), "Test");
+	glUniformBlockBinding(Application::Get().shader.GetProgram(), test_index, 2);
+	glBindBufferBase(GL_UNIFORM_BUFFER, 2, Application::Get().lightManager->ubo);
+
+	float value = 1;
+	glBindBuffer(GL_UNIFORM_BUFFER, indexUBO);
+	glBufferData(GL_UNIFORM_BUFFER, sizeof(float) *10, &spot->ubo, GL_STATIC_DRAW);
+
+	std::cout << sizeof(SpotLight) << " : " << glGetUniformBlockIndex(shader.GetProgram(), "SpotLight");
+
+	//	glBindBufferBase(GL_UNIFORM_BUFFER, 4, spot->ubo);
 }
 
 void Application::InitCallbacks()

@@ -10,9 +10,9 @@
 class Application
 {
 public:
-     ~Application() = default;
+     ~Application();
 
-     SpotLight* spot;
+     LightManager* lightManager;
 
      static Application& Get();
      static void Destroy();

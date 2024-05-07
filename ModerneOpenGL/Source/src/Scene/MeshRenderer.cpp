@@ -40,6 +40,9 @@ void MeshRenderer::Update()
 
 		Vector3D campos = Camera::Get().GetCenter();
 		glUniform3fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "viewPos"),1, &campos[0]);
+		std::cout << "uniform : " << glGetUniformLocation(Application::Get().shader.GetProgram(), "Test.u_float") << std::endl;
+		glUniform4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "Test.u_float"), 1, &Application::Get().spot->u_float.x);
+
 
 		glDrawElements(GL_TRIANGLES, model->indexes.size(), GL_UNSIGNED_INT, 0);
 	}
