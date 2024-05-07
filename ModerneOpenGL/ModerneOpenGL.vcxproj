@@ -191,7 +191,6 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\baboon.jpg" />
     <Image Include="Assets\Textures\baboon.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -34,6 +34,10 @@ C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\Mod
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : black.png doesn't exist.
 
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource missing_texture.jpg already exist ?
+
+C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : missing_texture.jpg doesn't exist.
+
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource shield.png already exist ?
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : shield.png doesn't exist.
@@ -41,6 +45,4 @@ C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\Mod
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_Body.jpg already exist ?
 
 C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_Body.jpg doesn't exist.
-
-C:\Users\e.ruhlmann\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : baboon.jpg  doesn't exist.
 

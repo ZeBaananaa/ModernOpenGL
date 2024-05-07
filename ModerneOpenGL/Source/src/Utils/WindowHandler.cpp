@@ -1,4 +1,5 @@
 #include "Utils/WindowHandler.h"
+#include "App.h"
 
 void WindowHandler::WindowResizeCallback(GLFWwindow* window, int width, int height)
 {

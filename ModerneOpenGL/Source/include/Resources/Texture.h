@@ -10,16 +10,28 @@ class Texture : public IResource
 {
 public:
 	Texture() = default;
-	Texture(std::string filename);
+	Texture(std::string filename, GLuint mode = GL_REPEAT);
 	~Texture() = default;
 
-	void Load(std::string filename) override;
+	void SetAnisotropy(float value);
+	void SetMode(GLuint value);
+	GLuint GetMode() const;
+	float GetAnisotropy() const;
+	float GetMaxAnisotropy() const;
 
 	void Bind();
 	void Unbind();
 
 private:
+	void Load(std::string filename) override;
+	void LoadTextureFlag(GLuint param = GL_REPEAT);
+
+private:
 	unsigned char* data;
 	unsigned int texture;
 	int width, height, nrChannels;
+
+	GLuint mode;
+	float anisotropy;
+	float maxAnisotropy;
 };

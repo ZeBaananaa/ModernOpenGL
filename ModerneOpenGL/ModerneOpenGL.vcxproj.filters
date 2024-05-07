@@ -58,7 +58,6 @@
     <None Include="Assets\Shaders\Example_Shader.frag" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\baboon.jpg" />
     <Image Include="Assets\Textures\baboon.jpg" />
   </ItemGroup>
 </Project>
