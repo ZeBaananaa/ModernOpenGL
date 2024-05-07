@@ -8,7 +8,7 @@ class MeshRenderer : public IComponent
 {
 public:
 	MeshRenderer(GameObject* gameObject);
-	MeshRenderer(GameObject* gameObject, std::string modelName, std::string textureName);
+	MeshRenderer(GameObject* gameObject, std::string modelName, std::string textureName, GLuint textureMode = GL_REPEAT);
 	~MeshRenderer();
 
 	void Update() override;

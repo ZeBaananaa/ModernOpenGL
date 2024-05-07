@@ -4,6 +4,7 @@
 std::vector<int> InputHandler::m_CurrentKeyStatus(400, 0);
 std::vector<int> InputHandler::m_MouseButtonKeyStatus(12, 0);
 Vector2D InputHandler::mousePos(0.f, 0.f);
+int InputHandler::keyPressed(-1);
 
 void InputHandler::Destroy()
 {
@@ -14,6 +15,7 @@ void InputHandler::Destroy()
 void InputHandler::KeyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	m_CurrentKeyStatus[key] = action;
+	keyPressed = key;
 }
 
 void InputHandler::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
@@ -36,9 +38,19 @@ bool InputHandler::IsKeyDown(int key)
 	return m_CurrentKeyStatus[key] == GLFW_REPEAT;
 }
 
+bool InputHandler::IsKeyHeld(int key)
+{
+	return m_CurrentKeyStatus[key] == GLFW_PRESS || m_CurrentKeyStatus[key] == GLFW_REPEAT;
+}
+
 bool InputHandler::IsKeyReleased(int key)
 {
 	return m_CurrentKeyStatus[key] == GLFW_RELEASE;
+}
+
+int InputHandler::GetKey()
+{
+	return keyPressed;
 }
 
 bool InputHandler::IsMousePressed(int button)

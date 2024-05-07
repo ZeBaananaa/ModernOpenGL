@@ -9,11 +9,14 @@ class GameObject
 {
 public:
 	GameObject(Transform* _parent = SceneGraph::Get().root);
+
 	//modelName plus tard des enum genre cube sphere ect.
-	GameObject(std::string modelName, std::string textureName, Transform* _parent = SceneGraph::Get().root);
+	GameObject(std::string modelName, std::string textureName = "missing_texture.jpg",
+		GLuint textureMode = GLFW_REPEAT, Transform* _parent = SceneGraph::Get().root);
 
 	GameObject(Vector3D position, Vector3D rotation, Vector3D scale,
-		std::string modelName, std::string textureName, Transform* _parent = SceneGraph::Get().root);
+		std::string modelName, std::string textureName = "missing_texture.jpg",
+		GLuint textureMode = GLFW_REPEAT, Transform* _parent = SceneGraph::Get().root);
 
 
 

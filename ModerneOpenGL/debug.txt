@@ -18,9 +18,9 @@ C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : sphere.obj doesn't exist.
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_obj.obj already exist ?
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf.obj already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_obj.obj doesn't exist.
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf.obj doesn't exist.
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource alien.jpg already exist ?
 
@@ -33,6 +33,10 @@ C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource black.png already exist ?
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : black.png doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource missing_texture.jpg already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : missing_texture.jpg doesn't exist.
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource shield.png already exist ?
 

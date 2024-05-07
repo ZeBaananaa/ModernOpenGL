@@ -46,35 +46,36 @@ void Camera::Update()
 void Camera::CheckMoveInput()
 {
     float movementSpeed = speed * Time::DeltaTime();
+    Vector3D localAxisX3D;
 
-    if (InputHandler::IsKeyDown(GLFW_KEY_LEFT) || InputHandler::IsKeyPressed(GLFW_KEY_LEFT))
+    if (InputHandler::IsKeyHeld(GLFW_KEY_LEFT))
     {
         //left
-        Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
+        localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
         Move(Product(localAxisX3D, movementSpeed));
     }
-    if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT) || InputHandler::IsKeyPressed(GLFW_KEY_RIGHT))
+    if (InputHandler::IsKeyHeld(GLFW_KEY_RIGHT))
     {
         //rigth
-        Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
+        localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
         Move(Product(localAxisX3D, -movementSpeed));
     }
-    if (InputHandler::IsKeyDown(GLFW_KEY_UP) || InputHandler::IsKeyPressed(GLFW_KEY_UP))
+    if (InputHandler::IsKeyHeld(GLFW_KEY_UP))
     {
         //front
         Move(Product(GetDirection(), movementSpeed));
     }
-    if (InputHandler::IsKeyDown(GLFW_KEY_DOWN) || InputHandler::IsKeyPressed(GLFW_KEY_DOWN))
+    if (InputHandler::IsKeyHeld(GLFW_KEY_DOWN))
     {
         //back
         Move(Product(GetDirection(), -movementSpeed));
     }
-    if (InputHandler::IsKeyDown(GLFW_KEY_A) || InputHandler::IsKeyPressed(GLFW_KEY_A))
+    if (InputHandler::IsKeyHeld(GLFW_KEY_E) || InputHandler::IsKeyHeld(GLFW_KEY_SPACE))
     {
         //up
         Move(Product(Vector3D::axeY, movementSpeed));
     }
-    if (InputHandler::IsKeyDown(GLFW_KEY_E) || InputHandler::IsKeyPressed(GLFW_KEY_E))
+    if (InputHandler::IsKeyHeld(GLFW_KEY_A) || InputHandler::IsKeyHeld(GLFW_KEY_LEFT_CONTROL))
     {
         //down
         Move(Product(Vector3D::axeY, -movementSpeed));

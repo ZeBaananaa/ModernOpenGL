@@ -10,11 +10,12 @@ MeshRenderer::MeshRenderer(GameObject* gameObject)
 	this->gameObject = gameObject;
 }
 
-MeshRenderer::MeshRenderer(GameObject* gameObject, std::string modelName, std::string textureName)
+MeshRenderer::MeshRenderer(GameObject* gameObject, std::string modelName, std::string textureName, GLuint textureMode)
 {
 	this->gameObject = gameObject;
 	this->model = ResourceManager::Get().Get<Model>(modelName);
 	this->texture = ResourceManager::Get().Get<Texture>(textureName);
+	this->texture->SetMode(textureMode);
 }
 
 MeshRenderer::~MeshRenderer()
