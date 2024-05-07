@@ -19,7 +19,7 @@ struct DirectionalLight
 	vec4 lightDiffuseColor;
 	vec4 lightSpecularColor;
 
-	int ONOff;
+	int enable;
 	int filling1;
 	int filling2;
 	int filling3;
@@ -27,6 +27,10 @@ struct DirectionalLight
 
 };
 
+struct Test
+{
+	vec4 colorTest2;
+};
 struct PointLight
 {
 	vec4 lightColor;
@@ -40,7 +44,7 @@ struct PointLight
 	float constant;
 	float linear;
 	float quadratic;
-	int ONOff;
+	int enable;
 };
 
 struct SpotLight
@@ -59,7 +63,7 @@ struct SpotLight
 	float constant;
 	float linear;
 	float quadratic;
-	int ONOff;
+	int enable;
 
 	float cutoff;
 	float outerCutOff;
@@ -70,11 +74,16 @@ struct SpotLight
 
 struct LightManager
 {
-	DirectionalLight* directional[4];
-	PointLight* points[4];
-	SpotLight* spots[4];
+	vec4 colorTest;
+	
+	DirectionalLight directional[4];
+	PointLight points[4];
+	SpotLight spots[4];
 
 	GLuint ubo;
+	float filling1;
+	float filling2;
+	float filling3;
 
 	void SetUpDirectional();
 	void SetUpPoints();

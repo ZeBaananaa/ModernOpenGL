@@ -10,33 +10,80 @@ in VertexOut
     vec4 fragColor;
 } vertexIn;
 
-layout (std140) uniform SpotLight
+struct DirectionalLight
 {
+	vec4 lightColor;
 
-	int id;
-	vec4 u_Color;
+	vec4 lightDirection;
 
-//	vec4 u_Position;
-//	vec4 u_Direction;
-//
-//	vec4 u_Ambient;
-//	vec4 u_Diffuse;
-//	vec4 u_Specular;
-//
-//	float u_Constant;
-//	float u_Linear;
-//	float u_Quadratic;
-//
-//	float u_CutOff;
-//	float u_OuterCutOff;
-//
+	vec4 lightAmbientColor;
+	vec4 lightDiffuseColor;
+	vec4 lightSpecularColor;
+
+	int ONOff;
+	int filling1;
+	int filling2;
+	int filling3;
 
 };
 
+struct PointLight
+{
+	vec4 lightColor;
+
+	vec4 lightPosition;
+
+	vec4 lightAmbientColor;
+	vec4 lightDiffuseColor;
+	vec4 lightSpecularColor;
+
+	float constant;
+	float linear;
+	float quadratic;
+	int ONOff;
+};
+
+struct SpotLight
+{
+	vec4 lightColor;
+
+	vec4 lightPosition;
+	vec4 lightDirection;
+
+	vec4 lightAmbientColor;
+	vec4 lightDiffuseColor;
+	vec4 lightSpecularColor;
+
+	float constant;
+	float linear;
+	float quadratic;
+	int ONOff;
+
+	float cutoff;
+	float outerCutOff;
+	float filling2;
+	float filling3;
+};
+
+layout (std140) uniform Lights
+{
+	vec4 colorTest;
+	DirectionalLight directionalLights[4];
+	PointLight pointsLights[4];
+	SpotLight spotsLights[4];
+	
+	
+	uint ubo;
+	float filling1;
+	float filling2;
+	float filling3;
+
+};
+
+
 layout (std140) uniform Test
 {
-	int  u_int;
-    vec4 u_float;
+	vec4 colorTest2;
 };
 
 //uniform int u_LightCount;
@@ -57,31 +104,33 @@ uniform sampler2D text;
 
 void main()
 {
-//	vec4 textColor = vec4(1,1,1,1);//texture(text, posIn.uvPos);
-//
-//	//ambient
-//	vec3 ambient =  vec3(u_Ambient) * vec3(u_Color);
-//
+	vec4 textColor = vec4(1,1,1,1);//texture(text, posIn.uvPos);
+	
+	DirectionalLight dir = directionalLights[0];
+
+	//ambient
+	vec3 ambient =  vec3(dir.lightAmbientColor) * vec3(1,1,1);
+	
 //	//diffuse
 //	vec3 norm = normalize(vertexIn.normalPos);
-//	vec3 lightDir = normalize(vec3(u_Position) - vertexIn.fragPos);
+//	vec3 lightDir = normalize(vec3(-dir.lightDirection));//vec3(u_Position) - vertexIn.fragPos);
 //
 //	float diff = max(dot(norm,lightDir),0.0);
-//	vec3 diffuse = vec3(u_Color)*diff;
+//	vec3 diffuse = vec3(1,1,1)*diff;
 //
 //	//specular
 //	vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
 //	vec3 reflectDir = reflect(-lightDir,norm);
 //
 //	float spec = pow(max(dot(viewDir,reflectDir),0.0),32.f);//shininess);
-//	vec3 specular = vec3(u_Specular) * spec * vec3(u_Color);
+//	vec3 specular = vec3(dir.lightSpecularColor) * spec * vec3(1,1,1);
 //
 //	//float dist = length(u_Position.xyz - fragPos);
 //	//float attenuation = 1.0/(u_Constant+u_Linear*dist+u_Quadratic*dist*dist);
 //	//vec3 halfwayDir = normalize(lightDir+viewDir);
 //
 //	vec3 result = (ambient + diffuse + specular) * vec3(textColor);
-//	//FragColor = vec4(result,1.0);
+	//FragColor = vec4(result,1.0);
 
-	FragColor = u_float;//vec4(u_float.y,0,0,1);
+	FragColor = vec4(vec3(ambient),1);
 }

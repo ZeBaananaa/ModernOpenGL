@@ -46,48 +46,33 @@ void Application::InitShaders()
 	shader.Link();
 
 	
-	//spot = new SpotLight();
-	//spot->ubo = 0;
-
-	//spot->u_float.x = 1;// = { 0,0,0,1 };
-	//spot->u_float.y = 1;
-	//spot->u_float.w = 1;
 	/*
-	spot->lightColor[0] = 1;
-	spot->lightColor[1] = 1;
-	spot->lightColor[2] = 1;
-	spot->lightColor[3] = 1;*/
+	//crreation UBO (uniform buffer)
+	glGenBuffers(1, &UBO);
+	glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+	glBufferData(GL_UNIFORM_BUFFER, sizeof(Block),
+		uboData, GL_STREAM_DRAW);
 
-	/*spot->lightPosition = { 0,5,0,1 };
-	spot->lightDirection = { 0,-1,0,0 };
+	//commet relier un UBO et un block
+	//1 choisir un binding point
+	glBindBufferBase(GL_UNIFORM_BUFFER, 42, UBO);
+	//2 recuperer l index de l'uniform block
+	int32_t index = glGetUniformBlockIndex(program, "Matrices");
+	//3 relier le block et l UBO sur le binding point
+	glUniformBlockBinding(program, index, 42);
+	*/
 
-	spot->lightAmbientColor = { 1.f,1.f,1.f,1.f };
-	spot->lightDiffuseColor = { 1.f,1.f,1.f,1.f };
-	spot->lightSpecularColor = { 1.f,1.f,1.f,1.f };*/
+	glGenBuffers(1, &instance->lightManager->ubo);
+	glBindBuffer(GL_UNIFORM_BUFFER, instance->lightManager->ubo);
+	glBufferData(GL_UNIFORM_BUFFER, sizeof(LightManager), lightManager, GL_DYNAMIC_DRAW);
 
-	/*glGenBuffers(1, &spot->ubo);
+	std::cout << sizeof(LightManager) << " : " << std::endl;
+	std::cout << sizeof(DirectionalLight) << " : " << std::endl;
+	std::cout << sizeof(SpotLight) << " : " << std::endl;
+	std::cout << sizeof(PointLight) << " : " << std::endl;
 
-	unsigned int lights_index = glGetUniformBlockIndex(Application::Get().shader.GetProgram(), "SpotLight");
-	glUniformBlockBinding(Application::Get().shader.GetProgram(), lights_index, 2);
-	glBindBufferBase(GL_UNIFORM_BUFFER, 2, Application::Get().spot->ubo);
-
-
-	glBindBuffer(GL_UNIFORM_BUFFER, spot->ubo);
-	glBufferData(GL_UNIFORM_BUFFER, sizeof(SpotLight), &spot, GL_STATIC_DRAW);*/
-
-	glGenBuffers(1, &Application::Get().lightManager->ubo);
-
-	unsigned int test_index = glGetUniformBlockIndex(Application::Get().shader.GetProgram(), "Test");
-	glUniformBlockBinding(Application::Get().shader.GetProgram(), test_index, 2);
-	glBindBufferBase(GL_UNIFORM_BUFFER, 2, Application::Get().lightManager->ubo);
-
-	float value = 1;
-	glBindBuffer(GL_UNIFORM_BUFFER, indexUBO);
-	glBufferData(GL_UNIFORM_BUFFER, sizeof(float) *10, &spot->ubo, GL_STATIC_DRAW);
-
-	std::cout << sizeof(SpotLight) << " : " << glGetUniformBlockIndex(shader.GetProgram(), "SpotLight");
-
-	//	glBindBufferBase(GL_UNIFORM_BUFFER, 4, spot->ubo);
+	unsigned int index = glGetUniformBlockIndex(shader.GetProgram(), "Lights");
+	glBindBufferBase(GL_UNIFORM_BUFFER, 0, instance->lightManager->ubo);
 }
 
 void Application::InitCallbacks()
@@ -122,23 +107,6 @@ void InitModel(std::string modelName)
 	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
 	model->vertexAttributes.SetAttributes(1, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
 	model->vertexAttributes.SetAttributes(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
-
-
-	/*
-	//crreation UBO (uniform buffer)
-	glGenBuffers(1, &UBO);
-	glBindBuffer(GL_UNIFORM_BUFFER, UBO);
-	glBufferData(GL_UNIFORM_BUFFER, sizeof(Block),
-		uboData, GL_STREAM_DRAW);
-
-	//commet relier un UBO et un block
-	//1 choisir un binding point
-	glBindBufferBase(GL_UNIFORM_BUFFER, 42, UBO);
-	//2 recuperer l index de l'uniform block
-	int32_t index = glGetUniformBlockIndex(program, "Matrices");
-	//3 relier le block et l UBO sur le binding point
-	glUniformBlockBinding(program, index, 42);
-	*/
 }
 
 
@@ -173,10 +141,13 @@ void InitTexture(std::string textureName)
 
 bool Application::Initialise()
 {
+	lightManager = new LightManager();
+	lightManager->Init();
+
 	InitResources();
 	InitCallbacks();
 	InitShaders();
-
+	
 	return true;
 }
 
