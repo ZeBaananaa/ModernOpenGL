@@ -87,5 +87,4 @@ struct LightManager
 	void SetUpPoints();
 	void SetUpSpots();
 	void Init();
-	void Destroy();
 };

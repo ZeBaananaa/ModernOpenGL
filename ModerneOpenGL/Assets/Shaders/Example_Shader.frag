@@ -20,7 +20,7 @@ struct DirectionalLight
 	vec4 lightDiffuseColor;
 	vec4 lightSpecularColor;
 
-	int ONOff;
+	int enable;
 	int filling1;
 	int filling2;
 	int filling3;
@@ -40,7 +40,7 @@ struct PointLight
 	float constant;
 	float linear;
 	float quadratic;
-	int ONOff;
+	int enable;
 };
 
 struct SpotLight
@@ -57,7 +57,7 @@ struct SpotLight
 	float constant;
 	float linear;
 	float quadratic;
-	int ONOff;
+	int enable;
 
 	float cutoff;
 	float outerCutOff;
@@ -93,35 +93,39 @@ void main()
 {
 	vec4 textColor = texture(text, posIn.uvPos);
 
-//	for(int i=0;i<60;i++){
-//		
-//	}
-
-	DirectionalLight dir = directionalLights[0];
-
-	//ambient
-	vec3 ambient =  vec3(dir.lightAmbientColor) * vec3(1,1,1);
+	vec3 result = vec3(textColor);
 	
-//	//diffuse
-//	vec3 norm = normalize(vertexIn.normalPos);
-//	vec3 lightDir = normalize(vec3(-dir.lightDirection));//vec3(u_Position) - vertexIn.fragPos);
-//
-//	float diff = max(dot(norm,lightDir),0.0);
-//	vec3 diffuse = vec3(1,1,1)*diff;
-//
-//	//specular
-//	vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
-//	vec3 reflectDir = reflect(-lightDir,norm);
-//
-//	float spec = pow(max(dot(viewDir,reflectDir),0.0),32.f);//shininess);
-//	vec3 specular = vec3(dir.lightSpecularColor) * spec * vec3(1,1,1);
-//
-//	//float dist = length(u_Position.xyz - fragPos);
-//	//float attenuation = 1.0/(u_Constant+u_Linear*dist+u_Quadratic*dist*dist);
-//	//vec3 halfwayDir = normalize(lightDir+viewDir);
-//
-//	vec3 result = (ambient + diffuse + specular) * vec3(textColor);
-	//FragColor = vec4(result,1.0);
+	for(int i=0;i<4;i++)
+	{
+		if(directionalLights[i].enable == 1)
+		{
+			DirectionalLight dir = directionalLights[i];
 
-	FragColor = vec4(vec3(ambient),1);
+			//ambient
+			vec3 ambient =  vec3(dir.lightAmbientColor) * vec3(1,1,1);
+	
+			//diffuse
+			vec3 norm = normalize(vertexIn.normalPos);
+			vec3 lightDir = normalize(vec3(-dir.lightDirection));//vec3(u_Position) - vertexIn.fragPos);
+
+			float diff = max(dot(norm,lightDir),0.0);
+			vec3 diffuse = vec3(1,1,1)*diff;
+
+			//specular
+			vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
+			vec3 reflectDir = reflect(-lightDir,norm);
+
+			float spec = pow(max(dot(viewDir,reflectDir),0.0),1.f);//shininess);
+			vec3 specular = vec3(dir.lightSpecularColor) * spec * vec3(1,1,1);
+
+			//float dist = length(u_Position.xyz - fragPos);
+			//float attenuation = 1.0/(u_Constant+u_Linear*dist+u_Quadratic*dist*dist);
+			//vec3 halfwayDir = normalize(lightDir+viewDir);
+
+			result = (ambient + diffuse + specular) * result;
+		}
+	}
+	FragColor = vec4(result,1.0);
+	
+	//FragColor = vec4(vec3(ambient),1);
 }

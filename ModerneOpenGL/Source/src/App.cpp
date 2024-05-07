@@ -17,7 +17,6 @@ Application::~Application()
 {
 	if (instance->lightManager)
 	{
-		instance->lightManager->Destroy();
 		delete instance->lightManager;
 		instance->lightManager = nullptr;
 	}

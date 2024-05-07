@@ -2,7 +2,6 @@
 
 void LightManager::SetUpDirectional()
 {
-	
 	for (size_t i = 0; i < 4; i++)
 	{
 		directional[i] = DirectionalLight();
@@ -21,18 +20,17 @@ void LightManager::SetUpDirectional()
 
 void LightManager::SetUpPoints()
 {
-	
 	for (size_t i = 0; i < 4; i++)
 	{
 		points[i] = PointLight();
 
-		points[i].lightColor			= { 1,1,1,1 };
+		points[i].lightColor		= { 1,1,1,1 };
 
 		points[i].lightPosition		= { 0,0,0,1 };
 
 		points[i].lightAmbientColor	= { 0,0,0,1 };
 		points[i].lightDiffuseColor	= { 1,1,1,1 };
-		points[i].lightSpecularColor	= { 1,1,1,1 };
+		points[i].lightSpecularColor= { 1,1,1,1 };
 
 		points[i].constant		= 1.f;
 		points[i].linear		= 0.4f;
@@ -43,19 +41,18 @@ void LightManager::SetUpPoints()
 }
 
 void LightManager::SetUpSpots()
-{
-	
+{	
 	for (size_t i = 0; i < 4; i++)
 	{
 		spots[i] = SpotLight();
 
 		spots[i].lightColor			= { 1,1,1,1 };
 
-		spots[i].lightPosition			= { 0,0,0,1 };
+		spots[i].lightPosition		= { 0,0,0,1 };
 		spots[i].lightDirection		= { 0,-1,0,0 };
 
-		spots[i].lightAmbientColor		= { 0,0,0,1 };
-		spots[i].lightDiffuseColor		= { 1,1,1,1 };
+		spots[i].lightAmbientColor	= { 0,0,0,1 };
+		spots[i].lightDiffuseColor	= { 1,1,1,1 };
 		spots[i].lightSpecularColor	= { 1,1,1,1 };
 
 		spots[i].constant	= 1.f;
@@ -74,15 +71,8 @@ void LightManager::Init()
 	SetUpDirectional();
 	SetUpPoints();
 	SetUpSpots();
-
-	colorTest = { 1,1,1,1 };
 	
-	//directional[0].enable = true;
-}
-
-void LightManager::Destroy()
-{
-	//delete[] directional;
-	//delete[] points;
-	//delete[] spots;
+	directional[0].enable = true;
+	directional[0].lightDirection = { 1,0,0,0 };
+	directional[0].lightColor = { 1,0,0,1 };
 }
