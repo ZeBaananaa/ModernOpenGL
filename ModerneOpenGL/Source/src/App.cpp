@@ -45,31 +45,9 @@ void Application::InitShaders()
 	shader.SetFragmentShader("Assets/Shaders/Example_Shader.frag");
 	shader.Link();
 
-	
-	/*
-	//crreation UBO (uniform buffer)
-	glGenBuffers(1, &UBO);
-	glBindBuffer(GL_UNIFORM_BUFFER, UBO);
-	glBufferData(GL_UNIFORM_BUFFER, sizeof(Block),
-		uboData, GL_STREAM_DRAW);
-
-	//commet relier un UBO et un block
-	//1 choisir un binding point
-	glBindBufferBase(GL_UNIFORM_BUFFER, 42, UBO);
-	//2 recuperer l index de l'uniform block
-	int32_t index = glGetUniformBlockIndex(program, "Matrices");
-	//3 relier le block et l UBO sur le binding point
-	glUniformBlockBinding(program, index, 42);
-	*/
-
 	glGenBuffers(1, &instance->lightManager->ubo);
 	glBindBuffer(GL_UNIFORM_BUFFER, instance->lightManager->ubo);
 	glBufferData(GL_UNIFORM_BUFFER, sizeof(LightManager), lightManager, GL_DYNAMIC_DRAW);
-
-	std::cout << sizeof(LightManager) << " : " << std::endl;
-	std::cout << sizeof(DirectionalLight) << " : " << std::endl;
-	std::cout << sizeof(SpotLight) << " : " << std::endl;
-	std::cout << sizeof(PointLight) << " : " << std::endl;
 
 	unsigned int index = glGetUniformBlockIndex(shader.GetProgram(), "Lights");
 	glBindBufferBase(GL_UNIFORM_BUFFER, 0, instance->lightManager->ubo);

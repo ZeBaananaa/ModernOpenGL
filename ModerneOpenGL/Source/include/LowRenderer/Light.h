@@ -74,8 +74,6 @@ struct SpotLight
 
 struct LightManager
 {
-	vec4 colorTest;
-	
 	DirectionalLight directional[4];
 	PointLight points[4];
 	SpotLight spots[4];

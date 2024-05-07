@@ -67,7 +67,6 @@ struct SpotLight
 
 layout (std140) uniform Lights
 {
-	vec4 colorTest;
 	DirectionalLight directionalLights[4];
 	PointLight pointsLights[4];
 	SpotLight spotsLights[4];
@@ -79,18 +78,6 @@ layout (std140) uniform Lights
 	float filling3;
 
 };
-
-
-layout (std140) uniform Test
-{
-	vec4 colorTest2;
-};
-
-//uniform int u_LightCount;
-//layout (std140,binding = 5) uniform LightBlock
-//{
-//	SpotLight spots[u_LightCount];
-//};
 
 out vec4 FragColor;
 in PosOut
@@ -104,8 +91,12 @@ uniform sampler2D text;
 
 void main()
 {
-	vec4 textColor = vec4(1,1,1,1);//texture(text, posIn.uvPos);
-	
+	vec4 textColor = texture(text, posIn.uvPos);
+
+//	for(int i=0;i<60;i++){
+//		
+//	}
+
 	DirectionalLight dir = directionalLights[0];
 
 	//ambient
