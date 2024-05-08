@@ -87,6 +87,8 @@ int main()
 	GameObject* c3 = new GameObject({ 10,-50,0 }, {0,0,0}, Vector3D(1,0,1), "cube.obj", "");
 	GameObject* c4 = new GameObject({ -20,0,0 }, {90,0,0}, Vector3D::one, "shield.obj", "shield.png");
 
+	GameObject* sp0 = new GameObject({ 0,0,5 }, { -90,0,0 }, Vector3D::one, "pyramid.obj");
+
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{

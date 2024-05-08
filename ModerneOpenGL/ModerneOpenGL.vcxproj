@@ -134,7 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\include\LowRenderer\Light.cpp" />
+    <ClCompile Include="Source\src\LowRenderer\Light.cpp" />
     <ClCompile Include="Source\src\Resources\Texture.cpp" />
     <ClCompile Include="Source\src\Utils\WindowHandler.cpp" />
     <ClCompile Include="Source\src\App.cpp" />
