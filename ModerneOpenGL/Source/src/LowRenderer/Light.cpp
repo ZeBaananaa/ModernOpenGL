@@ -41,8 +41,8 @@ void LightManager::SetLight(SpotLights lightToSet, Vector4D position, Vector4D d
 	spots[index].lightDiffuseColor = diffuseColor;
 	spots[index].lightSpecularColor = specularColor;
 
-	spots[index].cutOff = cutOff;
-	spots[index].outerCutOff = outerCutOff;
+	spots[index].cutOff = cutOff * PI/180.f;
+	spots[index].outerCutOff = outerCutOff * PI / 180.f;
 
 	spots[index].enable = enable;
 }
@@ -117,8 +117,8 @@ void LightManager::SetUpSpots()
 		spots[i].lightDiffuseColor	= { 0.8f,0.8f,0.8f,1 };
 		spots[i].lightSpecularColor	= { 1,1,1,1 };
 
-		spots[i].cutOff			= 30.f;
-		spots[i].outerCutOff	= 0.f;
+		spots[i].cutOff			= 20.f * PI / 180.f;
+		spots[i].outerCutOff	= 35.f * PI / 180.f;
 
 		spots[i].enable = false;
 	}
@@ -135,5 +135,5 @@ void LightManager::Init()
 
 	//SetLight(PointLigths::PT0, { 0,0,0,1 }, { 0,0,0,1 }, { 3,3,3,1 }, { 5,5,5,1 }, 1, 0.4, 0, true);
 
-	SetLight(SpotLights::SP0, { 0,0,5,1 }, { 0,0,-1,0 }, { 0,0,0,1 }, { 0.8f,0.8f,0.8f,1 }, { 1,1,1,1 }, 10, 15, true);
+	SetLight(SpotLights::SP0, { 0,0,5,1 }, { 0,0,-1,0 }, { 1,1,1,1 }, { 6,6,6,1 }, { 1,1,1,1 }, 20, 35, true);
 }

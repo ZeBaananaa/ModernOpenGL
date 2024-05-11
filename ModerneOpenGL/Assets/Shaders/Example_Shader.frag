@@ -112,7 +112,7 @@ void main()
 			vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
 			vec3 reflectDir = reflect(-lightDir,norm);
 			float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
-			vec3 specular = vec3(dir.lightSpecularColor) * (spec * material[2]);
+			vec3 specular = vec3(dir.lightSpecularColor) * (spec * material[2])   * vec3(textColor);
 
 			result += (ambient + diffuse + specular);
 		}
@@ -137,7 +137,7 @@ void main()
 			vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
 			vec3 reflectDir = reflect(-lightDir,norm);
 			float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
-			vec3 specular = vec3(ptl.lightSpecularColor) * (spec * material[2]);
+			vec3 specular = vec3(ptl.lightSpecularColor) * (spec * material[2])    * vec3(textColor);
 
 			//attenuation
 			float dist = length(ptl.lightPosition.xyz - vertexIn.fragPos);
@@ -154,13 +154,10 @@ void main()
 			SpotLight sp = spotsLights[i];
 
 			vec3 lightDir = normalize(vec3(sp.lightPosition) - vertexIn.fragPos);
-			float theta = dot(lightDir,normalize(vec3(sp.lightDirection)));
+			float theta = dot(lightDir,normalize(vec3(-sp.lightDirection)));
 
 			if(theta > sp.cutOff)
 			{
-				//ambient
-				//vec3 ambient =  vec3(sp.lightAmbientColor) * material[0] * vec3(textColor);
-	
 				//diffuse
 				vec3 norm = normalize(vertexIn.normalPos);
 				float diff = max(dot(norm,lightDir),0.0);
@@ -170,18 +167,22 @@ void main()
 				vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
 				vec3 reflectDir = reflect(-lightDir,norm);
 				float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
-				vec3 specular = vec3(sp.lightSpecularColor) * (spec * material[2]);
+				vec3 specular = vec3(sp.lightSpecularColor) * (spec * material[2]) * vec3(textColor);
 
 				//attenuation
 				float epsilon = sp.cutOff - sp.outerCutOff;
 				if(epsilon == 0)
 					epsilon = 0.000000001f;
-				float intensity = clamp((theta - sp.outerCutOff)/epsilon,0.0,1.0);
+				float intensity = clamp((sp.outerCutOff - theta )/epsilon,0.0,1.0);
 
 				result += (diffuse + specular) * intensity;
 			}
 			else
-				result += vec3(1,0,0);
+			{
+				//ambient
+				vec3 ambient =  vec3(sp.lightAmbientColor) * material[0] * vec3(textColor);
+				result += ambient;
+			}
 		}
 	}
 	FragColor = vec4(result,1.0);
