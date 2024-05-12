@@ -1,4 +1,5 @@
 #include "Light.h"
+#include "Log.h"
 
 void LightManager::SetLight(DirectionalLights lightToSet, Vector4D direction, Vector4D ambientColor, Vector4D diffuseColor, Vector4D specularColor, bool enable)
 {
@@ -41,8 +42,9 @@ void LightManager::SetLight(SpotLights lightToSet, Vector4D position, Vector4D d
 	spots[index].lightDiffuseColor = diffuseColor;
 	spots[index].lightSpecularColor = specularColor;
 
-	spots[index].cutOff = cutOff * PI/180.f;
-	spots[index].outerCutOff = outerCutOff * PI / 180.f;
+	spots[index].cutOff = cosf(cutOff * PI/180.f);
+
+	spots[index].outerCutOff = cosf(outerCutOff * PI / 180.f);
 
 	spots[index].enable = enable;
 }
@@ -60,6 +62,47 @@ void LightManager::SetActive(PointLigths lightToSet, bool enable)
 void LightManager::SetActive(SpotLights lightToSet, bool enable)
 {
 	spots[static_cast<int>(lightToSet)].enable = enable;
+}
+
+void LightManager::SetSpotAngle(SpotLights lightToSet, float angleInDegree, bool add)
+{
+	float e = GetSpotAngle(lightToSet) - (acosf(spots[static_cast<int>(lightToSet)].outerCutOff) * 180.f/PI);
+
+	if(add)
+	{
+		spots[static_cast<int>(lightToSet)].cutOff -= angleInDegree * PI / 180.f;
+	}
+	else
+		spots[static_cast<int>(lightToSet)].cutOff = cosf(angleInDegree * PI / 180.f);
+
+	if(spots[static_cast<int>(lightToSet)].cutOff >= 1)
+	{
+		spots[static_cast<int>(lightToSet)].cutOff = cosf(2.f * PI / 180.f);
+	}
+	else if (spots[static_cast<int>(lightToSet)].cutOff <= 0)
+	{
+		spots[static_cast<int>(lightToSet)].cutOff = cosf(90.f * PI / 180.f);
+	}
+
+	spots[static_cast<int>(lightToSet)].outerCutOff = cosf((GetSpotAngle(lightToSet) - e) * PI / 180.f);
+}
+
+void LightManager::SetSpotOuterCutOff(SpotLights lightToSet, float angleInDegree)
+{
+	float currentCutOff = GetSpotAngle(lightToSet);
+	if (angleInDegree >= currentCutOff)
+	{
+		angleInDegree = currentCutOff - 1.f;
+	}
+	if (angleInDegree < 1)
+		angleInDegree = 1;
+	
+	spots[static_cast<int>(lightToSet)].outerCutOff = cosf(angleInDegree * PI / 180.f);
+}
+
+float LightManager::GetSpotAngle(SpotLights lightToSet)
+{
+	return acosf(spots[static_cast<int>(lightToSet)].cutOff) * 180/PI;
 }
 
 void LightManager::SetUpDirectional()
@@ -117,8 +160,8 @@ void LightManager::SetUpSpots()
 		spots[i].lightDiffuseColor	= { 0.8f,0.8f,0.8f,1 };
 		spots[i].lightSpecularColor	= { 1,1,1,1 };
 
-		spots[i].cutOff			= 20.f * PI / 180.f;
-		spots[i].outerCutOff	= 35.f * PI / 180.f;
+		spots[i].cutOff			= cosf(45.f * PI / 180.f);
+		spots[i].outerCutOff	= cosf(30.f * PI / 180.f);
 
 		spots[i].enable = false;
 	}
@@ -129,11 +172,10 @@ void LightManager::Init()
 	SetUpDirectional();
 	SetUpPoints();
 	SetUpSpots();
-	
 
-	//SetLight(DirectionalLights::DIR0, { 1,0,0,0 }, { 0.8f,0.8f,0.8f,1.f }, { 0,0,0,1 }, { 0.5f,0.5f,0.5f,1 }, false);
+	SetLight(DirectionalLights::DIR0, { 1,-1,-1,0 }, { 1,1,1,1.f }, { 0,0,0,1 }, { 0.5f,0.5f,0.5f,1 }, true);
 
-	//SetLight(PointLigths::PT0, { 0,0,0,1 }, { 0,0,0,1 }, { 3,3,3,1 }, { 5,5,5,1 }, 1, 0.4, 0, true);
+	SetLight(PointLigths::PT0, { 5,5,2,1 }, { 0,0,0,1 }, { 7,7,7,1 }, { 5,5,5,1 }, 1, 0.4, 0.4, true);
 
-	SetLight(SpotLights::SP0, { 0,0,5,1 }, { 0,0,-1,0 }, { 1,1,1,1 }, { 6,6,6,1 }, { 1,1,1,1 }, 20, 35, true);
+	SetLight(SpotLights::SP0, { 0,0,5,1 }, { 0,0,-1,0 }, { 1,1,1,1 }, { 6,6,6,1 }, { 1,1,1,1 }, 45 , 30 , true);
 }

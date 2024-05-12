@@ -100,6 +100,9 @@ struct LightManager
 	void SetActive(DirectionalLights lightToSet, bool enable);
 	void SetActive(PointLigths lightToSet, bool enable);
 	void SetActive(SpotLights lightToSet, bool enable);
+	void SetSpotAngle(SpotLights lightToSet,float angleInDegree,bool add = false);
+	void SetSpotOuterCutOff(SpotLights lightToSet, float angleInDegree);
+	float GetSpotAngle(SpotLights lightToSet);
 
 
 	void SetUpDirectional();
