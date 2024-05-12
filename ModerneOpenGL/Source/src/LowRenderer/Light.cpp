@@ -175,7 +175,7 @@ void LightManager::Init()
 
 	SetLight(DirectionalLights::DIR0, { 1,-1,-1,0 }, { 1,1,1,1.f }, { 0,0,0,1 }, { 0.5f,0.5f,0.5f,1 }, true);
 
-	SetLight(PointLigths::PT0, { 5,5,2,1 }, { 0,0,0,1 }, { 7,7,7,1 }, { 5,5,5,1 }, 1, 0.4, 0.4, true);
+	SetLight(PointLigths::PT0, { 5,5,2,1 }, { 0,0,0,1 }, { 7,7,7,1 }, { 2,2,2,1 }, 1, 0.4, 0.4, true);
 
-	SetLight(SpotLights::SP0, { 0,0,5,1 }, { 0,0,-1,0 }, { 1,1,1,1 }, { 6,6,6,1 }, { 1,1,1,1 }, 45 , 30 , true);
+	SetLight(SpotLights::SP0, { 0,0,5,1 }, { 0,0,-1,0 }, { 1,1,1,1 }, { 15,15,15,1 }, { 0.2f,0.2f,0.2f,1.f }, 45 , 30 , true);
 }

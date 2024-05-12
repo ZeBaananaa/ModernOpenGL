@@ -110,9 +110,16 @@ void main()
 
 			//specular
 			vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
-			vec3 reflectDir = reflect(-lightDir,norm);
-			float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
-			vec3 specular = vec3(dir.lightSpecularColor) * (spec * material[2])   * vec3(textColor);
+
+			//no blinn
+			//vec3 reflectDir = reflect(-lightDir,norm);
+			//float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
+			//vec3 specular = vec3(dir.lightSpecularColor) * (spec * material[2])   * vec3(textColor);
+
+			//blinn
+			vec3 halfwayDir = normalize(lightDir + viewDir);
+			float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0), materialShininess);
+			vec3 specular = vec3(dir.lightSpecularColor) * (spec * material[2]);//			* vec3(textColor);
 
 			result += (ambient + diffuse + specular);
 		}
@@ -135,9 +142,15 @@ void main()
 
 			//specular
 			vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
-			vec3 reflectDir = reflect(-lightDir,norm);
-			float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
-			vec3 specular = vec3(ptl.lightSpecularColor) * (spec * material[2])    * vec3(textColor);
+
+			//no blinn
+			//vec3 reflectDir = reflect(-lightDir,norm);
+			//float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
+
+			//blinn
+			vec3 halfwayDir = normalize(lightDir + viewDir);
+			float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0), materialShininess);
+			vec3 specular = vec3(ptl.lightSpecularColor) * (spec * material[2]);//		* vec3(textColor);
 
 			//attenuation
 			float dist = length(ptl.lightPosition.xyz - vertexIn.fragPos);
@@ -165,9 +178,16 @@ void main()
 
 				//specular
 				vec3 viewDir = normalize(viewPos - vertexIn.fragPos);
-				vec3 reflectDir = reflect(-lightDir,norm);
-				float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
-				vec3 specular = vec3(sp.lightSpecularColor) * (spec * material[2]);
+
+				//no blinn
+				//vec3 reflectDir = reflect(-lightDir,norm);
+				//float spec = pow(max(dot(viewDir,reflectDir),0.0),materialShininess);
+				//vec3 specular = vec3(sp.lightSpecularColor) * (spec * material[2]);
+
+				//blinn
+				vec3 halfwayDir = normalize(lightDir + viewDir);
+				float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0), materialShininess);
+				vec3 specular = vec3(sp.lightSpecularColor) * (spec * material[2]);//		* vec3(textColor);
 
 				//attenuation
 				float epsilon = sp.cutOff - sp.outerCutOff;
@@ -176,12 +196,6 @@ void main()
 				float intensity = clamp((sp.outerCutOff - theta)/epsilon,0.0,1.0);
 
 				result += (diffuse + specular) * intensity;
-			}
-			else
-			{
-				//ambient
-				vec3 ambient =  vec3(sp.lightAmbientColor) * material[0] * vec3(textColor);
-				result += ambient;
 			}
 		}
 	}
