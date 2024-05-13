@@ -1,45 +1,58 @@
 #pragma once
 #include "glad/glad.h"
-
-struct vec4
+#include "MathPerso.h"
+enum class DirectionalLights
 {
-	float x;
-	float y; 
-	float z; 
-	float w;
+	DIR0,
+	DIR1,
+	DIR2,
+	DIR3,
+	NbLight
+};
+
+enum class PointLigths
+{
+	PT0,
+	PT1,
+	PT2,
+	PT3,
+	NbLight
+};
+
+enum class SpotLights
+{
+	SP0,
+	SP1,
+	SP2,
+	SP3,
+	NbLight
 };
 
 struct DirectionalLight
 {
-	vec4 lightColor;
+	Vector4D lightColor;
 
-	vec4 lightDirection;
+	Vector4D lightDirection;
 
-	vec4 lightAmbientColor;
-	vec4 lightDiffuseColor;
-	vec4 lightSpecularColor;
+	Vector4D lightAmbientColor;
+	Vector4D lightDiffuseColor;
+	Vector4D lightSpecularColor;
 
 	int enable;
 	int filling1;
 	int filling2;
 	int filling3;
-	//vec4 ConstLinQuadOnOFF; // {constant,linear,quadratic,true/false}
-
 };
 
-struct Test
-{
-	vec4 colorTest2;
-};
 struct PointLight
 {
-	vec4 lightColor;
+	Vector4D lightColor;
 
-	vec4 lightPosition;
+	Vector4D lightPosition;
 
-	vec4 lightAmbientColor;
-	vec4 lightDiffuseColor;
-	vec4 lightSpecularColor;
+	Vector4D lightAmbientColor;
+	Vector4D lightDiffuseColor;
+	Vector4D lightSpecularColor;
 
 	float constant;
 	float linear;
@@ -50,25 +63,20 @@ struct PointLight
 struct SpotLight
 {
 	//rgba
-	vec4 lightColor;
+	Vector4D lightColor;
 
-	vec4 lightPosition;
-	vec4 lightDirection;
+	Vector4D lightPosition;
+	Vector4D lightDirection;
 
-	vec4 lightAmbientColor;
-	vec4 lightDiffuseColor;
-	vec4 lightSpecularColor;
+	Vector4D lightAmbientColor;
+	Vector4D lightDiffuseColor;
+	Vector4D lightSpecularColor;
 
-	//vec4 ConstLinQuadOnOFF;
-	float constant;
-	float linear;
-	float quadratic;
-	int enable;
 
-	float cutoff;
+	float cutOff;
 	float outerCutOff;
-	float filling2;
-	float filling3;
+	int enable;
+	int filling3;
 };
 
 
@@ -82,6 +90,20 @@ struct LightManager
 	float filling1;
 	float filling2;
 	float filling3;
+
+	void SetLight(DirectionalLights lightToSet, Vector4D direction, Vector4D ambientColor,Vector4D diffuseColor,Vector4D specularColor,bool enable);
+	void SetLight(PointLigths lightToSet, Vector4D position, Vector4D ambientColor, Vector4D diffuseColor, Vector4D specularColor
+		, float constant, float linear, float quadratic, bool enable);
+	void SetLight(SpotLights lightToSet, Vector4D position, Vector4D direction, Vector4D ambientColor, Vector4D diffuseColor, Vector4D specularColor
+		, float cutOff, float outerCutOff, bool enable);
+
+	void SetActive(DirectionalLights lightToSet, bool enable);
+	void SetActive(PointLigths lightToSet, bool enable);
+	void SetActive(SpotLights lightToSet, bool enable);
+	void SetSpotAngle(SpotLights lightToSet,float angleInDegree,bool add = false);
+	void SetSpotOuterCutOff(SpotLights lightToSet, float angleInDegree);
+	float GetSpotAngle(SpotLights lightToSet);
+
 
 	void SetUpDirectional();
 	void SetUpPoints();
