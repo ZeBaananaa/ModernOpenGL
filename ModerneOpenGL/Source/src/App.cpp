@@ -60,6 +60,7 @@ void Application::InitCallbacks()
 	glfwSetKeyCallback(Application::window, InputHandler::KeyboardCallback);
 	glfwSetCursorPosCallback(Application::window, InputHandler::MouseCursorCallback);
 	glfwSetMouseButtonCallback(Application::window, InputHandler::MouseButtonCallback);
+	glfwSetScrollCallback(Application::window, InputHandler::MouseScrollCallback);
 
 	/* Window resizing & framebuffer callbacks */
 	glfwSetWindowSizeCallback(Application::window, WindowHandler::WindowResizeCallback);

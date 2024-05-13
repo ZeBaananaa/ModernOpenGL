@@ -125,8 +125,7 @@ int main()
 	GameObject* sp1 = new GameObject({ -5 ,0,5 }, { 0,0,0 }, Vector3D::one, "cube.obj");
 	GameObject* sp15 = new GameObject({ -2.5 ,0,2.5 }, { 0,45,0 }, Vector3D::one, "cube.obj");
 	
-	bool okm = false;
-	bool okp = false;
+	
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{
@@ -147,26 +146,21 @@ int main()
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);
 
-		if (InputHandler::IsKeyReleased(GLFW_KEY_M) && okm == true)
-			okm = false;
-
-		if (InputHandler::IsKeyReleased(GLFW_KEY_P) && okp == true)
-			okp = false;
-
-		if (InputHandler::IsKeyPressed(GLFW_KEY_M) && okm == false)
+		if (InputHandler::IsKeyPressed(GLFW_KEY_M))
 		{
-			okm = true;
 			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, -1, true);
 
 			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
+			DEBUG_LOG("Key Pressed : %d", InputHandler::GetKey());
 		}
-		if (InputHandler::IsKeyPressed(GLFW_KEY_P) && okp == false)
+		if (InputHandler::IsKeyPressed(GLFW_KEY_P))
 		{
-			okp = true;
 			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, 1, true);
 
 			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
 		}
+
+		InputHandler::ProcessPressedKeys();
 	}
 	Destroy();
 	return 0;
