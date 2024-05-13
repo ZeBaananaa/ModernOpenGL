@@ -60,7 +60,7 @@ void ResourceManager::Delete(std::string name)
 }
 std::string ResourceManager::GetExtension(std::string name)
 {
-    int index = name.find('.');
+    size_t index = name.find('.');
     std::string result = "";
 
     if (index < 0)

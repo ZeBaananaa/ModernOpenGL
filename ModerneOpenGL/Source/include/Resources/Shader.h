@@ -12,6 +12,9 @@ public:
 	bool SetFragmentShader(std::filesystem::path const& filename);
 	bool Link();
 
+	void Load(std::string name) {};
+	void UnLoad() {};
+
 	int GetProgram()
 	{
 		return shaderProgram;

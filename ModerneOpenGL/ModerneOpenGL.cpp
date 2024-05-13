@@ -1,5 +1,10 @@
 // ModerneOpenGL.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+#include "imgui_impl_opengl3_loader.h"
+
 #include "Assertion.h"
 //#include <cstdint>
 #include "Log.h"
@@ -10,12 +15,14 @@
 #include "App.h"
 #include "Utils/InputHandler.h"
 
-#include "glad/glad.h"
-#include <iostream>
+//#include "glad/glad.h"
+//#include "GLFW/glfw3.h"
 
 #include "GameObject.h"
 #include "Components.h"
 #include "SceneGraph.h"
+
+#include <iostream>
 
 void Destroy()
 {
@@ -56,6 +63,14 @@ void InitWindow()
 		std::cout << "Failed to initialize GLAD... \nAborting!" << std::endl;
 		return;
 	}
+
+	// IMGUI INIT
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	ImGui::StyleColorsDark();
+	ImGui_ImplGlfw_InitForOpenGL(window, true);
+	ImGui_ImplOpenGL3_Init("#version 330");
 
 	/* Enable Depth Testing */
 	glEnable(GL_DEPTH_TEST);
@@ -134,7 +149,6 @@ int main()
 		/* Poll for and process events */
 		glfwPollEvents();
 	}
-
 	Destroy();
 	return 0;
 }

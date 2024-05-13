@@ -1,8 +1,10 @@
 #pragma once
-#include <GLFW/glfw3.h>
+
+#include "MathPerso.h"
+#include "GLFW/glfw3.h"
+
 #include <vector>
 #include <iostream>
-#include "MathPerso.h"
 
 class InputHandler
 {

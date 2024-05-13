@@ -1,13 +1,14 @@
 #pragma once
-#include <glad/glad.h>
+
+#include "glad/glad.h"
+#include "Vertex.h"
+#include "ResourcesManager.h"
+#include "Log.h"
+
 #include <string>
 #include <vector>
 #include <fstream>
 #include <sstream>
-
-#include "Vertex.h"
-#include "ResourcesManager.h"
-#include "Log.h"
 
 class Model : public IResource
 {

@@ -1,8 +1,10 @@
 #pragma once
+
 #include "IComponent.h"
 #include "Components.h"
 #include "SceneGraph.h"
 #include "ResourcesManager.h"
+
 #include <typeinfo>
 
 class GameObject

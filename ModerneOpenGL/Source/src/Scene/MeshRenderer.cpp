@@ -45,7 +45,7 @@ void MeshRenderer::Update()
 
 		glBufferData(GL_UNIFORM_BUFFER, sizeof(LightManager), Application::Get().lightManager, GL_DYNAMIC_DRAW);
 
-		glDrawElements(GL_TRIANGLES, model->indexes.size(), GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(model->indexes.size()), GL_UNSIGNED_INT, 0);
 	}
 }
 
