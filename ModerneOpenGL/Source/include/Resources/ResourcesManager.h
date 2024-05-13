@@ -1,7 +1,9 @@
 #pragma once
+
 #include <string>
 #include <map>
 #include "Log.h"
+
 __interface IResource
 {
 	virtual void Load(std::string name) {};

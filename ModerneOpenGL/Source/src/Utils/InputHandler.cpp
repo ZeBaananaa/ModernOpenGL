@@ -3,7 +3,7 @@
 
 std::vector<int> InputHandler::m_CurrentKeyStatus(400, 0);
 std::vector<int> InputHandler::m_MouseButtonKeyStatus(12, 0);
-Vector2D InputHandler::mousePos(0.f, 0.f);
+Vector2D InputHandler::mousePos(0.0, 0.0);
 int InputHandler::keyPressed(-1);
 
 void InputHandler::Destroy()

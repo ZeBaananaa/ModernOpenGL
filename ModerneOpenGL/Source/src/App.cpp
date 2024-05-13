@@ -1,14 +1,16 @@
-#include <Utils/InputHandler.h>
+#include "Utils/InputHandler.h"
 
 #include "App.h"
 #include "Model.h"
 #include "Camera.h"
 #include "Utils/Time.h"
 #include "SceneGraph.h"
-#include <Resources/Texture.h>
+#include "Resources/Texture.h"
 #include "Light.h"
+#include <imgui.h>
+#include <imgui_impl_opengl3.h>
 
-#include "glad/glad.h"
+//#include "glad/glad.h"
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
 Application* Application::instance = nullptr;
@@ -162,11 +164,10 @@ void Application::Update()
 
 void Application::Render()
 {
+	glViewport(0, 0, m_width, m_height);
+	glClearColor(0.15f, 0.15f, 1.f, 1.f); // Set background color to blue
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	// Set background color to blue
-	glClearColor(0.15f, 0.15f, 1.f, 1.f);
-
+	
 	glUseProgram(shader.GetProgram());
 	SceneGraph::Get().Render();
 	//Model* alien = ResourceManager::Get().Get<Model>("Alien.obj");

@@ -40,7 +40,7 @@ void Model::Load(std::string nameObjFile)
     std::vector<Vector3D> normalObj;
     Vector3D vn;
 
-    std::map<std::string, int> tupleIndex;
+    std::map<std::string, size_t> tupleIndex;
 
     Vertex vertex;
 
@@ -138,7 +138,7 @@ void Model::Load(std::string nameObjFile)
                 }
             }
 
-            int nbVertexInPoly = indexVertexPolygon.size();
+            size_t nbVertexInPoly = indexVertexPolygon.size();
 
             indexes.push_back(indexVertexPolygon[0]);
             indexes.push_back(indexVertexPolygon[1]);
@@ -146,7 +146,7 @@ void Model::Load(std::string nameObjFile)
 
             if (nbVertexInPoly > 3)
             {
-                for (int indexInPoly = 3; indexInPoly < nbVertexInPoly; ++indexInPoly)
+                for (size_t indexInPoly = 3; indexInPoly < nbVertexInPoly; ++indexInPoly)
                 {
                     indexes.push_back(indexVertexPolygon[0]);
                     indexes.push_back(indexVertexPolygon[indexInPoly - 1]);

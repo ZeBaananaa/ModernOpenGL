@@ -1,6 +1,9 @@
 #pragma once
+
 #include "glad/glad.h"
+#include "GLFW/glfw3.h"
 #include "MathPerso.h"
+
 enum class DirectionalLights
 {
 	DIR0,
@@ -38,10 +41,10 @@ struct DirectionalLight
 	Vector4D lightDiffuseColor;
 	Vector4D lightSpecularColor;
 
-	int enable;
-	int filling1;
-	int filling2;
-	int filling3;
+	int enable = 0;
+	int filling1 = 0;
+	int filling2 = 0;
+	int filling3 = 0;
 };
 
 struct PointLight

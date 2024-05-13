@@ -1,6 +1,7 @@
 #include "ResourcesManager.h"
 #include "Model.h"
 #include "Log.h"
+
 ResourceManager* ResourceManager::instance = nullptr;
 
 ResourceManager::~ResourceManager()

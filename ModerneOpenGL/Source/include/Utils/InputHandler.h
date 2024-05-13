@@ -1,6 +1,8 @@
 #pragma once
 
 #include "MathPerso.h"
+
+#include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
 #include <vector>
@@ -29,10 +31,10 @@ public:
     static bool IsMousePressed(int button);
     static bool IsMouseReleased(int button);
 
-    static void SetMousePos(float x, float y)
+    static void SetMousePos(double x, double y)
     {
-        mousePos.x = x;
-        mousePos.y = y;
+        mousePos.x = static_cast<float>(x);
+        mousePos.y = static_cast<float>(y);
     };
 
     static Vector2D GetMousePos()

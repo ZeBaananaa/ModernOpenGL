@@ -1,6 +1,7 @@
 #pragma once
-#include <glad/glad.h>
-#include <gl/GL.h>
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 #include "ResourcesManager.h"
 

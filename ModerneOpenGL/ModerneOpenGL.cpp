@@ -3,7 +3,9 @@
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-#include "imgui_impl_opengl3_loader.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 #include "Assertion.h"
 //#include <cstdint>
@@ -14,9 +16,6 @@
 #include "MathPerso.h"
 #include "App.h"
 #include "Utils/InputHandler.h"
-
-//#include "glad/glad.h"
-//#include "GLFW/glfw3.h"
 
 #include "GameObject.h"
 #include "Components.h"
@@ -36,6 +35,10 @@ void Destroy()
 	Log::Destroy();
 	SceneGraph::Destroy();
 	InputHandler::Destroy();
+
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
 }
 
 void InitWindow()
@@ -47,6 +50,10 @@ void InitWindow()
 	/* Create a windowed mode window and its OpenGL context */
 
 	GLFWwindow* window = glfwCreateWindow(1280, 720, "Modern OpenGL", NULL, NULL);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
 	if (!window)
 	{
 		std::cout << "Cannot create GLFW Window... \nAborting!" << std::endl;
@@ -56,21 +63,14 @@ void InitWindow()
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1); // Enable vsync
 
 	/* Init glad after context is defined */
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize GLAD... \nAborting!" << std::endl;
 		return;
-	}
-
-	// IMGUI INIT
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	ImGui::StyleColorsDark();
-	ImGui_ImplGlfw_InitForOpenGL(window, true);
-	ImGui_ImplOpenGL3_Init("#version 330");
+	};
 
 	/* Enable Depth Testing */
 	glEnable(GL_DEPTH_TEST);
@@ -80,6 +80,17 @@ void InitWindow()
 	glCullFace(GL_BACK);
 
 	Application::Get().window = window;
+
+	// IMGUI INIT
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+	ImGui::StyleColorsDark();
+	ImGui_ImplGlfw_InitForOpenGL(Application::Get().window, true);
+	ImGui_ImplOpenGL3_Init("#version 330");
 }
 
 
@@ -119,8 +130,19 @@ int main()
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{
+		/* Poll for and process events */
+		glfwPollEvents();
+
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
 		/* Render here */
 		Application::Get().Update();
+
+		ImGui::ShowDemoWindow();
+		ImGui::Render();
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);
@@ -145,9 +167,6 @@ int main()
 
 			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
 		}
-
-		/* Poll for and process events */
-		glfwPollEvents();
 	}
 	Destroy();
 	return 0;

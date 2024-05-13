@@ -1,4 +1,5 @@
 #include "Log.h"
+
 Log* Log::instance = nullptr;
 
 Log::Log(const char* fileName)
