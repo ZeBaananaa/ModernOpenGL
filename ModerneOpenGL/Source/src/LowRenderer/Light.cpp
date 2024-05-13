@@ -173,7 +173,7 @@ void LightManager::Init()
 	SetUpPoints();
 	SetUpSpots();
 
-	SetLight(DirectionalLights::DIR0, { 1,-1,-1,0 }, { 1,1,1,1.f }, { 0,0,0,1 }, { 0.5f,0.5f,0.5f,1 }, true);
+	SetLight(DirectionalLights::DIR0, { 1,-1,-1,0 }, { 10,10,10,1.f }, { 0,0,0,1 }, { 0.5f,0.5f,0.5f,1 }, true);
 
 	SetLight(PointLigths::PT0, { 5,5,2,1 }, { 0,0,0,1 }, { 7,7,7,1 }, { 2,2,2,1 }, 1, 0.4, 0.4, true);
 
