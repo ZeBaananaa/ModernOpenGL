@@ -1,6 +1,7 @@
 #pragma once
 #include "MathPerso.h"
 #include <vector>
+#include "Collision.h"
 
 class GameObject;
 class Transform
@@ -16,6 +17,8 @@ public:
 	void Update();
 	void Render();
 	void Delete();
+
+	void CheckCollision(Collider* collider);
 
 	void SetParent(Transform* parent);
 	void SetChildrenRecalculateGlobalTransform();

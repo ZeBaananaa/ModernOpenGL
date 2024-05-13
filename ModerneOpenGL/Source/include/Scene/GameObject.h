@@ -19,7 +19,6 @@ public:
 		GLuint textureMode = GLFW_REPEAT, Transform* _parent = SceneGraph::Get().root);
 
 
-
 	~GameObject();
 
 	void Update();

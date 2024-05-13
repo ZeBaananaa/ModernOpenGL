@@ -163,6 +163,14 @@ void Transform::RemoveChildren(Transform* child)
 	}
 }
 
+void Transform::CheckCollision(Collider* collider)
+{
+	if (gameObject && gameObject->GetComponent<Collider>())
+	{
+
+	}
+}
+
 #pragma region Local Transform
 
 void Transform::SetLocalTransformOnParentChange()

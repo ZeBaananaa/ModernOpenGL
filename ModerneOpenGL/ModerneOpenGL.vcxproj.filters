@@ -22,6 +22,7 @@
     <ClCompile Include="Source\src\Utils\WindowHandler.cpp" />
     <ClCompile Include="Source\src\Resources\Texture.cpp" />
     <ClCompile Include="Source\include\LowRenderer\Light.cpp" />
+    <ClCompile Include="Source\src\Core\Maths\Collision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />
@@ -52,6 +53,7 @@
     <ClInclude Include="Source\include\Scene\IComponent.h" />
     <ClInclude Include="Source\include\Scene\MeshRenderer.h" />
     <ClInclude Include="Source\include\Scene\Components.h" />
+    <ClInclude Include="Source\include\Core\Maths\Collision.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

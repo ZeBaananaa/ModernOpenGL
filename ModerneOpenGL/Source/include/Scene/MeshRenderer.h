@@ -11,6 +11,7 @@ public:
 	MeshRenderer(GameObject* gameObject, std::string modelName, std::string textureName, GLuint textureMode = GL_REPEAT);
 	~MeshRenderer();
 
+	void Init() override;
 	void Update() override;
 	void Delete() override;
 
