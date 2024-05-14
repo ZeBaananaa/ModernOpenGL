@@ -90,7 +90,7 @@ void Transform::Update()
 
 	for (size_t i = 0; i < children.size(); i++)
 	{
-		children[i]->gameObject->Update();
+		children[i]->gameObject->transform->Update();
 	}
 }
 

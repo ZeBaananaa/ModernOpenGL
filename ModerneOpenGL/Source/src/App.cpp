@@ -157,6 +157,7 @@ void Application::Update()
 	Time::Update();
 	Camera::Get().Update();
 	RotationMouse();
+	SceneGraph::Get().Update();
 	Render();
 }
 

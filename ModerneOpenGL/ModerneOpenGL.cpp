@@ -82,23 +82,38 @@ int main()
 	SceneGraph::Get();
 
 	//GameObject* c1 = new GameObject({ -5,0,0 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
-	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.jpg");
+	//GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.jpg");
 	//GameObject* c2 = new GameObject({ 5,0,0 }, Vector3D::zero, Vector3D::one, "Wolf.obj", "Wolf_Body.jpg");
 	//GameObject* c3 = new GameObject({ 10,-50,0 }, {0,0,0}, Vector3D(1,0,1), "cube.obj", "");
 	//GameObject* c4 = new GameObject({ -20,0,0 }, {90,0,0}, Vector3D::one, "shield.obj", "shield.png");
 
 
-	for (size_t i = 0; i < 11; i++)
+	//for (size_t i = 0; i < 11; i++)
+	//{
+	//	for (size_t j = 0; j < 11; j++)
+	//	{
+	//		GameObject* sp0 = new GameObject({ i*1.5f - 7.5f,j * 1.5f - 7.5f,0 }, { 0,0,0 }, Vector3D::one, "cube.obj");
+	//	}
+	//}
+	//
+	//GameObject* sp1 = new GameObject({ -5 ,0,5 }, { 0,0,0 }, Vector3D::one, "cube.obj");
+	//GameObject* sp15 = new GameObject({ -2.5 ,0,2.5 }, { 0,45,0 }, Vector3D::one, "cube.obj");
+	
+	GameObject* c1 = new GameObject({ -5,5,5 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
+	GameObject* c2 = new GameObject({ 0,0,0 }, Vector3D::zero, Vector3D::one, "cube.obj", "black.png");
+
+	c1->AddComponent(AddCollider(Colliders::SPHERE, c1));
+	c2->AddComponent(AddCollider(Colliders::CUBE, c2));
+
+	SceneGraph::Get().Update();
+
+	c1->transform->SetLocalPosition(Vector3D::zero);
+
+	if (CollisionSphereBox(c1->GetComponent<SphereCollider>(), c2->GetComponent<BoxCollider>()))
 	{
-		for (size_t j = 0; j < 11; j++)
-		{
-			GameObject* sp0 = new GameObject({ i*1.5f - 7.5f,j * 1.5f - 7.5f,0 }, { 0,0,0 }, Vector3D::one, "cube.obj");
-		}
+		c1->GetComponent<MeshRenderer>()->texture = ResourceManager::Get().Get<Texture>("missing_texture.jpg");
 	}
-	
-	GameObject* sp1 = new GameObject({ -5 ,0,5 }, { 0,0,0 }, Vector3D::one, "cube.obj");
-	GameObject* sp15 = new GameObject({ -2.5 ,0,2.5 }, { 0,45,0 }, Vector3D::one, "cube.obj");
-	
+
 	bool okm = false;
 	bool okp = false;
 	/* Loop until the user closes the window */
