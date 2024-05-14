@@ -1,9 +1,5 @@
 // ModerneOpenGL.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
-
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
@@ -20,6 +16,7 @@
 #include "GameObject.h"
 #include "Components.h"
 #include "SceneGraph.h"
+#include "Menu.h"
 
 #include <iostream>
 
@@ -35,10 +32,7 @@ void Destroy()
 	Log::Destroy();
 	SceneGraph::Destroy();
 	InputHandler::Destroy();
-
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
+	Menu::Get().Destroy();
 }
 
 void InitWindow()
@@ -81,16 +75,7 @@ void InitWindow()
 
 	Application::Get().window = window;
 
-	// IMGUI INIT
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-
-	ImGui::StyleColorsDark();
-	ImGui_ImplGlfw_InitForOpenGL(Application::Get().window, true);
-	ImGui_ImplOpenGL3_Init("#version 330");
+	Menu::Get().Init();
 }
 
 
@@ -102,13 +87,11 @@ int main()
 	//#endif
 	
 	InitWindow();
-
 	Application::Get().Initialise();
-
 	SceneGraph::Get();
 
 	//GameObject* c1 = new GameObject({ -5,0,0 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
-	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.jpg");
+	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png");
 	//GameObject* c2 = new GameObject({ 5,0,0 }, Vector3D::zero, Vector3D::one, "Wolf.obj", "Wolf_Body.jpg");
 	//GameObject* c3 = new GameObject({ 10,-50,0 }, {0,0,0}, Vector3D(1,0,1), "cube.obj", "");
 	//GameObject* c4 = new GameObject({ -20,0,0 }, {90,0,0}, Vector3D::one, "shield.obj", "shield.png");
@@ -132,33 +115,21 @@ int main()
 		/* Poll for and process events */
 		glfwPollEvents();
 
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
+		Menu::Get().Update();
 
 		/* Render here */
 		Application::Get().Update();
 
-		ImGui::ShowDemoWindow();
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		Menu::Get().Render();
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);
 
 		if (InputHandler::IsKeyPressed(GLFW_KEY_M))
-		{
 			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, -1, true);
 
-			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
-			DEBUG_LOG("Key Pressed : %d", InputHandler::GetKey());
-		}
 		if (InputHandler::IsKeyPressed(GLFW_KEY_P))
-		{
 			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, 1, true);
-
-			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
-		}
 
 		InputHandler::ProcessPressedKeys();
 	}

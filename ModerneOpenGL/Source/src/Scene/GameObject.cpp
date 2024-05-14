@@ -10,14 +10,14 @@ GameObject::GameObject(std::string modelName, std::string textureName, GLuint te
 {
 	transform = new Transform(this, _parent);
 	textureName != "" ? components.push_back(new MeshRenderer(this, modelName, textureName, textureMode))
-		: components.push_back(new MeshRenderer(this, modelName, "missing_texture.jpg", textureMode));
+		: components.push_back(new MeshRenderer(this, modelName, "missing_texture.png", GL_REPEAT));
 }
 
 GameObject::GameObject(Vector3D position, Vector3D rotation, Vector3D scale, std::string modelName, std::string textureName, GLuint textureMode, Transform* _parent)
 {
 	transform = new Transform(position,rotation,scale,this, _parent);
 	textureName != "" ? components.push_back(new MeshRenderer(this, modelName, textureName, textureMode))
-		: components.push_back(new MeshRenderer(this, modelName, "missing_texture.jpg", textureMode));
+		: components.push_back(new MeshRenderer(this, modelName, "missing_texture.png", GL_REPEAT));
 }
 
 GameObject::~GameObject()

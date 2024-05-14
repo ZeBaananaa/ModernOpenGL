@@ -3,6 +3,12 @@
 #include "Shader.h"
 #include "Utils/WindowHandler.h"
 #include "Light.h"
+#include "Utils/InputHandler.h"
+#include "Model.h"
+#include "Camera.h"
+#include "Utils/Time.h"
+#include "SceneGraph.h"
+#include "Resources/Texture.h"
 
 class Application
 {

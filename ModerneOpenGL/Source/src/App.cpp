@@ -1,16 +1,4 @@
-#include "Utils/InputHandler.h"
-
 #include "App.h"
-#include "Model.h"
-#include "Camera.h"
-#include "Utils/Time.h"
-#include "SceneGraph.h"
-#include "Resources/Texture.h"
-#include "Light.h"
-#include <imgui.h>
-#include <imgui_impl_opengl3.h>
-
-//#include "glad/glad.h"
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
 Application* Application::instance = nullptr;
@@ -87,23 +75,6 @@ void InitModel(std::string modelName)
 	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
 	model->vertexAttributes.SetAttributes(1, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
 	model->vertexAttributes.SetAttributes(2, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
-
-
-	/*
-	//crreation UBO (uniform buffer)
-	glGenBuffers(1, &UBO);
-	glBindBuffer(GL_UNIFORM_BUFFER, UBO);
-	glBufferData(GL_UNIFORM_BUFFER, sizeof(Block),
-		uboData, GL_STREAM_DRAW);
-
-	//commet relier un UBO et un block
-	//1 choisir un binding point
-	glBindBufferBase(GL_UNIFORM_BUFFER, 42, UBO);
-	//2 recuperer l index de l'uniform block
-	int32_t index = glGetUniformBlockIndex(program, "Matrices");
-	//3 relier le block et l UBO sur le binding point
-	glUniformBlockBinding(program, index, 42);
-	*/
 }
 
 
@@ -171,14 +142,6 @@ void Application::Render()
 	
 	glUseProgram(shader.GetProgram());
 	SceneGraph::Get().Render();
-	//Model* alien = ResourceManager::Get().Get<Model>("Alien.obj");
-
-	//Matrix4x4 MVP =  Camera::Get().GetVPMatrix() * TRS({ -10, -10, -10 }, { 0, 0, 0 }, { 10, 10, 10 });
-	//float tab[16];
-	//Matrix4x4ToFloat(MVP, tab);
-	//glUniformMatrix4fv(glGetUniformLocation(shader.GetProgram(), "MVP"), 1, false, tab);
-
-	//glDrawElements(GL_TRIANGLES, alien->indexes.size(), GL_UNSIGNED_INT, 0);
 }
 
 void Application::RotationMouse()

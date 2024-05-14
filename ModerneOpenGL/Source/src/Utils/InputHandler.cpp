@@ -19,6 +19,9 @@ void InputHandler::Destroy()
 
 void InputHandler::KeyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+	if (!m_pressedKey.empty())
+		m_pressedKey.clear(); // Clear list of pressed keys to avoid key being continuously detected
+
 	ImGui_ImplGlfw_KeyCallback(window, key, scancode, action, mods);
 
 	m_CurrentKeyStatus[key] = action;
@@ -52,7 +55,6 @@ void InputHandler::ProcessPressedKeys()
 	for (int key : m_pressedKey)
 		m_CurrentKeyStatus[key] = GLFW_REPEAT;
 }
-
 
 bool InputHandler::IsKeyPressed(int key)
 {

@@ -29,7 +29,6 @@ public:
 
     static int GetKey();
 
-
     static bool IsMousePressed(int button);
     static bool IsMouseReleased(int button);
 
@@ -39,6 +38,7 @@ public:
     static void SetMousePos(double x, double y);
     static Vector2D GetMousePos();
     static void ProcessPressedKeys();
+
 private:
     static std::vector<int> m_CurrentKeyStatus;
     static std::vector<int> m_pressedKey;
