@@ -61,6 +61,6 @@ bool CollisionSphereBox(SphereCollider* s, BoxCollider* b);
 bool CollisionSegmentPlan();
 bool CollisionSegmentQuad();
 
-bool CollisionSegmentCapsule(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius, SphereCollider* collider);
-bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, SphereCollider* collider,Vector3D& posCol);
-bool CollisionSegmentCylinder(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius, SphereCollider* collider,Vector3D& posCol);
+bool CollisionSegmentCapsule(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius);
+bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, Vector3D& posCol);
+bool CollisionSegmentCylinder(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius, Vector3D& posCol);
