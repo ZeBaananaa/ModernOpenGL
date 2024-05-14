@@ -46,11 +46,11 @@ void InitWindow()
 	GLFWwindow* window = glfwCreateWindow(1280, 720, "Modern OpenGL", NULL, NULL);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+	glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
 	if (!window)
 	{
-		std::cout << "Cannot create GLFW Window... \nAborting!" << std::endl;
+		DEBUG_LOG("Cannot create GLFW Window... \nAborting!\n");
 		glfwTerminate();
 		return;
 	}
@@ -62,20 +62,19 @@ void InitWindow()
 	/* Init glad after context is defined */
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
-		std::cout << "Failed to initialize GLAD... \nAborting!" << std::endl;
+		DEBUG_LOG("Failed to initialize GLAD... \nAborting!\n");
 		return;
 	};
 
-	/* Enable Depth Testing */
-	glEnable(GL_DEPTH_TEST);
-
-	/* Enable face culling & set it to back faces (Helps improve performances) */
-	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST); /* Enable Depth Testing */
+	glEnable(GL_CULL_FACE); /* Enable face culling & set it to back faces (Helps improve performances) */
 	glCullFace(GL_BACK);
 
 	Application::Get().window = window;
 
 	Menu::Get().Init();
+	Application::Get().Initialise();
+	SceneGraph::Get();
 }
 
 
@@ -87,35 +86,21 @@ int main()
 	//#endif
 	
 	InitWindow();
-	Application::Get().Initialise();
-	SceneGraph::Get();
 
-	//GameObject* c1 = new GameObject({ -5,0,0 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
-	GameObject* c0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png");
-	//GameObject* c2 = new GameObject({ 5,0,0 }, Vector3D::zero, Vector3D::one, "Wolf.obj", "Wolf_Body.jpg");
-	//GameObject* c3 = new GameObject({ 10,-50,0 }, {0,0,0}, Vector3D(1,0,1), "cube.obj", "");
-	//GameObject* c4 = new GameObject({ -20,0,0 }, {90,0,0}, Vector3D::one, "shield.obj", "shield.png");
+	GameObject* obj0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png", "Alien");
+	GameObject* obj1 = new GameObject(Vector3D(-5.f, 0.f, 5.f), Vector3D::zero, Vector3D(5.f), "sphere.obj", "", "Sphere", obj0->transform);
 
-
+	GameObject* empty = new GameObject(SceneGraph::Get().root, "All Cubes");
 	for (size_t i = 0; i < 11; i++)
-	{
 		for (size_t j = 0; j < 11; j++)
-		{
-			GameObject* sp0 = new GameObject({ i*1.5f - 7.5f,j * 1.5f - 7.5f,0 }, { 0,0,0 }, Vector3D::one, "cube.obj");
-		}
-	}
-	
-	GameObject* sp1 = new GameObject({ -5 ,0,5 }, { 0,0,0 }, Vector3D::one, "cube.obj");
-	GameObject* sp15 = new GameObject({ -2.5 ,0,2.5 }, { 0,45,0 }, Vector3D::one, "cube.obj");
-	
+			GameObject* cube = new GameObject({ i * 1.5f - 7.5f, j * 1.5f - 7.5f, 0.f }, { 0.f, 0.f, 0.f },
+												Vector3D::one, "cube.obj", "", "", empty->transform);
 	
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
 	{
 		/* Poll for and process events */
 		glfwPollEvents();
-
-		Menu::Get().Update();
 
 		/* Render here */
 		Application::Get().Update();

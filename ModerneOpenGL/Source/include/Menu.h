@@ -12,12 +12,15 @@ public:
 
 	static Menu& Get();
 	static void Destroy();
+
 	void Init();
 	void Render();
-	void Update();
+	void Draw();
+
+	void DrawRoot();
+	void DrawChildren(Transform* child);
 
 private:
 	Menu() = default;
-
 	static Menu* instance;
 };

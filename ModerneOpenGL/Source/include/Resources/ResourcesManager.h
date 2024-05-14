@@ -46,11 +46,8 @@ public:
 			{
 				resource = new T(name);
 
-				DEBUG_LOG("Does the resource " + name + " already exist ?");
-				if(IsKeyInList(name))
-				{
+				if (IsKeyInList(name))
 					Delete(name);
-				}
 				
 				resources[name] = resource;
 			}

@@ -51,8 +51,8 @@ void Application::InitCallbacks()
 	glfwSetScrollCallback(Application::window, InputHandler::MouseScrollCallback);
 
 	/* Window resizing & framebuffer callbacks */
-	glfwSetWindowSizeCallback(Application::window, WindowHandler::WindowResizeCallback);
 	glfwSetFramebufferSizeCallback(Application::window, WindowHandler::BufferResizeCallback);
+	glfwSetWindowSizeCallback(Application::window, WindowHandler::WindowResizeCallback);
 }
 
 void InitModel(std::string modelName)
@@ -95,16 +95,10 @@ void InitTexture(std::string textureName)
 	std::string txtPath = "Assets/Textures/";
 
 	for (const auto& entry : std::filesystem::directory_iterator(path))
-	{
 		InitModel(entry.path().filename().string());
-		std::cout << entry.path().filename() << std::endl;
-	}
 
 	for (const auto& txtEntry : std::filesystem::directory_iterator(txtPath))
-	{
 		InitTexture(txtEntry.path().filename().string());
-		std::cout << txtEntry.path().filename() << std::endl;
-	}
 }
 
 bool Application::Initialise()

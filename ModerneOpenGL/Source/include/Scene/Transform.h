@@ -43,14 +43,16 @@ public:
 	Vector3D GetGlobalPosition();
 	Vector3D GetGlobalRotation();
 	Vector3D GetGlobalScale();
+
 	#pragma endregion
 
+	std::string GetName() const;
+	void SetName(std::string value);
+
+	std::vector<Transform*>& GetChildren();
 
 	bool recalculateLocalT = true;
 	bool recalculateGlobalT = true;
-
-
-	std::string name = "";
 
 private :
 	void SetLocalTransformOnParentChange();
@@ -65,7 +67,6 @@ private :
 	Vector3D localRotation;
 	Vector3D localScale;
 
-
 	Vector3D globalPosition;
 	//local rota + parent rota + parent parent rota (+ parent global rota en gros)
 	Vector3D globalRotation;
@@ -73,5 +74,6 @@ private :
 	Vector3D globalScale;
 
 	Transform* parent = nullptr;
+	std::string name = "";
 };
 

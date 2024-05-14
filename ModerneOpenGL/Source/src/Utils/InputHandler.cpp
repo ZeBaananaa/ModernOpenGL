@@ -4,7 +4,7 @@
 #include "imgui_impl_glfw.h"
 
 std::vector<int> InputHandler::m_CurrentKeyStatus(400, 0);
-std::vector<int> InputHandler::m_MouseButtonKeyStatus(15, 0);
+std::vector<int> InputHandler::m_MouseButtonKeyStatus(16, 0);
 std::vector<int> InputHandler::m_pressedKey;
 Vector2D InputHandler::mousePos;
 Vector2D InputHandler::wheelPos;
