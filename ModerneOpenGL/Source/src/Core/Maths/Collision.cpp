@@ -118,12 +118,13 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 
 	Vector3D posCol = {10000,10000,10000};
 	bool col = false;
-
+	Vector3D lr = box->gameObject->transform->GetLocalRotation();
 	for (int i = 0; i < 2; ++i)
 	{
 		Vector3D rota{90,0,0};
 		if (i == 1)
 			rota = {0,0,90};
+		rota -= lr;
 
 		int j = i + 1;
 
