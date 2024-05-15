@@ -120,7 +120,7 @@ int main()
 	//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	//	//_CrtSetBreakAlloc(699402);
 	//#endif
-	
+
 	InitWindow();
 
 	GameObject* obj0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png", "Alien");
@@ -164,7 +164,6 @@ int main()
 	glBindVertexArray(0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-	
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyDown(GLFW_KEY_ESCAPE))
 	{
@@ -177,6 +176,37 @@ int main()
 		Menu::Get().Render();
 
 		glDepthFunc(GL_LEQUAL);
+
+		Matrix4x4 view = Matrix4x4(1.0f);
+		Matrix4x4 projection = Matrix4x4(1.0f);
+		view = Matrix4x4(Matrix3x3(ViewMatrix(Camera::Get().GetCenter(), Camera::Get().GetCenter() + Camera::Get().GetDirection(), Vector3D(0.f, 1.f, 0.f))));
+		projection = PerspectiveMatrix(45.f, Application::Get().m_width / Application::Get().m_height, 0.1f, 1000.f);
+
+		for (int i = 0; i < 4; ++i)
+		{
+			for (int j = 0; j < 4; ++j)
+			{
+				if (i == 0 && j == 0)
+					std::cout << "\n BEGIN Matrix Debug\n\n" << std::endl;
+
+				std::cout << projection[i][j] << std::endl;
+
+				if (i == 4 && j == 4)
+					std::cout << "\n END DEBUG \n" << std::endl;
+			}
+		}
+
+		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "view"), 1, GL_FALSE, &view.col1.x);
+		glUniformMatrix4fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "projection"), 1, GL_FALSE, &projection.col1.x);
+
+		glBindVertexArray(skyboxVAO);
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, skybox->GetTexture());
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
+
+		// Switch back to the normal depth function
+		glDepthFunc(GL_LESS);
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);

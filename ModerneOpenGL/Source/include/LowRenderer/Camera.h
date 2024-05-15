@@ -23,7 +23,7 @@ public:
 
 	void SetFov(float newFov);
 	void SetNearFar(float newNear, float newFar);
-	
+
 	float speed{ 10.f };
 	bool recalculateView = true;
 	bool recalculateProjection = true;
@@ -31,17 +31,16 @@ public:
 private:
 	Camera();
 	static Camera* instance;
-	
+
 	Matrix4x4 viewMatrix;
 	Matrix4x4 projectionMatrix;
 	Matrix4x4 vpMatrix;
-	
+
 	Vector3D eye;
 	Vector3D center;
 
 	float _fov{90.f};
 	float _near{ 0.1f };
 	float _far{ 1000.f };
-	
 };
 

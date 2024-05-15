@@ -43,7 +43,7 @@ void Application::InitShaders()
 	glBindBufferBase(GL_UNIFORM_BUFFER, 0, instance->lightManager->ubo);
 
 	/* SKYBOX SHADER */
-	
+
 	skybox.SetVertex("Assets/Shaders/Skybox.vert");
 	skybox.SetFragment("Assets/Shaders/Skybox.frag");
 	skybox.Link();
@@ -118,7 +118,7 @@ bool Application::Initialise()
 	InitResources();
 	InitCallbacks();
 	InitShaders();
-	
+
 	return true;
 }
 
@@ -140,11 +140,11 @@ void Application::Update()
 void Application::Render()
 {
 	glViewport(0, 0, m_width, m_height);
-	glClearColor(0.15f, 0.15f, 1.f, 1.f); // Set background color to blue
+	//glClearColor(0.15f, 0.15f, 1.f, 1.f); // Set background color to blue
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
+
 	glUseProgram(shader.GetProgram());
-	//glUseProgram(skybox.GetProgram());
+	glUseProgram(skybox.GetProgram());
 	SceneGraph::Get().Render();
 }
 

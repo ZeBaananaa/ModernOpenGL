@@ -50,6 +50,10 @@ public:
 
 	void Load(std::vector<Texture> textures);
 	void LoadCubemapFlags();
+	int GetTexture()
+	{
+		return texture;
+	}
 
 private:
 	std::vector<Texture> texture_face;
