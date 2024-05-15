@@ -97,8 +97,17 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 
 	Matrix4x4 g = box->gameObject->transform->GetGlobalTransform();
 	Matrix4x4 rg = Reverse(g);
-	Vector3D positionOldSphereL = rg * Vector4D(collider->oldPos);
-	Vector3D positionSphereL = rg * Vector4D(collider->gameObject->transform->GetGlobalPosition());
+
+	Vector3D inverseScale = box->gameObject->transform->GetGlobalScale();
+	inverseScale.x = 1.0f / inverseScale.x;
+	inverseScale.y = 1.0f / inverseScale.y;
+	inverseScale.z = 1.0f / inverseScale.z;
+
+	Vector3D value = box->gameObject->transform->GetGlobalRotation() * -1;
+	Matrix4x4 trss = TRS(box->gameObject->transform->GetGlobalPosition() * -1, value, inverseScale);
+	
+	Vector3D positionOldSphereL = trss * Vector4D(collider->oldPos);
+	Vector3D positionSphereL = trss * Vector4D(collider->gameObject->transform->GetGlobalPosition());
 
 	if (positionOldSphereL == positionSphereL)
 		return false;
@@ -106,7 +115,7 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	Vector3D sizeScaled = TensorialProduct(box->size, box->scale);
 
 	std::vector<Vector3D> points;
-	points.push_back({ -sizeScaled.x / 2.f, -sizeScaled.y / 2.f, -sizeScaled.z / 2.f });
+	points.push_back({ -sizeScaled.x / 2.f, -sizeScaled.y / 2.f, -sizeScaled.z / 2.f } );
 	points.push_back({ -sizeScaled.x / 2.f, -sizeScaled.y / 2.f, sizeScaled.z / 2.f });
 	points.push_back({ sizeScaled.x / 2.f, -sizeScaled.y / 2.f, sizeScaled.z / 2.f });
 	points.push_back({ sizeScaled.x / 2.f, -sizeScaled.y / 2.f, -sizeScaled.z / 2.f });
@@ -116,15 +125,51 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	points.push_back({ sizeScaled.x / 2.f, sizeScaled.y / 2.f, sizeScaled.z / 2.f });
 	points.push_back({ sizeScaled.x / 2.f, sizeScaled.y / 2.f, -sizeScaled.z / 2.f });
 
+	for (size_t i = 0; i < points.size(); i++)
+	{
+		GameObject* g = new GameObject(points[i],Vector3D::zero,Vector3D::one * 0.2f,"cube.obj");
+	}
+
+	GameObject* c = new GameObject(positionOldSphereL, box->gameObject->transform->GetGlobalRotation(), Vector3D::one * 0.4f, "cube.obj");
+	//GameObject* d = new GameObject(positionSphereL, box->gameObject->transform->GetGlobalRotation(), Vector3D::one * 0.4f, "cube.obj");
+
 	Vector3D posCol = {10000,10000,10000};
 	bool col = false;
-	Vector3D lr = box->gameObject->transform->GetLocalRotation();
+	
+	for (int i = 0; i < 4; ++i)
+	{
+		//caps horizontal
+			//bottom
+
+		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i], radiusScaled, posCol,g))
+		{
+			col = true;
+		}
+		//top
+
+		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i + 4], radiusScaled, posCol,g))
+		{
+			col = true;
+		}
+	}
+	if (col)
+	{
+		GameObject* g = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.2f, "sphere.obj");
+
+		posCol = box->gameObject->transform->GetGlobalTransform() * (Vector4D)posCol;
+
+		Vector3D realPos = posCol - collider->gameObject->transform->GetGlobalPosition();
+		collider->gameObject->transform->SetLocalPosition(collider->gameObject->transform->GetLocalPosition() + realPos);
+
+		return true;
+	}
+	
+	
 	for (int i = 0; i < 2; ++i)
 	{
 		Vector3D rota{90,0,0};
 		if (i == 1)
 			rota = {0,0,90};
-		rota -= lr;
 
 		int j = i + 1;
 
@@ -171,7 +216,10 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	}
 	if (col)
 	{
-		posCol = box->gameObject->transform->GetGlobalTransform() * (Vector4D)posCol;
+
+		GameObject* g = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.3f, "sphere.obj");
+		//posCol = box->gameObject->transform->GetGlobalTransform() * (Vector4D)posCol;
+		//GameObject* a = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.2f, "pyramid.obj");
 
 		Vector3D realPos = posCol - collider->gameObject->transform->GetGlobalPosition();
 		collider->gameObject->transform->SetLocalPosition(collider->gameObject->transform->GetLocalPosition() + realPos);
@@ -179,37 +227,7 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 		return true;
 	}
 
-	for (int i = 0; i < 4; ++i)
-	{
-		//caps horizontal
-			//bottom
-
-		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i], radiusScaled, posCol))
-		{
-			col = true;
-		}
-		//top
-
-		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i + 4], radiusScaled, posCol))
-		{
-			col = true;
-		}
-
-		//caps vertical
-		if (CollisionSegmentCylinder(positionOldSphereL, positionSphereL, points[i], points[i + 4], radiusScaled, posCol))
-		{
-			col = true;
-		}
-	}
-	if (col)
-	{
-		posCol = box->gameObject->transform->GetGlobalTransform() * (Vector4D)posCol;
-
-		Vector3D realPos = posCol - collider->gameObject->transform->GetGlobalPosition();
-		collider->gameObject->transform->SetLocalPosition(collider->gameObject->transform->GetLocalPosition() + realPos);
-
-		return true;
-	}
+	
 	else
 	{
 		//for (int i = 0; i < 6; ++i)
@@ -229,7 +247,7 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	return false;
 }
 
-bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, Vector3D& posCol)
+bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, Vector3D& posCol,Matrix4x4 worldTransform)
 {
 	Vector3D AB(startSeg, endSeg);
 	float a = AB.SquaredNorm();
@@ -246,8 +264,15 @@ bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphe
 	if (t0 > 1 || t0 < 0)
 		return false;
 
-	if (Norm(startSeg + posCol) > Norm(startSeg + AB * t0))
+
+	Vector3D worldPosCol = worldTransform * Vector4D(posCol);
+	Vector3D worldstartSeg = worldTransform * Vector4D(startSeg);
+	Vector3D worldNewPosCol = worldTransform * Vector4D(startSeg + AB * t0);
+
+	if (Norm(worldPosCol - worldstartSeg) > Norm(worldNewPosCol - worldstartSeg))
 		posCol = startSeg + AB * t0;
+
+
 
 	return true;
 }
