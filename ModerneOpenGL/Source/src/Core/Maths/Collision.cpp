@@ -96,18 +96,21 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	float radiusScaled = collider->radius * collider->scale*2.f;
 
 	Matrix4x4 g = box->gameObject->transform->GetGlobalTransform();
+
+	DEBUG_LOG(g.ToString());
 	Matrix4x4 rg = Reverse(g);
+	DEBUG_LOG(rg.ToString());
 
-	Vector3D inverseScale = box->gameObject->transform->GetGlobalScale();
-	inverseScale.x = 1.0f / inverseScale.x;
-	inverseScale.y = 1.0f / inverseScale.y;
-	inverseScale.z = 1.0f / inverseScale.z;
+	//Vector3D inverseScale = box->gameObject->transform->GetGlobalScale();
+	//inverseScale.x = 1.0f / inverseScale.x;
+	//inverseScale.y = 1.0f / inverseScale.y;
+	//inverseScale.z = 1.0f / inverseScale.z;
 
-	Vector3D value = box->gameObject->transform->GetGlobalRotation() * -1;
-	Matrix4x4 trss = TRS(box->gameObject->transform->GetGlobalPosition() * -1, value, inverseScale);
+	//Vector3D value = box->gameObject->transform->GetGlobalRotation() * -1;
+	//Matrix4x4 trss = TRS(box->gameObject->transform->GetGlobalPosition() * -1, value, inverseScale);
 	
-	Vector3D positionOldSphereL = trss * Vector4D(collider->oldPos);
-	Vector3D positionSphereL = trss * Vector4D(collider->gameObject->transform->GetGlobalPosition());
+	Vector3D positionOldSphereL = rg * Vector4D(collider->oldPos);
+	Vector3D positionSphereL = rg * Vector4D(collider->gameObject->transform->GetGlobalPosition());
 
 	if (positionOldSphereL == positionSphereL)
 		return false;
@@ -152,6 +155,7 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 			col = true;
 		}
 	}
+
 	if (col)
 	{
 		GameObject* g = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.2f, "sphere.obj");
@@ -163,7 +167,6 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 
 		return true;
 	}
-	
 	
 	for (int i = 0; i < 2; ++i)
 	{

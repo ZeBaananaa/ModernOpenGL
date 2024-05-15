@@ -40,4 +40,25 @@ C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource shield.png already exist ?
 
-C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : shi
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : shield.png doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\include\Resources\ResourcesManager.h(47): Does the resource Wolf_Body.jpg already exist ?
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_Body.jpg doesn't exist.
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Core\Maths\Collision.cpp(100): 
+{  0.000000    -0.000000    1.000000    0.250000  }
+{  0.000001    -1.000000    -0.000000    0.000000  }
+{  1.000000    0.000001    0.000000    0.000000  }
+{  0.000000    0.000000    0.000000    1.000000  }
+
+
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Core\Maths\Collision.cpp(102): 
+{  0.000000    0.000001    1.000000    -0.000000  }
+{  -0.000000    -1.000000    0.000001    0.000000  }
+{  1.000000    -0.000000    0.000000    -0.250000  }
+{  0.000000    0.000000    0.000000    1.000000  }
+
+
+

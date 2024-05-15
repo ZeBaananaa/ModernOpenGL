@@ -83,7 +83,7 @@ int main()
 	
 	GameObject* start0 = new GameObject({ 0,5,0.5 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
 	GameObject* c1 = new GameObject(start0->transform->GetGlobalPosition(), Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
-	GameObject* c2 = new GameObject({ 0,0,0 }, { 180,0,0}, {1,1,1}, "cube.obj", "black.png");
+	GameObject* c2 = new GameObject({ 0.25,0,0 }, { 90,90,90}, {1,1,1}, "cube.obj", "black.png");
 
 	c1->AddComponent(AddCollider(Colliders::SPHERE, c1));
 	c2->AddComponent(AddCollider(Colliders::CUBE, c2));

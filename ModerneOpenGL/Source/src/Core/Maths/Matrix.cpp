@@ -1440,6 +1440,8 @@ MatrixMxN MatrixMxN::SubMatrix(int ligneIndex, int columnIndex) const
 	return sM;
 }
 
+#include "Log.h"
+
 void MatrixMxN::GaussianElimination()
 {
 	int r = -1;
@@ -1492,18 +1494,13 @@ void MatrixMxN::Reverse()
 		return;
 	}
 
-	PrintMatrix();
-
 	MatrixMxN mGauss = Augmented((*this));
-	mGauss.PrintMatrix();
 	mGauss.GaussianElimination();
 	int i = 0;
-	for (unsigned int col = mGauss.nbColumn/2; col < mGauss.nbColumn;++i, ++col)
+	for (unsigned int col = mGauss.nbColumn / 2; col < mGauss.nbColumn; ++i, ++col)
 	{
 		(*this)[i] = mGauss[col];
 	}
-
-	PrintMatrix();
 }
 
 MatrixMxN& MatrixMxN::operator=(const MatrixMxN& m2)

@@ -1516,7 +1516,7 @@ float VectorND::FindMaxInColumn()
 
 int VectorND::FindMaxInColumn(int indiceLigne,float& max)
 {
-	max = fabsf((*this)[indiceLigne]);
+	max = (*this)[indiceLigne];
 	unsigned int i = indiceLigne + 1;
 	int k = indiceLigne;
 	for (; i < size; i++)
