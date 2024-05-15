@@ -326,7 +326,19 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 
 	//cylinder vertical
 
-
+	for (int i = 0; i < 4; ++i)
+	{
+		Matrix4x4 trsCylinder = TRS(MidPoint(points[i], points[i+4]), Vector3D::zero, Vector3D::one);
+		Matrix4x4 trsCylinderR = Reverse(trsCylinder);
+		posCol = trsCylinderR * (Vector4D)posCol;
+		if (CollisionSegmentCylinder(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
+			, trsCylinderR * Vector4D(points[i]), trsCylinderR * Vector4D(points[i+4]), radiusScaled, posCol, globalMatrixOfBox * trsCylinder))
+		{
+			col = true;
+		}
+		posCol = trsCylinder * (Vector4D)posCol;
+		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+	}
 
 	return col;
 }
