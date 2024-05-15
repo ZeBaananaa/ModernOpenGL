@@ -47,18 +47,1616 @@ C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(42): The resource : Wolf_Body.jpg doesn't exist.
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Core\Maths\Collision.cpp(100): 
-{  0.000000    -0.000000    1.000000    0.250000  }
-{  0.000001    -1.000000    -0.000000    0.000000  }
-{  1.000000    0.000001    0.000000    0.000000  }
+{  0.707107    -0.707107    0.000000    5.000000  }
+{  0.707107    0.707107    0.000000    0.000000  }
+{  0.000000    0.000000    1.000000    0.000000  }
 {  0.000000    0.000000    0.000000    1.000000  }
 
 
 
 C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Core\Maths\Collision.cpp(102): 
-{  0.000000    0.000001    1.000000    -0.000000  }
-{  -0.000000    -1.000000    0.000001    0.000000  }
-{  1.000000    -0.000000    0.000000    -0.250000  }
+{  0.707107    0.707107    0.000000    -3.535534  }
+{  -0.707107    0.707107    0.000000    3.535533  }
+{  0.000000    0.000000    1.000000    0.000000  }
 {  0.000000    0.000000    0.000000    1.000000  }
 
 
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300811
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.294159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308160
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304164
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314154
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308157
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314156
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310157
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310160
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310160
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310160
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306165
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314153
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306166
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314146
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302195
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314111
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302184
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314087
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302133
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314113
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308122
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314151
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310152
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314157
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314157
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312157
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.840105
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.865433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.845433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.841433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.841433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.843433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.841433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.843433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.851433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.855433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.845433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.843433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.873424
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827441
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.905359
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827515
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.867497
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827451
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.847445
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827439
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.843433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827440
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835431
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827441
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831439
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835429
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827439
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837431
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827440
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831439
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827564
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.307575
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.282159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.302159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.308159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.300159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.298159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.304159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.306159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.310159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314092
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312161
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312160
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312160
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314158
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.312159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 0.314159
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831875
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.865433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.863434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.857432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.869433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.883432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.877433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.863434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.841433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.841433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.847433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.845433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.849432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.859433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.853751
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.873430
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.859435
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.857433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.853433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.851433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827877
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.839433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.845433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.853432
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.849434
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.849433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.845433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.841433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.837433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.835433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.833433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.831433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.827433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
+
+C:\Users\l.braud\source\repos\visual\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\LowRenderer\Camera.cpp(100): 2.829433
 

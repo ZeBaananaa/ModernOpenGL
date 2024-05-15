@@ -92,6 +92,20 @@ void Camera::Move(const Vector3D& t)
 void Camera::Rotation(float angle, Vector3D axis, Vector3D anchor)
 {
     center.Rotate(angle, axis, anchor);
+
+    //between 0 - PI
+    float currentAngle = GetAngle(GetDirection(), Vector3D::axeY);
+    if (currentAngle > PI - PI / 10 || currentAngle < PI / 10)
+    {
+        float newAngle = 0;
+        if (currentAngle > PI - PI / 10.f)
+            newAngle = PI - PI / 10;
+        if (currentAngle < PI / 10.f)
+            newAngle = PI / 10;
+        center.Rotate(-(currentAngle - newAngle), axis, anchor);
+    }
+
+
     recalculateView = true;
 }
 

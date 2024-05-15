@@ -63,4 +63,4 @@ bool CollisionSegmentQuad();
 
 bool CollisionSegmentCapsule(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius);
 bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, Vector3D& posCol,Matrix4x4 worldTransform);
-bool CollisionSegmentCylinder(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius, Vector3D& posCol);
+bool CollisionSegmentCylinder(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius, Vector3D& posCol, Matrix4x4 worldTransform);
