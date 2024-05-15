@@ -42,9 +42,7 @@ void MeshRenderer::Update()
 		Vector3D campos = Camera::Get().GetCenter();
 		glUniform3fv(glGetUniformLocation(Application::Get().shader.GetProgram(), "viewPos"),1, &campos[0]);
 
-
 		glBufferData(GL_UNIFORM_BUFFER, sizeof(LightManager), Application::Get().lightManager, GL_DYNAMIC_DRAW);
-
 		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(model->indexes.size()), GL_UNSIGNED_INT, 0);
 	}
 }

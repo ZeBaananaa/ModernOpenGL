@@ -10,7 +10,8 @@ in VertexOut
     vec4 fragColor;
 } vertexIn;
 
-uniform sampler2D text;
+uniform sampler2D text; // texture sampler
+uniform samplerCube cubemap; // cubemap texture sampler
 
 struct DirectionalLight
 {
@@ -69,7 +70,6 @@ layout (std140) uniform Lights
 	PointLight pointsLights[4];
 	SpotLight spotsLights[4];
 	
-	
 	uint ubo;
 	float filling1;
 	float filling2;
@@ -93,9 +93,9 @@ void main()
 
 	float materialShininess = 0.3f;
 	
-	for(int i=0;i<4;i++)
+	for (int i = 0; i < 4; ++i)
 	{
-		if(directionalLights[i].enable == 1)
+		if (directionalLights[i].enable == 1)
 		{
 			DirectionalLight dir = directionalLights[i];
 
@@ -105,7 +105,7 @@ void main()
 			//diffuse
 			vec3 norm = normalize(vertexIn.normalPos);
 			vec3 lightDir = normalize(vec3(-dir.lightDirection));
-			float diff = max(dot(norm,lightDir),0.0);
+			float diff = max(dot(norm,lightDir), 0.0f);
 			vec3 diffuse = vec3(dir.lightDiffuseColor) * (diff * material[1]) * vec3(textColor);
 
 			//specular
@@ -113,16 +113,16 @@ void main()
 
 			//blinn
 			vec3 halfwayDir = normalize(lightDir + viewDir);
-			float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0), materialShininess);
+			float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0f), materialShininess);
 			vec3 specular = vec3(dir.lightSpecularColor) * (spec * material[2]);
 
 			result += (ambient + diffuse + specular);
 		}
 	}
 
-	for(int i=0;i<4;i++)
+	for (int i = 0; i < 4; ++i)
 	{
-		if(pointsLights[i].enable == 1)
+		if (pointsLights[i].enable == 1)
 		{
 			PointLight ptl = pointsLights[i];
 
@@ -132,7 +132,7 @@ void main()
 			//diffuse
 			vec3 norm = normalize(vertexIn.normalPos);
 			vec3 lightDir = normalize(vec3(ptl.lightPosition) - vertexIn.fragPos);
-			float diff = max(dot(norm,lightDir),0.0);
+			float diff = max(dot(norm,lightDir), 0.0f);
 			vec3 diffuse = vec3(ptl.lightDiffuseColor) * (diff * material[1]) * vec3(textColor);
 
 			//specular
@@ -140,31 +140,31 @@ void main()
 
 			//blinn
 			vec3 halfwayDir = normalize(lightDir + viewDir);
-			float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0), materialShininess);
+			float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0f), materialShininess);
 			vec3 specular = vec3(ptl.lightSpecularColor) * (spec * material[2]);
 
 			//attenuation
 			float dist = length(ptl.lightPosition.xyz - vertexIn.fragPos);
-			float attenuation = 1.0/(ptl.constant + ptl.linear * dist + ptl.quadratic * (dist*dist));
+			float attenuation = 1.0f / (ptl.constant + ptl.linear * dist + ptl.quadratic * (dist*dist));
 
 			result += (ambient + diffuse + specular) * attenuation;
 		}
 	}
 
-	for(int i=0;i<4;i++)
+	for (int i = 0; i < 4; ++i)
 	{
-		if(spotsLights[i].enable == 1)
+		if (spotsLights[i].enable == 1)
 		{
 			SpotLight sp = spotsLights[i];
 
 			vec3 lightDir = normalize(vec3(sp.lightPosition) - vertexIn.fragPos);
 			float theta = dot(lightDir,normalize(vec3(-sp.lightDirection)));
 
-			if(theta > sp.cutOff)
+			if (theta > sp.cutOff)
 			{
 				//diffuse
 				vec3 norm = normalize(vertexIn.normalPos);
-				float diff = max(dot(norm,lightDir),0.0);
+				float diff = max(dot(norm,lightDir), 0.0f);
 				vec3 diffuse = vec3(sp.lightDiffuseColor) * (diff * material[1]) * vec3(textColor);
 
 				//specular
@@ -172,18 +172,21 @@ void main()
 
 				//blinn
 				vec3 halfwayDir = normalize(lightDir + viewDir);
-				float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0), materialShininess);
+				float spec = pow(max(dot(vertexIn.normalPos, halfwayDir), 0.0f), materialShininess);
 				vec3 specular = vec3(sp.lightSpecularColor) * (spec * material[2]);
 
 				//attenuation
 				float epsilon = sp.cutOff - sp.outerCutOff;
-				if(epsilon == 0)
+
+				if (epsilon == 0.f)
 					epsilon = 0.000000001f;
-				float intensity = clamp((sp.outerCutOff - theta)/epsilon,0.0,1.0);
+
+				float intensity = clamp((sp.outerCutOff - theta)/epsilon, 0.0f, 1.0f);
 
 				result += (diffuse + specular) * intensity;
 			}
 		}
 	}
-	FragColor = vec4(result,1.0);
+
+	FragColor = vec4(result, 1.0f);
 }

@@ -27,5 +27,5 @@ void main()
     vertexOut.fragPos = vec3(modelMatrix * posVec4);
     vertexOut.normalPos = mat3(transpose(inverse(modelMatrix))) * normal;
     vertexOut.uvPos = uv;
-    vertexOut.fragColor = vec4(color,1.f);
+    vertexOut.fragColor = vec4(color, 1.f);
 }

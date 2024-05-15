@@ -8,8 +8,8 @@ public:
 	Shader();
 	~Shader();
 
-	bool SetVertexShader(std::filesystem::path const& filename);
-	bool SetFragmentShader(std::filesystem::path const& filename);
+	bool SetVertex(std::filesystem::path const& filename);
+	bool SetFragment(std::filesystem::path const& filename);
 	bool Link();
 
 	void Load(std::string name) {};

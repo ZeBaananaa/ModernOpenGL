@@ -20,6 +20,42 @@
 
 #include <iostream>
 
+float skyboxVertices[] =
+{
+	//   Coordinates
+	-1.0f, -1.0f,  1.0f,//        7--------6
+	 1.0f, -1.0f,  1.0f,//       /|       /|
+	 1.0f, -1.0f, -1.0f,//      4--------5 |
+	-1.0f, -1.0f, -1.0f,//      | |      | |
+	-1.0f,  1.0f,  1.0f,//      | 3------|-2
+	 1.0f,  1.0f,  1.0f,//      |/       |/
+	 1.0f,  1.0f, -1.0f,//      0--------1
+	-1.0f,  1.0f, -1.0f
+};
+
+unsigned int skyboxIndices[] =
+{
+	// Right
+	1, 2, 6,
+	6, 5, 1,
+	// Left
+	0, 4, 7,
+	7, 3, 0,
+	// Top
+	4, 5, 6,
+	6, 7, 4,
+	// Bottom
+	0, 3, 2,
+	2, 1, 0,
+	// Back
+	0, 1, 5,
+	5, 4, 0,
+	// Front
+	3, 7, 6,
+	6, 2, 3
+};
+
+
 void Destroy()
 {
 	Application::Get().Terminate();
@@ -95,9 +131,42 @@ int main()
 		for (size_t j = 0; j < 11; j++)
 			GameObject* cube = new GameObject({ i * 1.5f - 7.5f, j * 1.5f - 7.5f, 0.f }, { 0.f, 0.f, 0.f },
 												Vector3D::one, "cube.obj", "", "", empty->transform);
+
+	ResourceManager::Get().Create<Texture>("right.png");
+	ResourceManager::Get().Create<Texture>("left.png");
+	ResourceManager::Get().Create<Texture>("top.png");
+	ResourceManager::Get().Create<Texture>("bottom.png");
+	ResourceManager::Get().Create<Texture>("front.png");
+	ResourceManager::Get().Create<Texture>("back.png");
+
+	Texture* t1 = ResourceManager::Get().Get<Texture>("right.png");
+	Texture* t2 = ResourceManager::Get().Get<Texture>("left.png");
+	Texture* t3 = ResourceManager::Get().Get<Texture>("top.png");
+	Texture* t4 = ResourceManager::Get().Get<Texture>("bottom.png");
+	Texture* t5 = ResourceManager::Get().Get<Texture>("front.png");
+	Texture* t6 = ResourceManager::Get().Get<Texture>("back.png");
+
+	Cubemap* skybox = new Cubemap((*t1), (*t2), (*t3), (*t4), (*t5), (*t6));
+
+	// Create VAO, VBO, and EBO for the skybox
+	unsigned int skyboxVAO, skyboxVBO, skyboxEBO;
+	glGenVertexArrays(1, &skyboxVAO);
+	glGenBuffers(1, &skyboxVBO);
+	glGenBuffers(1, &skyboxEBO);
+	glBindVertexArray(skyboxVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, skyboxEBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(skyboxIndices), &skyboxIndices, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
 	
 	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
+	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyDown(GLFW_KEY_ESCAPE))
 	{
 		/* Poll for and process events */
 		glfwPollEvents();
@@ -106,6 +175,8 @@ int main()
 		Application::Get().Update();
 
 		Menu::Get().Render();
+
+		glDepthFunc(GL_LEQUAL);
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);

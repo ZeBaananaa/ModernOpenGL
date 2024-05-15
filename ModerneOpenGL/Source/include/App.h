@@ -36,6 +36,7 @@ public:
     void RotationMouse();
 
     Shader shader;
+    Shader skybox;
 private:
     static Application* instance;
     Application() = default;

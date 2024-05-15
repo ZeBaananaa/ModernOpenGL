@@ -72,8 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="Assets\Shaders\Example_Shader.vert" />
-    <None Include="Assets\Shaders\Example_Shader.frag" />
+    <None Include="Assets\Shaders\Default.vert" />
+    <None Include="Assets\Shaders\Default.frag" />
+    <None Include="Assets\Shaders\Skybox.vert" />
+    <None Include="Assets\Shaders\Skybox.frag" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\baboon.jpg" />
