@@ -19,8 +19,11 @@ public:
 
 	void DrawRoot();
 	void DrawChildren(Transform* child);
+	static void DrawChildSettings(Transform* child);
 
 private:
 	Menu() = default;
 	static Menu* instance;
+
+	Transform* latestChildClicked;
 };

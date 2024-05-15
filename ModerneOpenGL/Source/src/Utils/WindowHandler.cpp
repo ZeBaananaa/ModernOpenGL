@@ -7,8 +7,6 @@ void WindowHandler::WindowResizeCallback(GLFWwindow* window, int width, int heig
 	Application::Get().m_width = width;
 	Application::Get().m_height = height;
 	Camera::Get().recalculateProjection = true;
-
-	Menu::Get().HandleWindowResizing(width, height);
 }
 
 void WindowHandler::BufferResizeCallback(GLFWwindow* window, int width, int height)
