@@ -16,9 +16,10 @@ class Collider : public IComponent
 {
 public:
 	void Init() override;
-	virtual void Update();
+	virtual void Update() = 0;
 	void Delete() override;
 
+	virtual void Resize() = 0;
 	Colliders type;
 
 	GameObject* gameObject;
@@ -36,6 +37,8 @@ public:
 	~SphereCollider() = default;
 
 	void Update() override;
+	void Resize() override;
+
 	float scale = 0.f;
 	float radius = 0.5f;
 };
@@ -47,6 +50,7 @@ public:
 	~BoxCollider() = default;
 
 	void Update() override;
+	void Resize() override;
 	Vector3D scale = { 1,1,1 };
 	Vector3D size = { 1,1,1 };
 };
@@ -55,12 +59,14 @@ Collider* AddCollider(Colliders colliderType, GameObject* _gameObject);
 
 bool CollisionSphereSphere(SphereCollider* s1, SphereCollider* s2);
 
-//put s pos et old pos in local and at the end put the pos(t0) in global pos
+bool QuickCheck(SphereCollider* s, BoxCollider* b);
 bool CollisionSphereBox(SphereCollider* s, BoxCollider* b);
 
 bool CollisionSegmentPlan();
 bool CollisionSegmentQuad();
 
-bool CollisionSegmentCapsule(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius);
+bool CollisionSegmentSpheres(std::vector<Vector3D> points, Vector3D positionOldSphereL, Vector3D positionSphereL, float radiusScaled, Vector3D& posCol, Matrix4x4 globalMatrixOfBox);
 bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, Vector3D& posCol,Matrix4x4 worldTransform);
+
+bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL, Vector3D positionSphereL, float radiusScaled, Vector3D& posCol, Matrix4x4 globalMatrixOfBox);
 bool CollisionSegmentCylinder(Vector3D startSeg, Vector3D endSeg, Vector3D startEdge, Vector3D endEdge, float radius, Vector3D& posCol, Matrix4x4 worldTransform);
