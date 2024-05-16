@@ -41,14 +41,6 @@ void Application::InitShaders()
 
 	unsigned int index = glGetUniformBlockIndex(shader.GetProgram(), "Lights");
 	glBindBufferBase(GL_UNIFORM_BUFFER, 0, instance->lightManager->ubo);
-
-	/* SKYBOX SHADER */
-
-	skybox.SetVertex("Assets/Shaders/Skybox.vert");
-	skybox.SetFragment("Assets/Shaders/Skybox.frag");
-	skybox.Link();
-
-	glUniform1i(glGetUniformLocation(Application::Get().skybox.GetProgram(), "viewPos"), 0);
 }
 
 void Application::InitCallbacks()
@@ -144,7 +136,6 @@ void Application::Render()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glUseProgram(shader.GetProgram());
-	glUseProgram(skybox.GetProgram());
 	SceneGraph::Get().Render();
 }
 
