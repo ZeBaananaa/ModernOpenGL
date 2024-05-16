@@ -194,14 +194,73 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	return false;
 }
 
-bool CollisionSegmentPlan()
+
+bool CollisionSegmentQuads(std::vector<Vector3D> points, Vector3D positionOldSphereL, Vector3D positionSphereL, float radiusScaled, Vector3D& posCol, Matrix4x4 globalMatrixOfBox)
 {
+	bool col = false;
+
+	for (int i = 0; i < 2; ++i)
+	{
+		Matrix4x4 trsCylinder = TRS(MidPoint(points[i] - radiusScaled, points[i + 2] - radiusScaled), {90,0,0}, Vector3D::one);
+		Matrix4x4 trsCylinderR = Reverse(trsCylinder);
+		posCol = trsCylinderR * (Vector4D)posCol;
+
+		Vector3D pointsI = trsCylinderR * (Vector4D)points[i] - radiusScaled;
+		float lenghtSide0 = Distance(pointsI, (Vector3D)(trsCylinderR * (Vector4D)points[i + 1] - radiusScaled));
+		float lenghtSide1 = Distance(pointsI, (Vector3D)(trsCylinderR * (Vector4D)points[i + 3] - radiusScaled));
+
+		float L = lenghtSide0 / 2.f;
+		float H = lenghtSide1 / 2.f;
+
+		if (CollisionSegmentQuad(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
+			, Vector3D::axeY ,L ,H, posCol, globalMatrixOfBox * trsCylinder))
+		{
+			col = true;
+
+		}
+		posCol = trsCylinder * (Vector4D)posCol;
+		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+	}
+
+	return col;
+}
+
+bool CollisionSegmentQuad(Vector3D startSeg, Vector3D endSeg, Vector3D normal,float lenght, float height, Vector3D& posCol, Matrix4x4 worldTransform)
+{
+	Vector3D posColPlan;
+	if (!CollisionSegmentPlan(startSeg, endSeg, normal, posColPlan, worldTransform))
+		return false;
+
+	if(fabsf(posColPlan.x) <= lenght && fabsf(posColPlan.y) <= height)
+	{
+		Vector3D worldPosCol = worldTransform * Vector4D(posCol);
+		Vector3D worldstartSeg = worldTransform * Vector4D(startSeg);
+		Vector3D worldNewPosCol = worldTransform * Vector4D(posColPlan);
+		if (Norm(worldPosCol - worldstartSeg) > Norm(worldNewPosCol - worldstartSeg))
+			posCol = posColPlan;
+		return true;
+	}
 	return false;
 }
 
-bool CollisionSegmentQuad()
+bool CollisionSegmentPlan(Vector3D startSeg, Vector3D endSeg, Vector3D normal, Vector3D& posCol, Matrix4x4 worldTransform)
 {
-	return false;
+	Vector3D AB(startSeg, endSeg);
+	float dot = DotProduct(AB, normal);
+	if (dot == 0)
+		return false;
+
+	//if local of a face, it hit the center 0,0,0 of the face
+	Vector3D center = Vector3D::zero;
+	float d = -(normal.x * center.x + normal.y * center.y + normal.z * center.z);
+	float t0 = -(DotProduct(startSeg, normal) + d) / dot;
+
+	if (t0 > 1 || t0 < 0)
+		return false;
+
+	posCol = startSeg + AB * t0;
+
+	return true;	
 }
 
 bool CollisionSegmentSpheres(std::vector<Vector3D> points,Vector3D positionOldSphereL,Vector3D positionSphereL,float radiusScaled,Vector3D& posCol,Matrix4x4 globalMatrixOfBox)
@@ -328,7 +387,7 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 
 	for (int i = 0; i < 4; ++i)
 	{
-		Matrix4x4 trsCylinder = TRS(MidPoint(points[i], points[i+4]), Vector3D::zero, Vector3D::one);
+		Matrix4x4 trsCylinder = TRS(MidPoint(points[i], points[i + 4]), {0,90,0}, Vector3D::one);
 		Matrix4x4 trsCylinderR = Reverse(trsCylinder);
 		posCol = trsCylinderR * (Vector4D)posCol;
 		if (CollisionSegmentCylinder(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
@@ -337,7 +396,7 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "shield.png");
 	}
 
 	return col;
@@ -362,6 +421,7 @@ bool CollisionSegmentCylinder(Vector3D startSeg, Vector3D endSeg, Vector3D start
 
 	if ((startEdge.y > posCollision.y && posCollision.y > endEdge.y) || (endEdge.y > posCollision.y && posCollision.y > startEdge.y))
 	{
+
 		Vector3D worldPosCol = worldTransform * Vector4D(posCol);
 		Vector3D worldstartSeg = worldTransform * Vector4D(startSeg);
 		Vector3D worldNewPosCol = worldTransform * Vector4D(startSeg + AB * t0);

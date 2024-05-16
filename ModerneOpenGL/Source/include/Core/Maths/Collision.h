@@ -62,8 +62,9 @@ bool CollisionSphereSphere(SphereCollider* s1, SphereCollider* s2);
 bool QuickCheck(SphereCollider* s, BoxCollider* b);
 bool CollisionSphereBox(SphereCollider* s, BoxCollider* b);
 
-bool CollisionSegmentPlan();
-bool CollisionSegmentQuad();
+bool CollisionSegmentQuads(std::vector<Vector3D> points, Vector3D positionOldSphereL, Vector3D positionSphereL, float radiusScaled, Vector3D& posCol, Matrix4x4 globalMatrixOfBox);
+bool CollisionSegmentQuad(Vector3D startSeg, Vector3D endSeg, Vector3D normal, float lenght,float height, Vector3D& posCol, Matrix4x4 worldTransform);
+bool CollisionSegmentPlan(Vector3D startSeg, Vector3D endSeg, Vector3D normal, Vector3D& posCol, Matrix4x4 worldTransform);
 
 bool CollisionSegmentSpheres(std::vector<Vector3D> points, Vector3D positionOldSphereL, Vector3D positionSphereL, float radiusScaled, Vector3D& posCol, Matrix4x4 globalMatrixOfBox);
 bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphere, float radius, Vector3D& posCol,Matrix4x4 worldTransform);
