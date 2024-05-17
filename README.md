@@ -24,7 +24,7 @@ etc...
 
 ### Tools & libs used:
 
-ImGUI : https://github.com/ocornut/imgui
-Glad : https://glad.dav1d.de/
-GLFW : https://www.glfw.org/
-STB Image : https://github.com/nothings/stb
+- ImGUI : https://github.com/ocornut/imgui
+- Glad : https://glad.dav1d.de/
+- GLFW : https://www.glfw.org/
+- STBImage : https://github.com/nothings/stb
