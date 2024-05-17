@@ -5,9 +5,9 @@ class Time
 {
 public:
     static void Update();
-    static double DeltaTime();
+    static float DeltaTime();
 
 private:
 	static std::chrono::steady_clock::time_point currentTime;
-	static double deltaTime;
+	static float deltaTime;
 };

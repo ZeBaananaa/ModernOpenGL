@@ -3,9 +3,12 @@
 #include "Shader.h"
 #include "Utils/WindowHandler.h"
 #include "Light.h"
-
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#include "Utils/InputHandler.h"
+#include "Model.h"
+#include "Camera.h"
+#include "Utils/Time.h"
+#include "SceneGraph.h"
+#include "Resources/Texture.h"
 
 class Application
 {
@@ -33,6 +36,7 @@ public:
     void RotationMouse();
 
     Shader shader;
+
 private:
     static Application* instance;
     Application() = default;

@@ -1,14 +1,4 @@
-#include <Utils/InputHandler.h>
-
 #include "App.h"
-#include "Model.h"
-#include "Camera.h"
-#include "Utils/Time.h"
-#include "SceneGraph.h"
-#include <Resources/Texture.h>
-#include "Light.h"
-
-#include "glad/glad.h"
 
 Vector2D Application::oldMousePos = { 0.f,0.f };
 Application* Application::instance = nullptr;
@@ -40,8 +30,9 @@ void Application::Destroy()
 
 void Application::InitShaders()
 {
-	shader.SetVertexShader("Assets/Shaders/Example_Shader.vert");
-	shader.SetFragmentShader("Assets/Shaders/Example_Shader.frag");
+	/* DEFAULT SHADER */
+	shader.SetVertex("Assets/Shaders/Default.vert");
+	shader.SetFragment("Assets/Shaders/Default.frag");
 	shader.Link();
 
 	glGenBuffers(1, &instance->lightManager->ubo);
@@ -58,10 +49,11 @@ void Application::InitCallbacks()
 	glfwSetKeyCallback(Application::window, InputHandler::KeyboardCallback);
 	glfwSetCursorPosCallback(Application::window, InputHandler::MouseCursorCallback);
 	glfwSetMouseButtonCallback(Application::window, InputHandler::MouseButtonCallback);
+	glfwSetScrollCallback(Application::window, InputHandler::MouseScrollCallback);
 
 	/* Window resizing & framebuffer callbacks */
-	glfwSetWindowSizeCallback(Application::window, WindowHandler::WindowResizeCallback);
 	glfwSetFramebufferSizeCallback(Application::window, WindowHandler::BufferResizeCallback);
+	glfwSetWindowSizeCallback(Application::window, WindowHandler::WindowResizeCallback);
 }
 
 void InitModel(std::string modelName)
@@ -84,23 +76,6 @@ void InitModel(std::string modelName)
 	model->vertexAttributes.SetAttributes(0, 3, GL_FLOAT, false, sizeof(Vertex), (void*)(0));
 	model->vertexAttributes.SetAttributes(1, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::textureUV));
 	model->vertexAttributes.SetAttributes(2, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, Vertex::normal));
-
-
-	/*
-	//crreation UBO (uniform buffer)
-	glGenBuffers(1, &UBO);
-	glBindBuffer(GL_UNIFORM_BUFFER, UBO);
-	glBufferData(GL_UNIFORM_BUFFER, sizeof(Block),
-		uboData, GL_STREAM_DRAW);
-
-	//commet relier un UBO et un block
-	//1 choisir un binding point
-	glBindBufferBase(GL_UNIFORM_BUFFER, 42, UBO);
-	//2 recuperer l index de l'uniform block
-	int32_t index = glGetUniformBlockIndex(program, "Matrices");
-	//3 relier le block et l UBO sur le binding point
-	glUniformBlockBinding(program, index, 42);
-	*/
 }
 
 
@@ -121,16 +96,10 @@ void InitTexture(std::string textureName)
 	std::string txtPath = "Assets/Textures/";
 
 	for (const auto& entry : std::filesystem::directory_iterator(path))
-	{
 		InitModel(entry.path().filename().string());
-		std::cout << entry.path().filename() << std::endl;
-	}
 
 	for (const auto& txtEntry : std::filesystem::directory_iterator(txtPath))
-	{
 		InitTexture(txtEntry.path().filename().string());
-		std::cout << txtEntry.path().filename() << std::endl;
-	}
 }
 
 bool Application::Initialise()
@@ -141,7 +110,7 @@ bool Application::Initialise()
 	InitResources();
 	InitCallbacks();
 	InitShaders();
-	
+
 	return true;
 }
 
@@ -163,21 +132,12 @@ void Application::Update()
 
 void Application::Render()
 {
+	glViewport(0, 0, m_width, m_height);
+	//glClearColor(0.15f, 0.15f, 1.f, 1.f); // Set background color to blue
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	// Set background color to blue
-	glClearColor(0.15f, 0.15f, 1.f, 1.f);
 
 	glUseProgram(shader.GetProgram());
 	SceneGraph::Get().Render();
-	//Model* alien = ResourceManager::Get().Get<Model>("Alien.obj");
-
-	//Matrix4x4 MVP =  Camera::Get().GetVPMatrix() * TRS({ -10, -10, -10 }, { 0, 0, 0 }, { 10, 10, 10 });
-	//float tab[16];
-	//Matrix4x4ToFloat(MVP, tab);
-	//glUniformMatrix4fv(glGetUniformLocation(shader.GetProgram(), "MVP"), 1, false, tab);
-
-	//glDrawElements(GL_TRIANGLES, alien->indexes.size(), GL_UNSIGNED_INT, 0);
 }
 
 void Application::RotationMouse()

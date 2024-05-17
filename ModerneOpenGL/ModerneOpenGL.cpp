@@ -1,5 +1,8 @@
 // ModerneOpenGL.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
 
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+
 #include "Assertion.h"
 //#include <cstdint>
 #include "Log.h"
@@ -10,12 +13,12 @@
 #include "App.h"
 #include "Utils/InputHandler.h"
 
-#include "glad/glad.h"
-#include <iostream>
-
 #include "GameObject.h"
 #include "Components.h"
 #include "SceneGraph.h"
+#include "Menu.h"
+
+#include <iostream>
 
 void Destroy()
 {
@@ -29,6 +32,7 @@ void Destroy()
 	Log::Destroy();
 	SceneGraph::Destroy();
 	InputHandler::Destroy();
+	Menu::Get().Destroy();
 }
 
 void InitWindow()
@@ -40,31 +44,37 @@ void InitWindow()
 	/* Create a windowed mode window and its OpenGL context */
 
 	GLFWwindow* window = glfwCreateWindow(1280, 720, "Modern OpenGL", NULL, NULL);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+
 	if (!window)
 	{
-		std::cout << "Cannot create GLFW Window... \nAborting!" << std::endl;
+		DEBUG_LOG("Cannot create GLFW Window... \nAborting!\n");
 		glfwTerminate();
 		return;
 	}
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+	glfwSwapInterval(1); // Enable vsync
 
 	/* Init glad after context is defined */
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
-		std::cout << "Failed to initialize GLAD... \nAborting!" << std::endl;
+		DEBUG_LOG("Failed to initialize GLAD... \nAborting!\n");
 		return;
-	}
+	};
 
-	/* Enable Depth Testing */
-	glEnable(GL_DEPTH_TEST);
-
-	/* Enable face culling & set it to back faces (Helps improve performances) */
-	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST); /* Enable Depth Testing */
+	glEnable(GL_CULL_FACE); /* Enable face culling & set it to back faces (Helps improve performances) */
 	glCullFace(GL_BACK);
 
 	Application::Get().window = window;
+
+	Menu::Get().Init();
+	Application::Get().Initialise();
+	SceneGraph::Get();
 }
 
 
@@ -74,67 +84,40 @@ int main()
 	//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	//	//_CrtSetBreakAlloc(699402);
 	//#endif
-	
+
 	InitWindow();
 
-	Application::Get().Initialise();
+	GameObject* obj0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png", "Alien");
+	GameObject* obj1 = new GameObject(Vector3D(-5.f, 0.f, 5.f), Vector3D::zero, Vector3D(5.f), "sphere.obj", "", "Sphere", obj0->transform);
 
-	SceneGraph::Get();
-	
-	GameObject* start0 = new GameObject({ 10,5,0.5 }, Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
-	GameObject* c1 = new GameObject(start0->transform->GetGlobalPosition(), Vector3D::zero, Vector3D::one * 0.5, "sphere.obj", "black.png");
-	GameObject* c2 = new GameObject({ 5,5,0 }, { 45,45,45 }, {1,1,1}, "cube.obj", "black.png");
+	GameObject* empty = new GameObject(SceneGraph::Get().root, "All Cubes");
+	for (size_t i = 0; i < 11; i++)
+		for (size_t j = 0; j < 11; j++)
+			GameObject* cube = new GameObject({ i * 1.5f - 7.5f, j * 1.5f - 7.5f, 0.f }, { 0.f, 0.f, 0.f },
+												Vector3D::one, "cube.obj", "", "", empty->transform);
 
-	c1->AddComponent(AddCollider(Colliders::SPHERE, c1));
-	c2->AddComponent(AddCollider(Colliders::CUBE, c2));
-
-	SceneGraph::Get().Update();
-
-	c1->transform->SetLocalPosition({0,5,0.5});
-
-	GameObject* c3 = new GameObject(c1->transform->GetLocalPosition(), { 0,0,0 }, Vector3D::one * 0.2, "sphere.obj", "black.png");
-
-	if (CollisionSphereBox(c1->GetComponent<SphereCollider>(), c2->GetComponent<BoxCollider>()))
-	{
-		c1->GetComponent<MeshRenderer>()->texture = ResourceManager::Get().Get<Texture>("missing_texture.jpg");
-	}
-
-	bool okm = false;
-	bool okp = false;
 	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyPressed(GLFW_KEY_ESCAPE))
+	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyDown(GLFW_KEY_ESCAPE))
 	{
+		/* Poll for and process events */
+		glfwPollEvents();
+
 		/* Render here */
 		Application::Get().Update();
+
+		Menu::Get().Render();
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);
 
-		if (InputHandler::IsKeyReleased(GLFW_KEY_M) && okm == true)
-			okm = false;
-
-		if (InputHandler::IsKeyReleased(GLFW_KEY_P) && okp == true)
-			okp = false;
-
-		if (InputHandler::IsKeyPressed(GLFW_KEY_M) && okm == false)
-		{
-			okm = true;
+		if (InputHandler::IsKeyPressed(GLFW_KEY_M))
 			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, -1, true);
 
-			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
-		}
-		if (InputHandler::IsKeyPressed(GLFW_KEY_P) && okp == false)
-		{
-			okp = true;
+		if (InputHandler::IsKeyPressed(GLFW_KEY_P))
 			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, 1, true);
 
-			DEBUG_LOG("%f", Application::Get().lightManager->GetSpotAngle(SpotLights::SP0));
-		}
-
-		/* Poll for and process events */
-		glfwPollEvents();
+		InputHandler::ProcessPressedKeys();
 	}
-
 	Destroy();
 	return 0;
 }

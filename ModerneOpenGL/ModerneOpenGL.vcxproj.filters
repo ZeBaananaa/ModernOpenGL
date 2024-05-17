@@ -23,6 +23,14 @@
     <ClCompile Include="Source\src\Resources\Texture.cpp" />
     <ClCompile Include="Source\src\Core\Maths\Collision.cpp" />
     <ClCompile Include="Source\src\LowRenderer\Light.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="imgui\imgui_tables.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Source\src\Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\include\App.h" />
@@ -53,12 +61,23 @@
     <ClInclude Include="Source\include\Scene\IComponent.h" />
     <ClInclude Include="Source\include\Scene\MeshRenderer.h" />
     <ClInclude Include="Source\include\Scene\Components.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="Source\include\Menu.h" />
     <ClInclude Include="Source\include\Core\Maths\Collision.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="Assets\Shaders\Example_Shader.vert" />
-    <None Include="Assets\Shaders\Example_Shader.frag" />
+    <None Include="Assets\Shaders\Default.vert" />
+    <None Include="Assets\Shaders\Default.frag" />
+    <None Include="Assets\Shaders\Skybox.vert" />
+    <None Include="Assets\Shaders\Skybox.frag" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\baboon.jpg" />

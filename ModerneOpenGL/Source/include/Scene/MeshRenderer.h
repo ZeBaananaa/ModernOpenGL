@@ -1,7 +1,8 @@
 #pragma once
+
 #include "IComponent.h"
 #include "Model.h"
-#include <Resources/Texture.h>
+#include "Resources/Texture.h"
 
 class GameObject;
 class MeshRenderer : public IComponent

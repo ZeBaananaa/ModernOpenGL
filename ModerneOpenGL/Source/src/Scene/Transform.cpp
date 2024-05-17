@@ -81,8 +81,6 @@ void Transform::SetZero()
 	globalTransform = Identity_Matrix4x4();
 }
 
-
-
 void Transform::Update()
 {
 	if(gameObject)
@@ -99,15 +97,13 @@ void Transform::Render()
 	if (gameObject)
 	{
 		MeshRenderer* mesh = gameObject->GetComponent<MeshRenderer>();
+
 		if (mesh)
 			mesh->Update();
 	}
-		
 
 	for (size_t i = 0; i < children.size(); i++)
-	{
 		children[i]->gameObject->transform->Render();
-	}
 }
 
 void Transform::Delete()
@@ -118,9 +114,8 @@ void Transform::Delete()
 void Transform::SetParent(Transform* _parent)
 {
 	if (parent != nullptr)
-	{
 		parent->RemoveChildren(this);
-	}
+
 	parent = _parent;
 
 	if (parent == nullptr)
@@ -202,6 +197,21 @@ Matrix4x4 Transform::GetLocalTransform()
 	}
 	
 	return localTransform;
+}
+
+std::string Transform::GetName() const
+{
+	return name;
+}
+
+void Transform::SetName(std::string value)
+{
+	name = value;
+}
+
+std::vector<Transform*>& Transform::GetChildren()
+{
+	return children;
 }
 
 Vector3D Transform::GetLocalPosition()

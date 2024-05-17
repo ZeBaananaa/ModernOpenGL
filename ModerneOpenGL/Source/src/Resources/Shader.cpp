@@ -1,5 +1,6 @@
 #include "Shader.h"
 #include "glad/glad.h"
+#include "GLFW/glfw3.h"
 #include <string>
 
 Shader::Shader()
@@ -16,7 +17,7 @@ Shader::~Shader()
 	glDeleteProgram(shaderProgram);
 }
 
-bool Shader::SetVertexShader(std::filesystem::path const& filename)
+bool Shader::SetVertex(std::filesystem::path const& filename)
 {
 	try
 	{
@@ -50,7 +51,7 @@ bool Shader::SetVertexShader(std::filesystem::path const& filename)
 	}
 }
 
-bool Shader::SetFragmentShader(std::filesystem::path const& filename)
+bool Shader::SetFragment(std::filesystem::path const& filename)
 {
 	try
 	{

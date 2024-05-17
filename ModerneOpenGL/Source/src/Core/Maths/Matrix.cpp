@@ -442,7 +442,7 @@ float Matrix3x3::DeterminantRec() const
 	float det = 0.f;
 	for (int i{ 0 }; i <= 2; ++i)
 	{
-		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, static_cast<float>(i)) * SubMatrix(i, 0.f).Determinant();
 	}
 	return det;
 }
@@ -872,7 +872,7 @@ float Matrix4x4::DeterminantRec() const
 	float det = 0.f;
 	for (int i{ 0 }; i <= 3; ++i)
 	{
-		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, static_cast<float>(i)) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }
@@ -1409,7 +1409,7 @@ float MatrixMxN::DeterminantRec() const
 	float det = 0.f;
 	for (unsigned int i{ 0 }; i < nbLigne; ++i)
 	{
-		det += (*this)[0][i] * powf(-1.f, i) * SubMatrix(i, 0).Determinant();
+		det += (*this)[0][i] * powf(-1.f, static_cast<float>(i)) * SubMatrix(i, 0).Determinant();
 	}
 	return det;
 }

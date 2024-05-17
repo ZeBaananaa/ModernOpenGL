@@ -2,8 +2,8 @@
 #include "App.h"
 #include "Log.h"
 
-#include <Utils/InputHandler.h>
-#include <Utils/Time.h>
+#include "Utils/InputHandler.h"
+#include "Utils/Time.h"
 Camera* Camera::instance = nullptr;
 
 Camera& Camera::Get()
@@ -48,34 +48,34 @@ void Camera::CheckMoveInput()
     float movementSpeed = speed * Time::DeltaTime();
     Vector3D localAxisX3D;
 
-    if (InputHandler::IsKeyHeld(GLFW_KEY_LEFT))
+    if (InputHandler::IsKeyDown(GLFW_KEY_LEFT))
     {
         //left
         localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
         Move(Product(localAxisX3D, movementSpeed));
     }
-    if (InputHandler::IsKeyHeld(GLFW_KEY_RIGHT))
+    if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT))
     {
         //rigth
         localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
         Move(Product(localAxisX3D, -movementSpeed));
     }
-    if (InputHandler::IsKeyHeld(GLFW_KEY_UP))
+    if (InputHandler::IsKeyDown(GLFW_KEY_UP))
     {
         //front
         Move(Product(GetDirection(), movementSpeed));
     }
-    if (InputHandler::IsKeyHeld(GLFW_KEY_DOWN))
+    if (InputHandler::IsKeyDown(GLFW_KEY_DOWN))
     {
         //back
         Move(Product(GetDirection(), -movementSpeed));
     }
-    if (InputHandler::IsKeyHeld(GLFW_KEY_E) || InputHandler::IsKeyHeld(GLFW_KEY_SPACE))
+    if (InputHandler::IsKeyDown(GLFW_KEY_E) || InputHandler::IsKeyDown(GLFW_KEY_SPACE))
     {
         //up
         Move(Product(Vector3D::axeY, movementSpeed));
     }
-    if (InputHandler::IsKeyHeld(GLFW_KEY_A) || InputHandler::IsKeyHeld(GLFW_KEY_LEFT_CONTROL))
+    if (InputHandler::IsKeyDown(GLFW_KEY_A) || InputHandler::IsKeyDown(GLFW_KEY_LEFT_CONTROL))
     {
         //down
         Move(Product(Vector3D::axeY, -movementSpeed));

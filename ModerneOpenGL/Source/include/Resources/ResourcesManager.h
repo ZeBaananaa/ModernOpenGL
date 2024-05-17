@@ -1,8 +1,10 @@
 #pragma once
+
 #include <string>
 #include <map>
 #include "Log.h"
-interface IResource
+
+__interface IResource
 {
 	virtual void Load(std::string name) {};
 	virtual void UnLoad() {};
@@ -44,11 +46,8 @@ public:
 			{
 				resource = new T(name);
 
-				DEBUG_LOG("Does the resource " + name + " already exist ?");
-				if(IsKeyInList(name))
-				{
+				if (IsKeyInList(name))
 					Delete(name);
-				}
 				
 				resources[name] = resource;
 			}
