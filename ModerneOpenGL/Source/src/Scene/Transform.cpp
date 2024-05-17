@@ -14,7 +14,7 @@ Transform::Transform(GameObject* _gameObject)
 {
 	if (_gameObject)
 		gameObject = _gameObject;
-	
+
 	SetParent(SceneGraph::Get().root);
 
 	SetZero();
@@ -120,7 +120,7 @@ void Transform::SetParent(Transform* _parent)
 
 	if (parent == nullptr)
 		parent = SceneGraph::Get().root;
-	
+
 	parent->AddChildren(this);
 
 	SetLocalTransformOnParentChange();
@@ -195,7 +195,7 @@ Matrix4x4 Transform::GetLocalTransform()
 		recalculateGlobalT = true;
 		localTransform = TRS(localPosition,localRotation,localScale);
 	}
-	
+
 	return localTransform;
 }
 
@@ -234,6 +234,13 @@ Vector3D Transform::GetLocalRotation()
 
 void Transform::SetLocalRotation(Vector3D newRotation)
 {
+	if (newRotation.x >= 360.f || newRotation.x <= -360.f)
+		newRotation.x = 0.f;
+	if (newRotation.y >= 360.f || newRotation.y <= -360.f)
+		newRotation.y = 0.f;
+	if (newRotation.z >= 360.f || newRotation.z <= -360.f)
+		newRotation.z = 0.f;
+
 	localRotation = newRotation;
 	recalculateLocalT = true;
 
@@ -265,7 +272,7 @@ Matrix4x4 Transform::GetGlobalTransform()
 	{
 		GetLocalTransform();
 	}
-	
+
 	if (recalculateGlobalT)
 	{
 		recalculateGlobalT = false;
@@ -303,8 +310,3 @@ Vector3D Transform::GetGlobalScale()
 	return globalScale;
 }
 #pragma endregion
-
-
-
-
-

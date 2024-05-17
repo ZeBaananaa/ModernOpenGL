@@ -96,7 +96,7 @@ void LightManager::SetSpotOuterCutOff(SpotLights lightToSet, float angleInDegree
 	}
 	if (angleInDegree < 1.f)
 		angleInDegree = 1.f;
-	
+
 	spots[static_cast<int>(lightToSet)].outerCutOff = cosf(angleInDegree * PI / 180.f);
 }
 
@@ -146,7 +146,7 @@ void LightManager::SetUpPoints()
 }
 
 void LightManager::SetUpSpots()
-{	
+{
 	for (size_t i = 0; i < 4; i++)
 	{
 		spots[i] = SpotLight();

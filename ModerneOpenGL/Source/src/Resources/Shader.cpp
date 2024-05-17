@@ -97,7 +97,7 @@ bool Shader::Link()
 		char log[512];
 
 		glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-		
+
 		if (!success)
 		{
 			glGetProgramInfoLog(shaderProgram, sizeof(log), NULL, log);

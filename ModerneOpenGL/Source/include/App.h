@@ -9,6 +9,7 @@
 #include "Utils/Time.h"
 #include "SceneGraph.h"
 #include "Resources/Texture.h"
+#include "GameObject.h"
 
 class Application
 {
@@ -45,4 +46,7 @@ private:
     void InitResources();
     void InitCallbacks();
 
+    GameObject* InitSceneObjects();
+    void AnimateScene(GameObject* object);
+    GameObject* root;
 };
