@@ -34,7 +34,6 @@ public:
     void Render();
 
     static Vector2D oldMousePos;
-    void RotationMouse();
 
     Shader shader;
 
@@ -46,7 +45,12 @@ private:
     void InitResources();
     void InitCallbacks();
 
-    GameObject* InitSceneObjects();
     void AnimateScene(GameObject* object);
+
+    void HandleInputs();
+    void HandleKeyboardInputs(Camera* cam);
+    void HandleMouseInputs(Camera* cam);
+
+    GameObject* InitSceneObjects();
     GameObject* root;
 };

@@ -127,11 +127,63 @@ void Application::Update()
 {
 	Time::Update();
 	Camera::Get().Update();
-	RotationMouse();
 	SceneGraph::Get().Update();
+	HandleInputs();
+
 	Render();
 
 	AnimateScene(root);
+}
+
+void Application::HandleInputs()
+{
+	Camera* cam = &Camera::Get();
+
+	HandleKeyboardInputs(cam);
+	HandleMouseInputs(cam);
+}
+
+void Application::HandleKeyboardInputs(Camera* cam)
+{
+	if (InputHandler::IsKeyPressed(GLFW_KEY_M))
+		lightManager->SetSpotAngle(SpotLights::SP0, -1, true);
+
+	if (InputHandler::IsKeyPressed(GLFW_KEY_P))
+		lightManager->SetSpotAngle(SpotLights::SP0, 1, true);
+
+	float movementSpeed = cam->speed * Time::DeltaTime();
+	Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, cam->GetDirection()));
+
+	if (InputHandler::IsKeyDown(GLFW_KEY_LEFT))
+	{
+		//left
+		cam->Move(Product(localAxisX3D, movementSpeed));
+	}
+	if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT))
+	{
+		//rigth
+		cam->Move(Product(localAxisX3D, -movementSpeed));
+	}
+	if (InputHandler::IsKeyDown(GLFW_KEY_UP))
+	{
+		//front
+		cam->Move(Product(cam->GetDirection(), movementSpeed));
+	}
+	if (InputHandler::IsKeyDown(GLFW_KEY_DOWN))
+	{
+		//back
+		cam->Move(Product(cam->GetDirection(), -movementSpeed));
+	}
+	if (InputHandler::IsKeyDown(GLFW_KEY_E) || InputHandler::IsKeyDown(GLFW_KEY_SPACE))
+	{
+		//up
+		cam->Move(Product(Vector3D::axeY, movementSpeed));
+	}
+	if (InputHandler::IsKeyDown(GLFW_KEY_A) || InputHandler::IsKeyDown(GLFW_KEY_LEFT_CONTROL))
+	{
+		//down
+		cam->Move(Product(Vector3D::axeY, -movementSpeed));
+	}
 }
 
 void Application::Render()
@@ -144,9 +196,8 @@ void Application::Render()
 	SceneGraph::Get().Render();
 }
 
-void Application::RotationMouse()
+void Application::HandleMouseInputs(Camera* cam)
 {
-	Camera* cam = &Camera::Get();
 	Vector2D newMousePos = InputHandler::GetMousePos();
 
 	Vector2D dirMouse = Application::oldMousePos - newMousePos;
@@ -181,7 +232,7 @@ GameObject* Application::InitSceneObjects()
 	GameObject* uranus = new GameObject(Vector3D(11.f, 0.f, 2.35f), Vector3D::zero, Vector3D(0.50f), "uranus.obj", "uranus.jpg", "Uranus", sun->transform, GL_CLAMP_TO_EDGE);
 	GameObject* neptun = new GameObject(Vector3D(-12.f, 0.f, 3.f), Vector3D::zero, Vector3D(0.5f), "neptun.obj", "neptun.jpg", "Neptun", sun->transform);
 
-	GameObject* alien = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.01f, "Alien.obj", "alien.png", "Alien");
+	GameObject* alien = new GameObject(Vector3D(0.f, 0.95f, 0.f), Vector3D::zero, Vector3D::one * 0.025f, "Alien.obj", "alien.png", "Alien", earth->transform);
 
 	return sun;
 }
@@ -196,7 +247,8 @@ void Application::AnimateScene(GameObject* object)
 			(*ch)->SetLocalRotation((*ch)->GetLocalRotation() + (Vector3D(0.f, 0.f, 25.f) * Time::DeltaTime()));
 
 			for (auto ch2 = (*ch)->GetChildren().begin(); ch2 != (*ch)->GetChildren().end(); ++ch2)
-				(*ch2)->SetLocalRotation((*ch2)->GetLocalRotation() + (Vector3D(0.f, 75.f, 75.f) * Time::DeltaTime()));
+				if ((*ch2)->GetName() != "Alien")
+					(*ch2)->SetLocalRotation((*ch2)->GetLocalRotation() + (Vector3D(0.f, 75.f, 75.f) * Time::DeltaTime()));
 		}
 		else if ((*ch)->GetName() == "Saturn")
 			(*ch)->SetLocalRotation((*ch)->GetLocalRotation() + (Vector3D(0.f, 45.f, 0.f) * Time::DeltaTime()));

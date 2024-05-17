@@ -31,8 +31,6 @@ void Camera::Destroy()
 
 void Camera::Update()
 {
-    CheckMoveInput();
-
     if (recalculateView)
         GetViewMatrix();
 
@@ -41,45 +39,6 @@ void Camera::Update()
 
     if (recalculateVP)
         GetVPMatrix();
-}
-
-void Camera::CheckMoveInput()
-{
-    float movementSpeed = speed * Time::DeltaTime();
-    Vector3D localAxisX3D;
-
-    if (InputHandler::IsKeyDown(GLFW_KEY_LEFT))
-    {
-        //left
-        localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
-        Move(Product(localAxisX3D, movementSpeed));
-    }
-    if (InputHandler::IsKeyDown(GLFW_KEY_RIGHT))
-    {
-        //rigth
-        localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, GetDirection()));
-        Move(Product(localAxisX3D, -movementSpeed));
-    }
-    if (InputHandler::IsKeyDown(GLFW_KEY_UP))
-    {
-        //front
-        Move(Product(GetDirection(), movementSpeed));
-    }
-    if (InputHandler::IsKeyDown(GLFW_KEY_DOWN))
-    {
-        //back
-        Move(Product(GetDirection(), -movementSpeed));
-    }
-    if (InputHandler::IsKeyDown(GLFW_KEY_E) || InputHandler::IsKeyDown(GLFW_KEY_SPACE))
-    {
-        //up
-        Move(Product(Vector3D::axeY, movementSpeed));
-    }
-    if (InputHandler::IsKeyDown(GLFW_KEY_A) || InputHandler::IsKeyDown(GLFW_KEY_LEFT_CONTROL))
-    {
-        //down
-        Move(Product(Vector3D::axeY, -movementSpeed));
-    }
 }
 
 void Camera::Move(const Vector3D& t)

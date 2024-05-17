@@ -92,12 +92,6 @@ int main()
 		/* Swap front and back buffers */
 		glfwSwapBuffers(Application::Get().window);
 
-		if (InputHandler::IsKeyPressed(GLFW_KEY_M))
-			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, -1, true);
-
-		if (InputHandler::IsKeyPressed(GLFW_KEY_P))
-			Application::Get().lightManager->SetSpotAngle(SpotLights::SP0, 1, true);
-
 		InputHandler::ProcessPressedKeys();
 	}
 	Destroy();

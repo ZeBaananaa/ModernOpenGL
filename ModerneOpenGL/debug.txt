@@ -1,0 +1,66 @@
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : Alien.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : cube.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : earth.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : jupiter.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : mars.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : mercury.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : moon.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : neptun.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : saturn.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : saturn_ring.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : sphere.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : sun.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : uranus.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : venus.obj doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : alien.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : back.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : bottom.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : earth.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : front.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : jupiter.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : left.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : mars.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : mercury.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : missing_texture.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : moon.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : neptun.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : right.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : saturn.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : saturn_ring.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : sun.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : top.png doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : uranus.jpg doesn't exist.
+
+C:\Users\ethan\source\repos\2023_gp_2028_gp_2028_modern_opengl-knuckles\ModerneOpenGL\Source\src\Resources\ResourcesManager.cpp(43): The resource : venus.jpg doesn't exist.
+
