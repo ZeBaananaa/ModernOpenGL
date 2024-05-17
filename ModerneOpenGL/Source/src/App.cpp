@@ -145,12 +145,6 @@ void Application::HandleInputs()
 
 void Application::HandleKeyboardInputs(Camera* cam)
 {
-	if (InputHandler::IsKeyPressed(GLFW_KEY_M))
-		lightManager->SetSpotAngle(SpotLights::SP0, -1, true);
-
-	if (InputHandler::IsKeyPressed(GLFW_KEY_P))
-		lightManager->SetSpotAngle(SpotLights::SP0, 1, true);
-
 	float movementSpeed = cam->speed * Time::DeltaTime();
 	Vector3D localAxisX3D = Normalize(CrossProduct(Vector3D::axeY, cam->GetDirection()));
 
