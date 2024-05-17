@@ -10,7 +10,7 @@ Texture::Texture(std::string filename, GLuint mode)
 
 Texture::~Texture()
 {
-	//delete [] data;
+	delete [] data;
 }
 
 void Texture::Load(std::string filename)

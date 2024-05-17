@@ -11,6 +11,7 @@ public:
 
 	Transform* root;
 
+	void Update();
 	void Render();
 
 private:

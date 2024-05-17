@@ -2,6 +2,11 @@
 
 SceneGraph* SceneGraph::instance = nullptr;
 
+void SceneGraph::Update()
+{
+	root->Update();
+}
+
 void SceneGraph::Render()
 {
 	root->Render();

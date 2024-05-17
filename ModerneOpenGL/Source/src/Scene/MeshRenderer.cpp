@@ -25,6 +25,10 @@ MeshRenderer::~MeshRenderer()
 	gameObject = nullptr;
 }
 
+void MeshRenderer::Init()
+{
+}
+
 void MeshRenderer::Update()
 {
 	if (model)

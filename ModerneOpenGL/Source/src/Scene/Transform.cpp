@@ -88,7 +88,7 @@ void Transform::Update()
 
 	for (size_t i = 0; i < children.size(); i++)
 	{
-		children[i]->gameObject->Update();
+		children[i]->gameObject->transform->Update();
 	}
 }
 
@@ -155,6 +155,14 @@ void Transform::RemoveChildren(Transform* child)
 			children.erase(children.begin() + i);
 			return;
 		}
+	}
+}
+
+void Transform::CheckCollision(Collider* collider)
+{
+	if (gameObject && gameObject->GetComponent<Collider>())
+	{
+
 	}
 }
 
