@@ -118,7 +118,7 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	float radiusScaled = collider->radius * collider->scale;
 	Vector3D sizeScaled = TensorialProduct(box->size, box->scale);
 
-	Matrix4x4 g = box->gameObject->transform->GetGlobalTransform();
+	Matrix4x4 g = box->gameObject->transform->GetGlobalTransform(); //TRS(box->gameObject->transform->GetGlobalPosition(),box->gameObject->transform->GetGlobalRotation(),Vector3D::one);//
 	Matrix4x4 rg = Reverse(g);
 
 	//Vector3D inverseScale = box->gameObject->transform->GetGlobalScale();
@@ -150,45 +150,28 @@ bool CollisionSphereBox(SphereCollider* collider, BoxCollider* box)
 	/// DEBUG ///
 	for (size_t i = 0; i < points.size(); i++)
 	{
-		GameObject* g = new GameObject(points[i],Vector3D::zero,Vector3D::one * 0.2f,"cube.obj");
+		GameObject* g = new GameObject(points[i],Vector3D::zero,Vector3D::one * 0.2f,"cube.obj","","",SceneGraph::Get().root->GetChildren()[0]);
 	}
 
-	GameObject* c = new GameObject(positionOldSphereL, box->gameObject->transform->GetGlobalRotation(), Vector3D::one * 0.5f, "cube.obj");
-	GameObject* d = new GameObject(positionSphereL, box->gameObject->transform->GetGlobalRotation(), Vector3D::one * 0.3f, "cube.obj");
+	GameObject* c = new GameObject(positionOldSphereL, box->gameObject->transform->GetGlobalRotation(), Vector3D::one * 0.5f, "cube.obj", "", "", SceneGraph::Get().root->GetChildren()[0]);
+	GameObject* d = new GameObject(positionSphereL, box->gameObject->transform->GetGlobalRotation(), Vector3D::one * 0.3f, "cube.obj", "", "", SceneGraph::Get().root->GetChildren()[0]);
 	//////////
 
 	Vector3D posCol = {10000,10000,10000};
 
-	 bool col = CollisionSegmentSpheres(points, positionOldSphereL, positionSphereL, radiusScaled, posCol, g);
-	 col = CollisionCyliders(points, positionOldSphereL, positionSphereL, radiusScaled, posCol, g);
+	bool col = CollisionSegmentSpheres(points, positionOldSphereL, positionSphereL, radiusScaled, posCol, g);
+	col = CollisionCyliders(points, positionOldSphereL, positionSphereL, radiusScaled, posCol, g);
+	col = CollisionSegmentQuads(points, positionOldSphereL, positionSphereL, radiusScaled, posCol, g);
 
 	if (col)
 	{
-		GameObject* g = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.2f, "sphere.obj");
+		GameObject* g = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.2f, "sphere.obj", "", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		posCol = box->gameObject->transform->GetGlobalTransform() * (Vector4D)posCol;
 
 		Vector3D realPos = posCol - collider->gameObject->transform->GetGlobalPosition();
 		collider->gameObject->transform->SetLocalPosition(collider->gameObject->transform->GetLocalPosition() + realPos);
 
-		return true;
-	}
-
-	
-	else
-	{
-		//for (int i = 0; i < 6; ++i)
-		//{
-		//	//faces 0.x + radius 0.y+radius 0.z + radius par exemple
-		//	// face carre mais plus petite de tte les composantes de +/- radius
-		//	//Seg Quad ->> Plan true? -> quad ?
-		//}
-
-	}
-
-	if (col)
-	{
-		//
 		return true;
 	}
 	return false;
@@ -199,27 +182,57 @@ bool CollisionSegmentQuads(std::vector<Vector3D> points, Vector3D positionOldSph
 {
 	bool col = false;
 
+	Vector3D point0 = points[0] + Vector3D(radiusScaled, -radiusScaled, radiusScaled);
+	//z
+	float lenghtSideZ = Distance(point0, points[1] + Vector3D(radiusScaled, -radiusScaled, -radiusScaled)) / .2f;
+	//x
+	float lenghtSideX = Distance(point0, points[3] + Vector3D(-radiusScaled, -radiusScaled, radiusScaled)) / 2.f;
+	//y
+	float lenghtSideY = Distance(points[0] + Vector3D(-radiusScaled, radiusScaled, radiusScaled), points[4] + Vector3D(-radiusScaled, -radiusScaled, radiusScaled)) / 2.f;
+
 	for (int i = 0; i < 2; ++i)
 	{
-		Matrix4x4 trsCylinder = TRS(MidPoint(points[i] - radiusScaled, points[i + 2] - radiusScaled), {90,0,0}, Vector3D::one);
+		int sign = -1;
+		if (i == 1)
+			sign = 1;
+
+		Matrix4x4 trsCylinder = TRS(MidPoint(points[i * 4] + Vector3D(radiusScaled, sign * radiusScaled, radiusScaled), points[i * 4 + 2] + Vector3D(-radiusScaled, sign * radiusScaled, -radiusScaled)), {90,0,0 }, Vector3D::one);
 		Matrix4x4 trsCylinderR = Reverse(trsCylinder);
 		posCol = trsCylinderR * (Vector4D)posCol;
 
-		Vector3D pointsI = trsCylinderR * (Vector4D)points[i] - radiusScaled;
-		float lenghtSide0 = Distance(pointsI, (Vector3D)(trsCylinderR * (Vector4D)points[i + 1] - radiusScaled));
-		float lenghtSide1 = Distance(pointsI, (Vector3D)(trsCylinderR * (Vector4D)points[i + 3] - radiusScaled));
-
-		float L = lenghtSide0 / 2.f;
-		float H = lenghtSide1 / 2.f;
-
 		if (CollisionSegmentQuad(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
-			, Vector3D::axeY ,L ,H, posCol, globalMatrixOfBox * trsCylinder))
+			,Vector3D::axeY * sign, lenghtSideX, lenghtSideZ, posCol, globalMatrixOfBox * trsCylinder))
 		{
 			col = true;
-
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+		//GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
+
+
+		trsCylinder = TRS(MidPoint(points[i * 3] + Vector3D(sign * radiusScaled, radiusScaled, radiusScaled), points[i + 5] + Vector3D(sign * radiusScaled, -radiusScaled, -radiusScaled)), { 0,0,90 }, Vector3D::one);
+		trsCylinderR = Reverse(trsCylinder);
+		posCol = trsCylinderR * (Vector4D)posCol;
+
+		if (CollisionSegmentQuad(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
+			,Vector3D::axeX * sign, lenghtSideZ, lenghtSideY, posCol, globalMatrixOfBox * trsCylinder))
+		{
+			col = true;
+		}
+		posCol = trsCylinder * (Vector4D)posCol;
+		//GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
+
+		trsCylinder = TRS(MidPoint(points[i] + Vector3D(radiusScaled, radiusScaled, sign * radiusScaled), points[7 - i] + Vector3D(-radiusScaled, -radiusScaled, sign * radiusScaled)), { 0,0,0 }, Vector3D::one);
+		trsCylinderR = Reverse(trsCylinder);
+		posCol = trsCylinderR * (Vector4D)posCol;
+
+		if (CollisionSegmentQuad(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
+			, Vector3D::axeZ * sign, lenghtSideZ, lenghtSideY, posCol, globalMatrixOfBox * trsCylinder))
+		{
+			col = true;
+		}
+		posCol = trsCylinder * (Vector4D)posCol;
+		//GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
+
 	}
 
 	return col;
@@ -272,14 +285,14 @@ bool CollisionSegmentSpheres(std::vector<Vector3D> points,Vector3D positionOldSp
 		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i], radiusScaled, posCol, globalMatrixOfBox))
 		{
 			col = true;
-			GameObject* sol = new GameObject(posCol, { 45,45,45 }, Vector3D::one * 0.1f, "cube.obj", "black.png");
+			GameObject* sol = new GameObject(posCol, { 45,45,45 }, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 		}
 
 		//top
 		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i + 4], radiusScaled, posCol, globalMatrixOfBox))
 		{
 			col = true;
-			GameObject* sol = new GameObject(posCol, { 45,45,45 }, Vector3D::one * 0.1f, "cube.obj", "black.png");
+			GameObject* sol = new GameObject(posCol, { 45,45,45 }, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 		}
 	}
 
@@ -338,7 +351,7 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		int k = 1;
 		if (i == 1)
@@ -354,7 +367,7 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		trsCylinder = TRS(MidPoint(points[i + 4], points[j + 4]), rota, Vector3D::one);
 		trsCylinderR = Reverse(trsCylinder);
@@ -365,7 +378,7 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		int k2 = j + 6;
 		if (i == 1)
@@ -380,14 +393,14 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "black.png");
+		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 	}
 
 	//cylinder vertical
 
 	for (int i = 0; i < 4; ++i)
 	{
-		Matrix4x4 trsCylinder = TRS(MidPoint(points[i], points[i + 4]), {0,90,0}, Vector3D::one);
+		Matrix4x4 trsCylinder = TRS(MidPoint(points[i], points[i + 4]), {0,0,0}, Vector3D::one);
 		Matrix4x4 trsCylinderR = Reverse(trsCylinder);
 		posCol = trsCylinderR * (Vector4D)posCol;
 		if (CollisionSegmentCylinder(trsCylinderR * (Vector4D)positionOldSphereL, trsCylinderR * (Vector4D)positionSphereL
@@ -396,7 +409,7 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "shield.png");
+		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "alien.png", "", SceneGraph::Get().root->GetChildren()[0]);
 	}
 
 	return col;

@@ -77,6 +77,7 @@ void InitWindow()
 	SceneGraph::Get();
 }
 
+#include <random>
 
 int main()
 {
@@ -87,14 +88,45 @@ int main()
 
 	InitWindow();
 
-	GameObject* obj0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png", "Alien");
-	GameObject* obj1 = new GameObject(Vector3D(-5.f, 0.f, 5.f), Vector3D::zero, Vector3D(5.f), "sphere.obj", "", "Sphere", obj0->transform);
+	GameObject* debugContainer = new GameObject(nullptr,"debugContainer");
+	
+	GameObject* s1 = new GameObject({ 5,5,10 }, Vector3D::zero, Vector3D::one * 0.2, "sphere.obj", "back.png","SphereCollider1");
+	GameObject* s2 = new GameObject({ 5,10,0 }, Vector3D::zero, Vector3D::one * 0.2, "sphere.obj", "back.png", "SphereCollider2");
+	GameObject* s3 = new GameObject({ 0,5,0 }, Vector3D::zero, Vector3D::one * 0.2, "sphere.obj", "back.png", "SphereCollider3");
+	GameObject* s4 = new GameObject({ 10,0,-5 }, Vector3D::zero, Vector3D::one * 0.2, "sphere.obj", "back.png", "SphereCollider4");
 
-	GameObject* empty = new GameObject(SceneGraph::Get().root, "All Cubes");
-	for (size_t i = 0; i < 11; i++)
-		for (size_t j = 0; j < 11; j++)
-			GameObject* cube = new GameObject({ i * 1.5f - 7.5f, j * 1.5f - 7.5f, 0.f }, { 0.f, 0.f, 0.f },
-												Vector3D::one, "cube.obj", "", "", empty->transform);
+	GameObject* c2 = new GameObject({ 5,5,0 }, { 0,45,0 }/* { 1.f * (rand() % 360), 1.f * (rand() % 360),1.f * (rand() % 360) }*/, { 1,1,1 }, "cube.obj", "bottom.png", "cube Collider");
+
+
+	s1->AddComponent(AddCollider(Colliders::SPHERE, s1));
+	s2->AddComponent(AddCollider(Colliders::SPHERE, s2));
+	s3->AddComponent(AddCollider(Colliders::SPHERE, s3));
+	s4->AddComponent(AddCollider(Colliders::SPHERE, s4));
+	c2->AddComponent(AddCollider(Colliders::CUBE, c2));
+
+	SceneGraph::Get().Update();
+
+	s1->transform->SetLocalPosition(c2->transform->GetLocalPosition());
+	s2->transform->SetLocalPosition(c2->transform->GetLocalPosition());
+	s3->transform->SetLocalPosition(c2->transform->GetLocalPosition());
+	s4->transform->SetLocalPosition(c2->transform->GetLocalPosition());
+
+	if (CollisionSphereBox(s1->GetComponent<SphereCollider>(), c2->GetComponent<BoxCollider>()))
+	{
+		s1->GetComponent<MeshRenderer>()->texture = ResourceManager::Get().Get<Texture>("missing_texture.png");
+	}
+	if (CollisionSphereBox(s2->GetComponent<SphereCollider>(), c2->GetComponent<BoxCollider>()))
+	{
+		s2->GetComponent<MeshRenderer>()->texture = ResourceManager::Get().Get<Texture>("missing_texture.png");
+	}
+	if (CollisionSphereBox(s3->GetComponent<SphereCollider>(), c2->GetComponent<BoxCollider>()))
+	{
+		s3->GetComponent<MeshRenderer>()->texture = ResourceManager::Get().Get<Texture>("missing_texture.png");
+	}
+	if (CollisionSphereBox(s4->GetComponent<SphereCollider>(), c2->GetComponent<BoxCollider>()))
+	{
+		s4->GetComponent<MeshRenderer>()->texture = ResourceManager::Get().Get<Texture>("missing_texture.png");
+	}
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyDown(GLFW_KEY_ESCAPE))

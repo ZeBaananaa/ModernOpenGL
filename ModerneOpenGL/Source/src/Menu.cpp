@@ -79,6 +79,7 @@ void Menu::DrawRoot()
 				latestChildClicked = *ch;
 			
 			DrawChildren((*ch));
+			ImGui::Unindent(20.0f);
 		}
 	}
 

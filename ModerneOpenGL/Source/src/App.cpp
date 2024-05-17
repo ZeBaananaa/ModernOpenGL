@@ -133,7 +133,7 @@ void Application::Update()
 void Application::Render()
 {
 	glViewport(0, 0, m_width, m_height);
-	//glClearColor(0.15f, 0.15f, 1.f, 1.f); // Set background color to blue
+	glClearColor(0.15f, 0.15f, 1.f, 1.f); // Set background color to blue
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glUseProgram(shader.GetProgram());
