@@ -206,7 +206,6 @@ bool CollisionSegmentQuads(std::vector<Vector3D> points, Vector3D positionOldSph
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		//GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 
 		trsCylinder = TRS(MidPoint(points[i * 3] + Vector3D(sign * radiusScaled, radiusScaled, radiusScaled), points[i + 5] + Vector3D(sign * radiusScaled, -radiusScaled, -radiusScaled)), { 0,0,90 }, Vector3D::one);
@@ -219,7 +218,7 @@ bool CollisionSegmentQuads(std::vector<Vector3D> points, Vector3D positionOldSph
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		//GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
+
 
 		trsCylinder = TRS(MidPoint(points[i] + Vector3D(radiusScaled, radiusScaled, sign * radiusScaled), points[7 - i] + Vector3D(-radiusScaled, -radiusScaled, sign * radiusScaled)), { 0,0,0 }, Vector3D::one);
 		trsCylinderR = Reverse(trsCylinder);
@@ -231,7 +230,6 @@ bool CollisionSegmentQuads(std::vector<Vector3D> points, Vector3D positionOldSph
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		//GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 	}
 
@@ -263,10 +261,9 @@ bool CollisionSegmentPlan(Vector3D startSeg, Vector3D endSeg, Vector3D normal, V
 	if (dot == 0)
 		return false;
 
-	//if local of a face, it hit the center 0,0,0 of the face
-	Vector3D center = Vector3D::zero;
-	float d = -(normal.x * center.x + normal.y * center.y + normal.z * center.z);
-	float t0 = -(DotProduct(startSeg, normal) + d) / dot;
+	//if local of a face, it hit the center 0,0,0 of the face, so d = 0
+
+	float t0 = -(DotProduct(startSeg, normal) + 0) / dot;
 
 	if (t0 > 1 || t0 < 0)
 		return false;
@@ -285,14 +282,12 @@ bool CollisionSegmentSpheres(std::vector<Vector3D> points,Vector3D positionOldSp
 		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i], radiusScaled, posCol, globalMatrixOfBox))
 		{
 			col = true;
-			GameObject* sol = new GameObject(posCol, { 45,45,45 }, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 		}
 
 		//top
 		if (CollisionSegmentSphere(positionOldSphereL, positionSphereL, points[i + 4], radiusScaled, posCol, globalMatrixOfBox))
 		{
 			col = true;
-			GameObject* sol = new GameObject(posCol, { 45,45,45 }, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 		}
 	}
 
@@ -315,7 +310,6 @@ bool CollisionSegmentSphere(Vector3D startSeg, Vector3D endSeg, Vector3D posSphe
 
 	if (t0 > 1 || t0 < 0)
 		return false;
-
 
 	Vector3D worldPosCol = worldTransform * Vector4D(posCol);
 	Vector3D worldstartSeg = worldTransform * Vector4D(startSeg);
@@ -351,7 +345,6 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		GameObject* sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		int k = 1;
 		if (i == 1)
@@ -367,7 +360,6 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		trsCylinder = TRS(MidPoint(points[i + 4], points[j + 4]), rota, Vector3D::one);
 		trsCylinderR = Reverse(trsCylinder);
@@ -378,7 +370,6 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 
 		int k2 = j + 6;
 		if (i == 1)
@@ -393,11 +384,9 @@ bool CollisionCyliders(std::vector<Vector3D> points, Vector3D positionOldSphereL
 			col = true;
 		}
 		posCol = trsCylinder * (Vector4D)posCol;
-		sol = new GameObject(posCol, Vector3D::zero, Vector3D::one * 0.1f, "cube.obj", "back.png", "", SceneGraph::Get().root->GetChildren()[0]);
 	}
 
 	//cylinder vertical
-
 	for (int i = 0; i < 4; ++i)
 	{
 		Matrix4x4 trsCylinder = TRS(MidPoint(points[i], points[i + 4]), {0,0,0}, Vector3D::one);
