@@ -32,7 +32,7 @@ void Menu::Init()
 
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(Application::Get().window, true);
-	ImGui_ImplOpenGL3_Init("#version 330");;
+	ImGui_ImplOpenGL3_Init("#version 330");
 }
 
 void Menu::Render()
@@ -60,7 +60,7 @@ void Menu::Draw()
 
 	if (latestChildClicked != nullptr)
 		DrawChildSettings(latestChildClicked);
-	
+
 	ImGui::End();
 }
 
@@ -70,38 +70,42 @@ void Menu::DrawRoot()
 
 	for (auto ch = SceneGraph::Get().root->GetChildren().begin(); ch != SceneGraph::Get().root->GetChildren().end(); ++ch)
 	{
-		if (ImGui::CollapsingHeader(((*ch)->GetName()).c_str()))
-		{
-			ImGui::Indent(20.0f);
-			ImGui::Button(((*ch)->GetName()).c_str());
-
-			if (ImGui::IsItemClicked())
-				latestChildClicked = *ch;
-			
-			DrawChildren((*ch));
-		}
+		DrawChildren((*ch));
 	}
 
 	ImGui::Unindent(20.0f);
+}
+
+void Menu::DrawButton(Transform* child)
+{
+	ImGui::Button((child->GetName()).c_str());
+	if (ImGui::IsItemClicked())
+		latestChildClicked = child;
 }
 
 void Menu::DrawChildren(Transform* child)
 {
 	ImGui::Indent(20.0f);
 
-	for (auto ch = child->GetChildren().begin(); ch != child->GetChildren().end(); ++ch)
+	if (child->GetChildren().empty())
 	{
-		if (!(*ch)->GetChildren().empty())
-			ImGui::CollapsingHeader(((*ch)->GetName()).c_str());
-		else
-		{
-			ImGui::Button(((*ch)->GetName()).c_str());
-			if (ImGui::IsItemClicked())
-				latestChildClicked = *ch;
-		}
-		DrawChildren((*ch));
+		DrawButton(child);
+		ImGui::Unindent(20.0f);
+		return;
 	}
-
+	else
+	{
+		if (ImGui::CollapsingHeader((child->GetName()).c_str()))
+		{
+			ImGui::Indent(20.0f);
+			DrawButton(child);
+			for (auto ch = child->GetChildren().begin(); ch != child->GetChildren().end(); ++ch)
+			{
+				DrawChildren((*ch));
+			}
+			ImGui::Unindent(20.0f);
+		}
+	}
 	ImGui::Unindent(20.0f);
 }
 

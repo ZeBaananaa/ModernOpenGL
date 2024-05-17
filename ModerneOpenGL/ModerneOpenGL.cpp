@@ -4,7 +4,6 @@
 #include "GLFW/glfw3.h"
 
 #include "Assertion.h"
-//#include <cstdint>
 #include "Log.h"
 #include "App.h"
 #include "Camera.h"
@@ -77,6 +76,9 @@ void InitWindow()
 	SceneGraph::Get();
 }
 
+void LoadScene()
+{
+}
 
 int main()
 {
@@ -87,14 +89,28 @@ int main()
 
 	InitWindow();
 
-	GameObject* obj0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png", "Alien");
-	GameObject* obj1 = new GameObject(Vector3D(-5.f, 0.f, 5.f), Vector3D::zero, Vector3D(5.f), "sphere.obj", "", "Sphere", obj0->transform);
+	GameObject* sun = new GameObject(Vector3D::zero, Vector3D(0.f, 0.f, 13.5f), Vector3D(2.5f), "sun.obj", "sun.jpg", "Sun");
+	 
+	GameObject* mercury = new GameObject(Vector3D(2.f, 0.f, -0.25f), Vector3D::zero, Vector3D(0.25f), "mercury.obj", "mercury.jpg", "Mercury", sun->transform);
 
-	GameObject* empty = new GameObject(SceneGraph::Get().root, "All Cubes");
-	for (size_t i = 0; i < 11; i++)
-		for (size_t j = 0; j < 11; j++)
-			GameObject* cube = new GameObject({ i * 1.5f - 7.5f, j * 1.5f - 7.5f, 0.f }, { 0.f, 0.f, 0.f },
-												Vector3D::one, "cube.obj", "", "", empty->transform);
+	GameObject* venus = new GameObject(Vector3D(-3.5f, 0.f, 0.25f), Vector3D::zero, Vector3D(0.4f), "venus.obj", "venus.jpg", "Venus", sun->transform);
+
+	GameObject* earth = new GameObject(Vector3D(2.5f, 0.f, 2.35f), Vector3D::zero, Vector3D(0.4f), "earth.obj", "earth.jpg", "Earth", sun->transform);
+
+	GameObject* moon = new GameObject(Vector3D(2.f, 0.f, 1.f), Vector3D::zero, Vector3D(0.25f), "moon.obj", "moon.jpg", "Moon", earth->transform);
+
+	GameObject* mars = new GameObject(Vector3D(-4.f, 0.f, 1.5f), Vector3D::zero, Vector3D(0.375f), "mars.obj", "mars.jpg", "Mars", sun->transform);
+
+	GameObject* jupiter = new GameObject(Vector3D(7.5f, 0.f, -2.f), Vector3D::zero, Vector3D(0.65f), "jupiter.obj", "jupiter.jpg", "Jupiter", sun->transform);
+
+	GameObject* saturn = new GameObject(Vector3D(-9.5, 0.f, -1.5f), Vector3D::zero, Vector3D(0.60f), "saturn.obj", "saturn.jpg", "Saturn", sun->transform);
+	GameObject* saturn_ring = new GameObject(Vector3D::zero, Vector3D(0.f, 0.f, -20.f), Vector3D(1.f), "saturn_ring.obj", "saturn_ring.png", "Saturn Ring", saturn->transform);
+
+	GameObject* uranus = new GameObject(Vector3D(11.f, 0.f, 2.35f), Vector3D::zero, Vector3D(0.50f), "uranus.obj", "uranus.jpg", "Uranus", sun->transform, GL_CLAMP_TO_EDGE);
+
+	GameObject* neptun = new GameObject(Vector3D(-12.f, 0.f, 3.f), Vector3D::zero, Vector3D(0.5f), "neptun.obj", "neptun.jpg", "Neptun", sun->transform);
+
+	//GameObject* obj0 = new GameObject(Vector3D::zero, Vector3D::zero, Vector3D::one * 0.1f, "Alien.obj", "alien.png", "Alien");
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(Application::Get().window) && !InputHandler::IsKeyDown(GLFW_KEY_ESCAPE))
@@ -104,6 +120,23 @@ int main()
 
 		/* Render here */
 		Application::Get().Update();
+
+		// TODO : Multiply with delta time
+		sun->transform->SetLocalRotation(sun->transform->GetLocalRotation() + Vector3D(0.f, 0.1f, 0.f));
+		for (auto ch = sun->transform->GetChildren().begin(); ch != sun->transform->GetChildren().end(); ++ch)
+		{
+			if ((*ch)->GetName() == "Earth")
+			{
+				(*ch)->SetLocalRotation((*ch)->GetLocalRotation() + Vector3D(0.f, 0.f, 0.25f));
+
+				for (auto ch2 = (*ch)->GetChildren().begin(); ch2 != (*ch)->GetChildren().end(); ++ch2)
+					(*ch2)->SetLocalRotation((*ch2)->GetLocalRotation() + Vector3D(0.f, 0.f, 1.5f));
+			}
+			else if ((*ch)->GetName() == "Saturn")
+				(*ch)->SetLocalRotation((*ch)->GetLocalRotation() + Vector3D(0.f, 0.45f, 0.f));
+			else
+				(*ch)->SetLocalRotation((*ch)->GetLocalRotation() + Vector3D(0.2f, 0.2f, 0.f));
+		}
 
 		Menu::Get().Render();
 

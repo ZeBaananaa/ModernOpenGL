@@ -173,9 +173,11 @@ void LightManager::Init()
 	SetUpPoints();
 	SetUpSpots();
 
-	SetLight(DirectionalLights::DIR0, { 1.f, -1.f, -1.f, 0.f }, { 1.f, 1.f, 1.f ,1.f }, { 0.f, 0.f, 0.f, 1.f }, { 0.5f, 0.5f, 0.5f, 1.f }, true);
+	SetLight(DirectionalLights::DIR0, { 1.f, -1.f, -1.f, 0.f }, { 2.f, 2.f, 2.f ,1.f }, { 0.f, 0.f, 0.f, 1.f }, { 0.5f, 0.5f, 0.5f, 1.f }, true);
+	SetLight(DirectionalLights::DIR1, { -1.f, 1.f, 1.f, 0.f }, { 2.f, 2.f, 2.f ,1.f }, { 0.f, 0.f, 0.f, 1.f }, { 0.5f, 0.5f, 0.5f, 1.f }, true);
 
-	SetLight(PointLigths::PT0, { 5.f, 5.f, 2.f, 1.f }, { 0.f, 0.f, 0.f, 1.f }, { 7.f, 7.f, 7.f, 1.f }, { 2.f, 2.f, 2.f, 1.f }, 1.f, 0.4f, 0.4f, true);
+	SetLight(PointLigths::PT0, { 0.f, 0.f, 0.f, 1.f }, { 0.f, 0.f, 0.f, 1.f }, { 22.5f, 20.f, 20.f, 1.f }, { 0.f, 0.f, 0.f, 1.f }, 1.f, 0.1f, 0.2f, true);
 
-	SetLight(SpotLights::SP0, { 0.f, 0.f, 5.f, 1.f }, { 0.f, 0.f, -1.f, 0.f }, { 1.f, 1.f, 1.f, 1.f }, { 15.f, 15.f, 15.f, 1.f }, { 0.2f, 0.2f, 0.2f, 1.f }, 45.f, 30.f, true);
+	SetLight(SpotLights::SP0, { 5.f, 0.f, 0.f, 1.f }, { -1.f, 0.f, 0.f, 0.f }, { 1.f, 1.f, 1.f, 1.f }, { 15.f, 15.f, 15.f, 1.f }, { 0.2f, 0.2f, 0.2f, 1.f }, 45.f, 30.f, true);
+	SetLight(SpotLights::SP1, { -5.f, 0.f, 0.f, 1.f }, { 1.f, 0.f, 0.f, 0.f }, { 1.f, 1.f, 1.f, 1.f }, { 15.f, 15.f, 15.f, 1.f }, { 0.2f, 0.2f, 0.2f, 1.f }, 45.f, 30.f, true);
 }

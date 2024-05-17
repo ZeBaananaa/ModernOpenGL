@@ -23,6 +23,8 @@ public:
 
 private:
 	Menu() = default;
+	void DrawButton(Transform* child);
+
 	static Menu* instance;
 
 	Transform* latestChildClicked;
